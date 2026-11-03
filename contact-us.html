@@ -1,0 +1,36 @@
+---
+layout: "default"
+title: "Contact Us"
+permalink: "/contact-us/"
+description: "Contact Our Lady of the Most Holy Trinity Chapel in Corpus Christi, Texas."
+---
+<section class="section">
+  <div class="container">
+    <h1 class="section-title section-title--plain">Contact Us</h1>
+    <div class="grid grid--6-6">
+      <div>
+        <!-- To send real email, add a form service address, for example:
+             <form id="contact-form" action="https://formspree.io/f/YOUR-ID" method="post"> -->
+        <form id="contact-form" class="contact-form" novalidate>
+          <h2 class="heading-minor form-label">Message:</h2>
+          <div class="field"><label class="visually-hidden" for="contact-name">Name</label><input id="contact-name" name="name" type="text" placeholder="Name*" required autocomplete="name"></div>
+          <div class="field"><label class="visually-hidden" for="contact-email">Email</label><input id="contact-email" name="email" type="email" placeholder="Email*" required autocomplete="email"></div>
+          <div class="field"><label class="visually-hidden" for="contact-message">Message</label><textarea id="contact-message" name="message" rows="4" placeholder="Message"></textarea></div>
+          <button class="button button--block" type="submit">Send</button>
+          <p class="form-note">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
+          <p class="form-success" hidden>Thank you for your message. This site is not yet connected to an email service, so please call <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }} to reach the Chapel.</p>
+        </form>
+      </div>
+      <div>
+        <h2 class="content-heading content-heading--lg">{{ site.title }}</h2>
+        <div class="rich text text--lg">
+<p>{{ site.chapel.address }}</p>
+<p><br></p>
+<p>Phone: <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }}</p>
+<p><br></p>
+<p>Professing the Catholic Faith, necessary for salvation, as found in the Apostle's Creed, the Tridentine, the Nicene, and the Athanasian Creeds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

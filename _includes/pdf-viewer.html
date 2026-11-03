@@ -1,0 +1,14 @@
+{%- comment -%}
+Embedded PDF with a download link.
+Usage: {% include pdf-viewer.html file="/assets/pdf/name.pdf" title="Heading" thumb="/assets/img/preview.png" link_text="Download PDF" %}
+{%- endcomment -%}
+{%- assign pdf = include.file | relative_url -%}
+<div class="pdf-viewer">
+  {% if include.title %}<p class="pdf-viewer__title">{{ include.title }}</p>{% endif %}
+  <a class="pdf-viewer__download" href="{{ pdf }}" target="_blank" rel="noopener">{{ include.link_text | default: "Download PDF" }} <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5 2l6 6-6 6z"/></svg></a>
+  <div class="pdf-viewer__frame">
+    <object data="{{ pdf }}#toolbar=0&amp;navpanes=0&amp;view=FitH" type="application/pdf" aria-label="{{ include.title | default: include.link_text | default: 'PDF document' | strip_html | escape }}">
+      <a href="{{ pdf }}" target="_blank" rel="noopener">{% if include.thumb %}<img src="{{ include.thumb | relative_url }}" alt="First page of the PDF">{% else %}Open the PDF{% endif %}</a>
+    </object>
+  </div>
+</div>

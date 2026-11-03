@@ -1,0 +1,2 @@
+{%- comment -%} YouTube embed. Usage: {% include video.html id="VIDEO_ID" title="Video title" %} {%- endcomment -%}
+<div class="video"><iframe src="https://www.youtube.com/embed/{{ include.id }}?rel=0" title="{{ include.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

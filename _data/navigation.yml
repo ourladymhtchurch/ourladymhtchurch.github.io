@@ -1,0 +1,196 @@
+# ---------------------------------------------------------------------------
+# Site menus.
+#   primary: the row of links under the site name (shown on desktop)
+#   drawer:  the full menu behind the ☰ button (every page and link)
+#   footer:  the links in the footer
+# Links that start with http:// or https:// open in a new tab.
+# Page addresses: /about/, /contact-us/, /donation/, /dress-code/, /documents/,
+# /resources/, and /documents/<file-name>/ for anything in the _documents folder.
+# ---------------------------------------------------------------------------
+primary:
+  - title: "Home"
+    url: /
+  - title: "Mass Schedule"
+    url: /#mass-schedule
+  - title: "Documents"
+    url: /documents/
+  - title: "Resources"
+    url: /resources/
+  - title: "Dress Code"
+    url: /dress-code/
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact-us/
+  - title: "Donate"
+    url: /donation/
+
+drawer:
+  - title: "Home"
+    url: /
+  - title: "Mass Schedule"
+    url: /#mass-schedule
+  - title: "Documents"
+    url: /documents/
+  - title: "Resources"
+    url: /resources/
+  - title: "Contact Us"
+    url: /contact-us/
+  - title: "About"
+    url: /about/
+  - title: "Bishop Pivarunas, CMRI"
+    url: https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/
+  - title: "Cong Mary Imm Queen- CMRI"
+    url: https://cmri.org
+  - title: "Bishop Davila, SST"
+    url: https://obispoenmisiones.com/biografia/
+  - title: "Society of Trent - SST"
+    url: https://obispoenmisiones.com/sociedad-sacerdotal-trento/
+  - title: "Submission to Magisterium"
+    url: /documents/submission-to-magisterium/
+  - title: "Catholic Papacy and Unity"
+    children:
+      - title: "Bp Pivarunas on Unity"
+        url: https://www.youtube.com/shorts/VijomUKdPpw
+      - title: "Bp Roy: Where Peter is..."
+        url: https://www.youtube.com/watch?v=-zAWIAvlB7k
+      - title: "Why an Imperfect Council"
+        url: https://www.youtube.com/watch?v=f5qSqQ93VFM
+      - title: "Transalpine Redemptorists"
+        url: https://www.youtube.com/watch?v=Q9ZLs-kl7eQ
+      - title: "Suggestions of Fr Zepeda"
+        url: https://www.youtube.com/watch?v=fV814uE2cKw
+      - title: "Open Letter from Laity"
+        url: https://www.unamsanctam.org/open-letter
+      - title: "For a True Pope"
+        url: http://www.unamsanctam.org
+  - title: "THE TRUE PAPACY"
+    url: https://thecatholicwire.org/the-crisis-in-the-catholic-church/do-we-have-a-bad-pope-or-no-pope-understanding-the-papacy-and-the-passion-of-the-church/
+  - title: "THE CATHOLIC WIRE"
+    url: https://thecatholicwire.org
+  - title: "Dress Code"
+    url: /dress-code/
+  - title: "MODESTY IN DRESS"
+    url: https://www.salvemariaregina.info/Modesty.html
+  - title: "PROPHECY OF APOSTASY"
+    url: http://www.marienfried.com/catholic%20teachings/prophecy%20of%20apostasy.html
+  - title: "FALSE ECUMENISM IN ACTION"
+    url: http://www.marienfried.com/catholic%20teachings/false%20ecumenism%20in%20action.htm
+  - title: "Satan will deceive if..."
+    url: https://www.youtube.com/watch?v=7RrUmvqc31g
+  - title: "FALSE vs. TRUE POPES"
+    url: http://www.marienfried.com/catholic%20teachings/false%20popes%20versus%20infallibility.html
+  - title: "Catholic Creeds"
+    children:
+      - title: "Profession of Faith"
+        url: /documents/profession-of-faith/
+      - title: "Athanasian Creed"
+        url: /documents/athanasian-creed/
+  - title: "Catechisms / English"
+    children:
+      - title: "Baltimore Catechism No. 2"
+        url: https://www.cmri.org/baltimore-catechism-no-2/
+      - title: "Baltimore Catechism No. 3"
+        url: https://ia800308.us.archive.org/3/items/BALTIMORECATECHISM/BALTIMORE_CATECHISM.pdf
+      - title: "Penny Catechism Audio 1"
+        url: https://www.youtube.com/watch?v=HOzDn_oauKo
+      - title: "Penny Catechism Audio 2"
+        url: https://www.youtube.com/watch?v=j2XsE9p7JGo
+      - title: "Penny Catechism PDF"
+        url: /documents/penny-catechism-pdf/
+      - title: "Roman Catechism of Trent"
+        url: http://www.catholicapologetics.info/thechurch/catechism/trentc.htm
+  - title: "Catecismos / Espanol"
+    children:
+      - title: "Catecismo / Mons.Carmona"
+        url: /documents/catecismo-mons-carmona/
+      - title: "Catecismo Romano Trento"
+        url: https://www.mercaba.org/Catecismo/ROMANO/catecismo_romano_concilio_Trento.htm
+  - title: "Papal Documents"
+    children:
+      - title: "Cum ex Apostolatus"
+        url: /documents/cum-ex-apostolatus/
+      - title: "Unam Sanctam"
+        url: /documents/unam-sanctam/
+      - title: "Documents of Popes"
+        url: https://web.archive.org/web/20200225125252/http://sedevacantist.com/encyclicals/papalindex.html
+  - title: "Our Lady of Fatima"
+    children:
+      - title: "Our Lady's Fatima Message"
+        url: /documents/our-ladys-fatima-message/
+      - title: "Fatima Prayer Changed?"
+        url: https://christianity.stackexchange.com/questions/69083/who-changed-the-fatima-prayer
+      - title: "Sun Miracle 10:13"
+        url: /documents/sun-miracle-10-13/
+      - title: "Pope Urban VIII /Galileo"
+        url: /documents/pope-urban-viii-galileo/
+  - title: "Bishop Thuc"
+    children:
+      - title: "Declaration /Bishop Thuc"
+        url: /documents/declaration-bishop-thuc/
+      - title: "Bishop Thuc Brief Bio"
+        url: https://www.youtube.com/watch?v=ZLAGCavIYUw
+  - title: "Resources"
+    children:
+      - title: "Examination of Conscience"
+        url: /documents/examination-of-conscience/
+      - title: "Holy Bible - Douay-Rheims"
+        url: https://drbo.org
+      - title: "Haydock Bible Commentary"
+        url: https://web.archive.org/web/20160405100303/http://haydock1859.tripod.com/id94.html
+      - title: "Holy Rosary / Latin & Eng"
+        url: https://www.holyromancatholicchurch.org/articles/LatinRosary.htm
+      - title: "Tridentine Mass"
+        url: http://traditionalcatholic.net/Tradition/Mass/Missal/index.html
+      - title: "Liberalism is a Sin"
+        url: https://archive.org/details/whatisliberalis00pallgoog/page/n12/mode/2up?view=theater
+      - title: "Case Against Roncalli"
+        url: https://introiboadaltaredei2.blogspot.com/2019/05/the-case-against-roncalli.html?m=1
+      - title: "Destruction of..Tradition"
+        url: https://www.holyromancatholicchurch.org/CatholicWritings.htm
+      - title: "Latin / English Prayers"
+        url: https://www.holyromancatholicchurch.org/CollectionOfLatin.htm
+      - title: "My Prayer Book"
+        url: https://www.holyromancatholicchurch.org/articles/MyPrayerBook.pdf
+      - title: "Imitation of Christ"
+        url: https://www.holyromancatholicchurch.org/articles/Of_the_imitation_of_Christ.pdf
+      - title: "Intro. to the Devout Life"
+        url: https://www.holyromancatholicchurch.org/articles/devout_life.pdf
+      - title: "1937 Latin-English Missal"
+        url: https://www.ccwatershed.org/pdfs/km0_misc-tome_1937_fr_lasance_missal/download/
+      - title: "A Soul in Hell - Annette"
+        url: https://www.youtube.com/watch?v=jwBhoJSqdHI
+      - title: "The Happiness of Heaven"
+        url: https://www.google.com/books/edition/The_Happiness_of_Heaven/7bw_AAAAYAAJ?hl=en&gbpv=1&printsec=frontcover
+      - title: "VIDEO: Brown Scapular"
+        url: https://youtu.be/cqBwFHaZV0w
+  - title: "St. Louis De Montfort"
+    children:
+      - title: "Secret of the Rosary"
+        url: http://www.saintsbooks.net/books/St.%20Louis%20Marie%20de%20Montfort%20-%20The%20Secret%20of%20the%20Rosary.pdf
+      - title: "Secreto del Rosario"
+        url: http://dulcecorazondemaria.com/libros/El%20Secreto%20Admirable%20del%20Santo%20Rosario.pdf
+      - title: "Secret of Mary"
+        url: http://www.catholictradition.org/Classics/secret-mary.htm
+      - title: "True Devotion to Mary"
+        url: https://knightlibrary.files.wordpress.com/2017/03/montfort_the_true_devotion_to_the_blessed_virgin.pdf
+      - title: "Friends of the Cross"
+        url: http://www.montfortian.info/writings/files/A-Letter-to-the-Friends-of-the-Cross.pdf
+      - title: "Love of Eternal Wisdom"
+        url: http://www.montfort.org/content/uploads/pdf/PDF_EN_25_1.pdf
+  - title: "Donation"
+    url: /donation/
+
+footer:
+  - title: "Bishop Pivarunas, CMRI"
+    url: https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/
+  - title: "Cong Mary Imm Queen- CMRI"
+    url: https://cmri.org
+  - title: "Bishop Davila, SST"
+    url: https://obispoenmisiones.com/biografia/
+  - title: "Society of Trent - SST"
+    url: https://obispoenmisiones.com/sociedad-sacerdotal-trento/
+  - title: "THE TRUE PAPACY"
+    url: https://thecatholicwire.org/the-crisis-in-the-catholic-church/do-we-have-a-bad-pope-or-no-pope-understanding-the-papacy-and-the-passion-of-the-church/
+  - title: "Dress Code"
+    url: /dress-code/

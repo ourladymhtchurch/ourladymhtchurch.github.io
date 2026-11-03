@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="container site-header__row">
+    <button class="menu-button" type="button" data-open-drawer aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </button>
+    <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  </div>
+  {% if site.data.navigation.primary %}
+  <nav class="primary-nav" aria-label="Main">
+    <div class="container">
+      <ul class="primary-nav__list">
+        {% for item in site.data.navigation.primary %}
+        {%- assign active = false -%}
+        {%- if item.url == "/" -%}
+          {%- if page.url == "/" %}{% assign active = true %}{% endif -%}
+        {%- elsif item.url contains "#" -%}
+        {%- elsif page.url contains item.url %}{% assign active = true %}{% endif -%}
+        <li><a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+  {% endif %}
+</header>

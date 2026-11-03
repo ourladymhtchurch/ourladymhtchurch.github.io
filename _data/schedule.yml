@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# Mass schedule shown on the home page. Add, remove or edit entries freely;
+# the page rebuilds from this file. Keep the two-space indentation.
+# ---------------------------------------------------------------------------
+celebrant: "Rev. Father Adam Joseph Craig, CMRI"
+
+masses:
+  - date: "Saturday, October 31, 2026"
+    time: "8:00 AM"
+    feast: "Blessed Virgin Mary (St. Alphonsus Rodriguez)"
+    confessions: "7:30 AM"
+    rosary: "7:35 AM"
+  - date: "Sunday, November 1, 2026"
+    time: "8:00 AM"
+    feast: "All Saints' Day; 23rd Sunday after Pentecost"
+    confessions: "7:00 AM"
+    rosary: "7:35 AM"
+    note: "After the Holy Mass: exposition and adoration of the Most Blessed Sacrament and Benediction."
+
+sermon:
+  title: "Saint Alphonsus Maria de Liguori's Sermon for the 23rd Sunday after Pentecost -- On Impenitence"
+  url: "https://traditionalcatholicsermons.org/index_files/StAlphonsus_TwentyThirdSundayAfterPentecost_OnImpenitence.mp3"
+
+intentions:
+  - "Please pray: for a true Pope, for Bishop Pivarunas and the CMRI, for Bishop Davila and the SST, and for the health of soul and body of the ill and dying...+"
+  - "Please pray for Holy Priests and Religious Vocations, and Holy Catholic Marriages and Families."
+  - "Please pray, especially the Holy Rosary, for the conversion of sinners, the perseverance of the just, and the eternal rest of the faithful departed, especially the soul of + Rosa Esparza Macias, TOSF [09-04-1933 + 10-08-2026]."
+
+quote:
+  text: "\"One day through the Rosary and Scapular, I will save the world.\" +"
+  attribution: "Blessed Virgin Mary to Saint Dominic"

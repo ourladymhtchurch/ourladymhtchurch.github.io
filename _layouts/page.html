@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+    {% unless page.hide_title %}
+    <h1 class="section-title{% if page.title_style == 'plain' %} section-title--plain{% elsif page.title_style == 'large' %} section-title--large{% endif %}">{{ page.title }}</h1>
+    {% endunless %}
+{{ content }}
+  </div>
+</section>

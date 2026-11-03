@@ -1,0 +1,94 @@
+# ---------------------------------------------------------------------------
+# Links shown on the Resources page, in groups. Links beginning with http
+# open in a new tab; site pages are written as /documents/<name>/ etc.
+# ---------------------------------------------------------------------------
+- title: Clergy and Congregations
+  description: The bishops and priestly societies that serve the Chapel.
+  links:
+    - { title: "Bishop Mark A. Pivarunas, CMRI", url: "https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/" }
+    - { title: "Congregation of Mary Immaculate Queen (CMRI)", url: "https://cmri.org" }
+    - { title: "Bishop Martin Davila Gandara, SST", url: "https://obispoenmisiones.com/biografia/" }
+    - { title: "Society of Trent (SST)", url: "https://obispoenmisiones.com/sociedad-sacerdotal-trento/" }
+
+- title: Catholic Papacy and Unity
+  description: Talks and writings on the papacy and the unity of the Church.
+  links:
+    - { title: "Bishop Pivarunas on Unity (video)", url: "https://www.youtube.com/shorts/VijomUKdPpw" }
+    - { title: "Bishop Roy: Where Peter is... (video)", url: "https://www.youtube.com/watch?v=-zAWIAvlB7k" }
+    - { title: "Why an Imperfect Council (video)", url: "https://www.youtube.com/watch?v=f5qSqQ93VFM" }
+    - { title: "Transalpine Redemptorists (video)", url: "https://www.youtube.com/watch?v=Q9ZLs-kl7eQ" }
+    - { title: "Suggestions of Fr Zepeda (video)", url: "https://www.youtube.com/watch?v=fV814uE2cKw" }
+    - { title: "Open Letter from the Laity to their Bishops and Clergy", url: "https://www.unamsanctam.org/open-letter" }
+    - { title: "For a True Pope (unamsanctam.org)", url: "http://www.unamsanctam.org" }
+    - { title: "The True Papacy (The Catholic Wire)", url: "https://thecatholicwire.org/the-crisis-in-the-catholic-church/do-we-have-a-bad-pope-or-no-pope-understanding-the-papacy-and-the-passion-of-the-church/" }
+    - { title: "The Catholic Wire", url: "https://thecatholicwire.org" }
+    - { title: "Prophecy of Apostasy", url: "http://www.marienfried.com/catholic%20teachings/prophecy%20of%20apostasy.html" }
+    - { title: "False Ecumenism in Action", url: "http://www.marienfried.com/catholic%20teachings/false%20ecumenism%20in%20action.htm" }
+    - { title: "Satan will deceive if... (video)", url: "https://www.youtube.com/watch?v=7RrUmvqc31g" }
+    - { title: "False vs. True Popes", url: "http://www.marienfried.com/catholic%20teachings/false%20popes%20versus%20infallibility.html" }
+
+- title: Catechisms / English
+  links:
+    - { title: "Baltimore Catechism No. 2", url: "https://www.cmri.org/baltimore-catechism-no-2/" }
+    - { title: "Baltimore Catechism No. 3 (PDF)", url: "https://ia800308.us.archive.org/3/items/BALTIMORECATECHISM/BALTIMORE_CATECHISM.pdf" }
+    - { title: "Penny Catechism Audio 1", url: "https://www.youtube.com/watch?v=HOzDn_oauKo" }
+    - { title: "Penny Catechism Audio 2", url: "https://www.youtube.com/watch?v=j2XsE9p7JGo" }
+    - { title: "Penny Catechism (PDF on this site)", url: "/documents/penny-catechism-pdf/" }
+    - { title: "Roman Catechism of Trent", url: "http://www.catholicapologetics.info/thechurch/catechism/trentc.htm" }
+
+- title: Catecismos / Español
+  links:
+    - { title: "Catecismo Católico - Mons. Moisés Carmona (PDF en este sitio)", url: "/documents/catecismo-mons-carmona/" }
+    - { title: "Catecismo Romano del Concilio de Trento", url: "https://www.mercaba.org/Catecismo/ROMANO/catecismo_romano_concilio_Trento.htm" }
+
+- title: Papal Documents
+  links:
+    - { title: "Cum ex Apostolatus Officio (Pope Paul IV, 1559)", url: "/documents/cum-ex-apostolatus/" }
+    - { title: "Unam Sanctam (Pope Boniface VIII, 1302)", url: "/documents/unam-sanctam/" }
+    - { title: "Documents of the Popes", url: "https://web.archive.org/web/20200225125252/http://sedevacantist.com/encyclicals/papalindex.html" }
+
+- title: Our Lady of Fatima
+  links:
+    - { title: "Our Lady's Fatima Message", url: "/documents/our-ladys-fatima-message/" }
+    - { title: "Was the Fatima Prayer Changed?", url: "https://christianity.stackexchange.com/questions/69083/who-changed-the-fatima-prayer" }
+    - { title: "The Sun Miracle and Josue 10:13", url: "/documents/sun-miracle-10-13/" }
+    - { title: "Pope Urban VIII and Galileo", url: "/documents/pope-urban-viii-galileo/" }
+
+- title: Bishop Thuc
+  links:
+    - { title: "Declaration of Bishop Thuc (1982)", url: "/documents/declaration-bishop-thuc/" }
+    - { title: "Bishop Thuc: Brief Biography (video)", url: "https://www.youtube.com/watch?v=ZLAGCavIYUw" }
+
+- title: Prayer, Scripture and Spiritual Reading
+  links:
+    - { title: "Prayerful Examination of Conscience", url: "/documents/examination-of-conscience/" }
+    - { title: "Holy Bible - Douay-Rheims", url: "https://drbo.org" }
+    - { title: "Haydock Bible Commentary", url: "https://web.archive.org/web/20160405100303/http://haydock1859.tripod.com/id94.html" }
+    - { title: "Holy Rosary in Latin and English", url: "https://www.holyromancatholicchurch.org/articles/LatinRosary.htm" }
+    - { title: "The Tridentine Mass (Missal)", url: "http://traditionalcatholic.net/Tradition/Mass/Missal/index.html" }
+    - { title: "1937 Latin-English Missal (Fr. Lasance)", url: "https://www.ccwatershed.org/pdfs/km0_misc-tome_1937_fr_lasance_missal/download/" }
+    - { title: "Latin / English Prayers", url: "https://www.holyromancatholicchurch.org/CollectionOfLatin.htm" }
+    - { title: "My Prayer Book (PDF)", url: "https://www.holyromancatholicchurch.org/articles/MyPrayerBook.pdf" }
+    - { title: "The Imitation of Christ (PDF)", url: "https://www.holyromancatholicchurch.org/articles/Of_the_imitation_of_Christ.pdf" }
+    - { title: "Introduction to the Devout Life (PDF)", url: "https://www.holyromancatholicchurch.org/articles/devout_life.pdf" }
+    - { title: "Liberalism is a Sin", url: "https://archive.org/details/whatisliberalis00pallgoog/page/n12/mode/2up?view=theater" }
+    - { title: "The Case Against Roncalli", url: "https://introiboadaltaredei2.blogspot.com/2019/05/the-case-against-roncalli.html?m=1" }
+    - { title: "The Destruction of Tradition", url: "https://www.holyromancatholicchurch.org/CatholicWritings.htm" }
+    - { title: "A Soul in Hell - Annette (video)", url: "https://www.youtube.com/watch?v=jwBhoJSqdHI" }
+    - { title: "The Happiness of Heaven (book)", url: "https://www.google.com/books/edition/The_Happiness_of_Heaven/7bw_AAAAYAAJ?hl=en&gbpv=1&printsec=frontcover" }
+    - { title: "The Brown Scapular (video)", url: "https://youtu.be/cqBwFHaZV0w" }
+
+- title: St. Louis De Montfort
+  links:
+    - { title: "The Secret of the Rosary (PDF)", url: "http://www.saintsbooks.net/books/St.%20Louis%20Marie%20de%20Montfort%20-%20The%20Secret%20of%20the%20Rosary.pdf" }
+    - { title: "El Secreto Admirable del Santo Rosario (PDF)", url: "http://dulcecorazondemaria.com/libros/El%20Secreto%20Admirable%20del%20Santo%20Rosario.pdf" }
+    - { title: "The Secret of Mary", url: "http://www.catholictradition.org/Classics/secret-mary.htm" }
+    - { title: "True Devotion to Mary (PDF)", url: "https://knightlibrary.files.wordpress.com/2017/03/montfort_the_true_devotion_to_the_blessed_virgin.pdf" }
+    - { title: "A Letter to the Friends of the Cross (PDF)", url: "http://www.montfortian.info/writings/files/A-Letter-to-the-Friends-of-the-Cross.pdf" }
+    - { title: "The Love of Eternal Wisdom (PDF)", url: "http://www.montfort.org/content/uploads/pdf/PDF_EN_25_1.pdf" }
+
+- title: Modesty
+  links:
+    - { title: "Traditional Catholic Dress Code (this site)", url: "/dress-code/" }
+    - { title: "Modesty in Dress", url: "https://www.salvemariaregina.info/Modesty.html" }
+    - { title: "Decency and Modesty (Archdiocese of Milwaukee, PDF)", url: "https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf" }

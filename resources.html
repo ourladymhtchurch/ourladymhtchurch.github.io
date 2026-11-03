@@ -1,0 +1,24 @@
+---
+layout: page
+title: Resources
+permalink: /resources/
+description: Links to clergy, catechisms, papal documents, prayers, Scripture and spiritual reading recommended by Our Lady of the Most Holy Trinity Chapel.
+---
+<p class="narrow text text--md text--center page-intro">Links recommended by the Chapel: clergy and congregations, catechisms, papal documents, prayers, Scripture and spiritual reading. Links to other websites open in a new tab.</p>
+<div class="resource-groups">
+{%- for group in site.data.resources %}
+  <section class="resource-group" id="{{ group.title | slugify }}">
+    <h2 class="resource-group__title">{{ group.title }}</h2>
+    {% if group.description %}<p class="resource-group__desc">{{ group.description }}</p>{% endif %}
+    <ul>
+      {%- for link in group.links %}
+      {%- if link.url contains "://" %}
+      <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>{% if link.note %} <span class="resource-note">{{ link.note }}</span>{% endif %}</li>
+      {%- else %}
+      <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a>{% if link.note %} <span class="resource-note">{{ link.note }}</span>{% endif %}</li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+  </section>
+{%- endfor %}
+</div>

@@ -1,0 +1,31 @@
+.container { width: 100%; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+@media (min-width: 1024px) { .container { width: 984px; } }
+@media (min-width: 1280px) { .container { width: 1160px; } }
+@media (min-width: 1920px) { .container { width: 1280px; } }
+
+.section { padding: 40px 0; }
+@media (min-width: 1024px) { .section { padding: 56px 0; } }
+.section--brown { background: var(--brown); color: #f4f3f2; }
+.section--brown .section-title,
+.section--brown .content-heading,
+.section--brown .pdf-viewer__title,
+.section--brown .pdf-viewer__download,
+.section--brown .eyebrow,
+.section--brown .eyebrow a,
+.section--brown .text,
+.section--brown .text--ink { color: #fff; }
+.section--brown .rich a { border-bottom-color: var(--peach); }
+.section--brown .pdf-viewer__download:hover { color: var(--peach); }
+
+.grid { display: grid; gap: 32px 48px; align-items: start; }
+.grid > *, .menu-columns > * { min-width: 0; }
+.grid > img { width: 100%; }
+@media (min-width: 768px) {
+  .grid--4-8 { grid-template-columns: 1fr 2fr; }
+  .grid--8-4 { grid-template-columns: 2fr 1fr; }
+  .grid--6-6 { grid-template-columns: 1fr 1fr; }
+  .grid--center { align-items: center; }
+  .grid--reverse > :first-child { order: 2; }
+}
+.grid + .grid { margin-top: 48px; }
+.narrow { max-width: 760px; margin: 0 auto 40px; }

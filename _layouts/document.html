@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{%- comment -%}
+Document layout. Front matter options:
+  title_style:    display (default) | large | plain
+  subtitle:       optional heading above the text
+  subtitle_style: display (default) | plain | plain-lg
+  image / image_alt / image_position (left, default | right)
+  intro:          optional line shown above the text
+  text_size:      sm | md | lg (default 20px)
+  text_align:     center (optional)
+  theme:          brown (optional colored section)
+  pdf / pdf_title / pdf_thumb / pdf_link_text: embedded PDF viewer
+{%- endcomment -%}
+{%- assign title_class = "section-title" -%}
+{%- if page.title_style == "large" %}{% assign title_class = "section-title section-title--large" %}
+{%- elsif page.title_style == "plain" %}{% assign title_class = "section-title section-title--plain" %}{% endif -%}
+{%- assign text_class = "rich text" -%}
+{%- case page.text_size %}
+  {%- when "sm" %}{% assign text_class = "rich text text--sm" %}
+  {%- when "md" %}{% assign text_class = "rich text text--md" %}
+  {%- when "lg" %}{% assign text_class = "rich text text--lg" %}
+{%- endcase -%}
+{%- if page.text_align == "center" %}{% assign text_class = text_class | append: " text--center" %}{% endif -%}
+{%- assign subtitle_class = "content-heading" -%}
+{%- case page.subtitle_style %}
+  {%- when "plain" %}{% assign subtitle_class = "content-heading content-heading--plain" %}
+  {%- when "plain-lg" %}{% assign subtitle_class = "content-heading content-heading--plain-lg" %}
+{%- endcase -%}
+
+<section class="section{% if page.theme == 'brown' %} section--brown{% endif %}">
+  <div class="container">
+    {% if page.category %}<p class="eyebrow"><a href="{{ '/documents/' | relative_url }}#{{ page.category | slugify }}">{{ page.category }}</a></p>{% endif %}
+    <h1 class="{{ title_class }}">{{ page.title }}</h1>
+
+    {% if page.image %}
+    <div class="grid {% if page.image_position == 'right' %}grid--8-4{% else %}grid--4-8{% endif %}">
+      {% unless page.image_position == 'right' %}<img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}">{% endunless %}
+      <div>
+        {% if page.subtitle %}<h2 class="{{ subtitle_class }}">{{ page.subtitle }}</h2>{% endif %}
+        {% if page.intro %}<p class="text text--md text--ink document-intro">{{ page.intro }}</p>{% endif %}
+        <div class="{{ text_class }}">
+{{ content }}
+        </div>
+      </div>
+      {% if page.image_position == 'right' %}<img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}">{% endif %}
+    </div>
+    {% else %}
+    <div class="narrow">
+      {% if page.subtitle %}<h2 class="{{ subtitle_class }}">{{ page.subtitle }}</h2>{% endif %}
+      {% if page.intro %}<p class="text text--md text--ink document-intro">{{ page.intro }}</p>{% endif %}
+      <div class="{{ text_class }}">
+{{ content }}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if page.pdf %}
+    {% include pdf-viewer.html title=page.pdf_title file=page.pdf thumb=page.pdf_thumb link_text=page.pdf_link_text %}
+    {% endif %}
+  </div>
+</section>
+
+{%- assign related = site.documents | where: "category", page.category | sort: "order" -%}
+{%- if related.size > 1 %}
+<section class="section section--related">
+  <div class="container">
+    <h2 class="content-heading">More in {{ page.category }}</h2>
+    <ul class="related-list">
+      {% for doc in related %}{% unless doc.url == page.url %}
+      <li><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+      {% endunless %}{% endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}

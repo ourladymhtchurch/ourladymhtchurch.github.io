@@ -1,0 +1,16 @@
+# Order and descriptions of the sections on the Documents page.
+# Each file in _documents/ names one of these in its "category" line.
+- name: Catholic Creeds
+  description: Professions of the Catholic Faith.
+- name: Catechisms
+  description: Instruction in Christian doctrine, in English and Spanish.
+- name: Papal Documents
+  description: Bulls and teaching of the Roman Pontiffs.
+- name: Our Lady of Fatima
+  description: The message of Fatima, the Miracle of the Sun, and related teaching.
+- name: Bishop Thuc
+  description: The 1982 declaration of Archbishop Ngo-Dinh-Thuc.
+- name: Prayer and Devotion
+  description: Aids to confession, prayer and the spiritual life.
+- name: Chapel Statements
+  description: Letters and statements from Our Lady of the Most Holy Trinity Chapel.

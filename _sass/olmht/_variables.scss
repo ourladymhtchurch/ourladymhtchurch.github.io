@@ -1,0 +1,19 @@
+/* Theme tokens. The main brown can also be changed with theme_color in _config.yml. */
+:root {
+  --brown:        #854204;   /* header, hero band, buttons, link underlines */
+  --brown-hover:  #a95607;
+  --brown-active: #522601;
+  --brown-dark:   #673102;   /* menu link hover */
+  --peach:        #fea57a;   /* accents on brown backgrounds */
+  --ink:          #1b1b1b;   /* headings */
+  --slate:        #2f4f4f;   /* emphasized body text on the home page */
+  --gray:         #5e5e5e;   /* standard body text */
+  --gray-2:       #595959;   /* footer text */
+  --panel:        #f6f6f6;
+  --drawer-link:  #151515;
+  --drawer-sub:   #575757;
+  --rule:         #d4d4d4;
+  --font-body:    'Montserrat', Arial, sans-serif;
+  --font-display: 'Archivo Black', Arial, sans-serif;
+  --font-logo:    'Vollkorn', Georgia, serif;
+}

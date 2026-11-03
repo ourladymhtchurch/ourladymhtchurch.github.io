@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-copy">Copyright &copy; {{ site.time | date: "%Y" }} {{ site.chapel.legal_name }} - All Rights Reserved.</p>
+    <p class="footer-address">{{ site.chapel.address }} &middot; <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }}</p>
+    <ul class="footer-nav">
+      {%- for item in site.data.navigation.footer %}
+      {%- if item.url contains "://" %}
+      <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></li>
+      {%- else %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+  </div>
+</footer>

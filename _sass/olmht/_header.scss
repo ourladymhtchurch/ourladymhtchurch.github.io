@@ -1,0 +1,36 @@
+.site-header { background: var(--brown); color: #fff; }
+.site-header__row {
+  position: relative;
+  display: flex; align-items: center;
+  min-height: 64px; padding-top: 14px; padding-bottom: 14px;
+}
+.menu-button {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: 0; padding: 6px; margin-left: -6px;
+  color: #fff; cursor: pointer;
+}
+.menu-button svg { width: 24px; height: 24px; }
+.menu-button:hover { color: #c6c6c6; }
+.logo {
+  flex: 1; text-align: center; padding: 0 12px;
+  font-family: var(--font-logo); font-weight: 700; font-size: 19px; line-height: 1.2;
+  color: #fff; text-decoration: none;
+}
+@media (min-width: 768px) { .logo { font-size: 20px; } }
+@media (min-width: 1024px) {
+  .site-header__row { padding-top: 28px; padding-bottom: 28px; }
+  .menu-button { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); margin: 0; }
+  .logo { font-size: 21px; padding: 0 48px; }
+}
+@media (min-width: 1920px) { .logo { font-size: 24px; } }
+
+/* Row of primary links under the site name (desktop only; the ☰ menu has everything). */
+.primary-nav { display: none; border-top: 1px solid rgba(255, 255, 255, .18); }
+@media (min-width: 1024px) { .primary-nav { display: block; } }
+.primary-nav__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+.primary-nav__list a {
+  display: inline-block; padding: 14px 16px 12px;
+  color: #fff; text-decoration: none; font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+.primary-nav__list a:hover, .primary-nav__list a.is-active { border-bottom-color: var(--peach); }

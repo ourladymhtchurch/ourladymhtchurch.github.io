@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# Site settings. Text here appears on every page; edit and rebuild.
+# ---------------------------------------------------------------------------
+title: Our Lady of the Most Holy Trinity Chapel
+tagline: A Traditional Roman Catholic Chapel
+description: >-
+  Our Lady of the Most Holy Trinity Chapel is a Traditional Roman Catholic
+  Chapel in Corpus Christi, Texas, offering the Traditional Latin Mass.
+lang: en
+
+chapel:
+  legal_name: Our Lady of the Most Holy Trinity Church
+  address: 4421 Carroll Lane, Corpus Christi, TX 78411, USA
+  phone: 361-857-6279
+  phone_note: (MARY)
+  phone_link: "tel:3618576279"
+
+# Where the site lives. For a GitHub Pages *project* site, set url to
+# "https://<username>.github.io" and baseurl to "/<repository-name>".
+# For a user site or a custom domain such as olmhtchurch.org, leave baseurl empty.
+# (The included GitHub Actions workflow sets baseurl automatically.)
+url: "https://ourladymhtchurch.github.io"
+baseurl: ""
+
+# Main color: header, hero band, buttons and link underlines.
+theme_color: "#854204"
+
+# The "documents" collection holds creeds, papal documents, catechisms and
+# other texts. Each file in _documents/ becomes a page at /documents/<name>/.
+collections:
+  documents:
+    output: true
+    permalink: /documents/:name/
+
+defaults:
+  - scope: { path: "", type: "documents" }
+    values: { layout: document }
+  - scope: { path: "" }
+    values: { layout: default }
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+sass:
+  style: compressed
+  quiet_deps: true
+
+exclude:
+  - archive
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - start-site.command
+  - vendor
+  - node_modules

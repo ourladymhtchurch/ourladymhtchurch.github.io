@@ -1,0 +1,29 @@
+---
+layout: page
+title: Documents
+permalink: /documents/
+description: Creeds, catechisms, papal documents, the message of Fatima and other texts kept by Our Lady of the Most Holy Trinity Chapel.
+---
+<p class="narrow text text--md text--center page-intro">Creeds, catechisms, papal documents and other texts kept on this site. Each one may be read online; documents with a PDF can also be downloaded.</p>
+{% for cat in site.data.document_categories %}
+{%- assign docs = site.documents | where: "category", cat.name | sort: "order" -%}
+{%- if docs.size > 0 %}
+<div class="doc-category" id="{{ cat.name | slugify }}">
+  <h2 class="doc-category__title">{{ cat.name }}</h2>
+  {% if cat.description %}<p class="doc-category__desc">{{ cat.description }}</p>{% endif %}
+  <div class="doc-grid">
+    {%- for doc in docs %}
+    <article class="doc-card">
+      {%- if doc.image %}
+      <a href="{{ doc.url | relative_url }}"><img class="doc-card__image" src="{{ doc.image | relative_url }}" alt=""></a>
+      {%- elsif doc.pdf_thumb %}
+      <a href="{{ doc.url | relative_url }}"><img class="doc-card__image" src="{{ doc.pdf_thumb | relative_url }}" alt=""></a>
+      {%- endif %}
+      <h3 class="doc-card__title"><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></h3>
+      {% if doc.summary %}<p class="doc-card__summary">{{ doc.summary }}</p>{% endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</div>
+{%- endif %}
+{%- endfor %}

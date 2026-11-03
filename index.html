@@ -1,0 +1,181 @@
+---
+layout: "default"
+title: "Home"
+permalink: "/"
+---
+{% include hero.html %}
+
+<section class="section" id="announcements">
+  <div class="container">
+    <div class="grid grid--4-8">
+      <img src="{{ '/assets/img/chapel-altar.jpg' | relative_url }}" alt="Side altar of the chapel with the statue of the Sacred Heart and the image of the Holy Face">
+      <div class="rich text text--slate">
+<p><strong>Deo gratias...+ Gloria in Excelcis Deo...+ All thanks, praise, and glory be to Our Divine Lord and Savior Jesus Christ the King of Kings, His Most Holy Name, His Most Sacred Wounds, His Most Precious Blood, His Most Holy Face, and His Most Sacred Heart reigning through the Immaculate Heart of Mary Our Queen Mother and Saint Joseph's Sacred Heart, and the daily Rosary...+ Thank you so much for your daily Rosary and prayers...+</strong></p>
+<p><br></p>
+<p><strong>Due to some health issues of several SST (Sociedad Sacerdotal Trento) priests, which Bishop Martin Davila, SST informed us of on October 20, 2026, he confirmed the next day that he gives his blessing to us to find other Catholic priests. Therefore, providentially, we are most grateful to His Excellency Bishop Mark Anthony Pivarunas, CMRI, as on October 22nd, he graciously agreed to help us with Catholic priests. &nbsp;To learn more about Bishop Pivarunas, please listen to an interesting interview in 2023, &nbsp;when he sat down with Kevin Davis on the Catholic Family Podcast and gave an in-depth look at his journey from being a young Catholic in Chicago to running the largest Traditional Catholic congregation in the world. Please click the link below to listen to Bishop Pivarunas tell his story:</strong></p>
+<p><a href="https://www.youtube.com/watch?v=cpnvANWHNDQ" target="_blank" rel="noopener"><strong>His Excellency, Bishop Mark Pivarunas (CMRI) tells his story</strong></a><strong>,</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} Mass times come from _data/schedule.yml {% endcomment %}
+<section class="section" id="mass-schedule">
+  <div class="container">
+    <h2 class="section-title">Traditional Latin Mass Schedule</h2>
+    {% if site.data.schedule.celebrant %}<p class="schedule-celebrant">{{ site.data.schedule.celebrant }}</p>{% endif %}
+    <div class="schedule">
+      {% for mass in site.data.schedule.masses %}
+      <div class="schedule__item">
+        <p class="schedule__date">{{ mass.date }}</p>
+        <p class="schedule__time">{{ mass.time }}</p>
+        {% if mass.feast %}<p class="schedule__feast">{{ mass.feast }}</p>{% endif %}
+        {% if mass.confessions or mass.rosary %}<p class="schedule__meta">{% if mass.confessions %}Confessions at {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary at {{ mass.rosary }}{% endif %}</p>{% endif %}
+        {% if mass.note %}<p class="schedule__note">{{ mass.note }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% if site.data.schedule.sermon %}
+    <div class="sermon">
+      <p class="sermon__label">Sermon</p>
+      <p>{{ site.data.schedule.sermon.title }}</p>
+      <p><a href="{{ site.data.schedule.sermon.url }}" target="_blank" rel="noopener">Listen to the sermon (MP3)</a></p>
+    </div>
+    {% endif %}
+    {% if site.data.schedule.intentions %}
+    <ul class="intentions">
+      {% for item in site.data.schedule.intentions %}<li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if site.data.schedule.quote %}
+    <p class="quote">{{ site.data.schedule.quote.text }} <span class="quote__attribution">{{ site.data.schedule.quote.attribution }}</span></p>
+    {% endif %}
+  </div>
+</section>
+
+{% comment %} Notices come from _data/notices.yml {% endcomment %}
+{% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
+<section class="section" id="notices">
+  <div class="container">
+    <h2 class="menu-title">{{ site.data.notices.updated }}</h2>
+    {% assign half = site.data.notices.items.size | plus: 1 | divided_by: 2 %}
+    <div class="menu-columns">
+      <div>
+        {% for item in site.data.notices.items limit: half %}
+        <div class="menu-item"><div class="notice">{{ item.text | markdownify | replace: 'href="/', hrefbase }}</div></div>
+        {% endfor %}
+      </div>
+      <div>
+        {% for item in site.data.notices.items offset: half %}
+        <div class="menu-item"><div class="notice">{{ item.text | markdownify | replace: 'href="/', hrefbase }}</div></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Protect purity with modesty &amp; The Pledge of Modesty</h2>
+    <div class="grid grid--4-8">
+      <img src="{{ '/assets/img/maria-bambina.jpg' | relative_url }}" alt="Statue of Santa Maria Bambina, the infant Mary, resting among white flowers before the altar">
+      <div>
+        <h3 class="content-heading">Our Blessed Ever-Virgin Queen Mother, The IMMACULATE CONCEPTION, Santa Maria Bambina, pray for us...</h3>
+        <div class="rich text text--sm">
+<p><strong>St Alphonsus' Sermon:&nbsp;On Impurity</strong></p>
+<p><a href="https://traditionalcatholicsermons.org/index_files/StAlphonsus_SixteenthSundayAfterPentecost_OnImpurity.mp3" target="_blank" rel="noopener"><u>https://traditionalcatholicsermons.org/index_files/StAlphonsus_SixteenthSundayAfterPentecost_OnImpurity.mp3</u></a></p>
+<p><br></p>
+<p><strong>Pledge of Modesty</strong></p>
+<p>"I believe in the virtue of modesty as the guardian of chastity. I pledge myself to live and fight for the ideals of the virtue of purity and the observance of modesty. In particular, I pledge myself to live and fight for more decency in the printed and spoken word, and for a Mary-like modesty in dress and action. I promise also to set an example for my family and my associates, and to let others know where I stand in such matters, in the hope of leading them to greater purity of life. I hope to maintain these ideals by cultivating a strong personal devotion to the Sacred Heart of Jesus and to the Immaculate Heart of Mary."</p>
+<p>Amen +</p>
+<p>Source:</p>
+<p><a href="https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf" target="_blank" rel="noopener">https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">THE importance of the daily Rosary for our times</h2>
+    <div class="grid grid--6-6 grid--center">
+      {% include video.html id="eWWGWhkJ8BQ" title="The Battle of Lepanto: how it affects our times" %}
+      <div class="rich text-major">
+<p><strong>October 7th, Feast of the Most Holy Rosary of the Blessed Ever-Virgin Mary&nbsp;</strong></p>
+<p><strong>(Our Lady of Victory at Lepanto, 1571)</strong></p>
+<h1><strong>WHY THE BATTLE OF LEPANTO IS IMPORTANT FOR OUR TIMES Our Lady of Victory and the Battle of Lepanto</strong></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Prophecy and Message from Our Lady of La Salette</h2>
+    {% include video.html id="9iIuaEVrnZQ" title="Prophecy and Message from Our Lady of La Salette" %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The 8 Promises of Jesus to Devotees of His Most Holy Face</h2>
+    <div class="grid grid--6-6 grid--center">
+      {% include video.html id="NpObk_ItTkA" title="The 8 Promises of Jesus to Devotees of His Holy Face" %}
+      <div class="rich text-major">
+<p><strong>An Aspiration to the Eternal Father to be Frequently Recited during the Day</strong></p>
+<p><br></p>
+<p><strong>Eternal Father, we offer Thee the Holy Face of Jesus, covered with blood, sweat, dust and spittle in reparation for the crimes of communists, blasphemers, and for the profaners of the Holy Name and of the Holy Day. Amen.&nbsp;</strong></p>
+<p><br></p>
+<p>Source:</p>
+<p>Scanlan, (2012). <em>The Golden Arrow</em>. TAN Books.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--6-6 grid--center">
+      {% include video.html id="Gv3wN35c1qc" title="The Secret of the Rosary - Full Audiobook" %}
+      <div class="media-caption">
+        <h3 class="content-heading">The Secret Of the Rosary - Full Audiobook</h3>
+        <div class="rich text">
+<p><strong>by ST. LOUIS MARIE DE MONTFORT.&nbsp;</strong></p>
+<p><strong>PRAYER, LORD JESUS CHRIST&nbsp;</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid--6-6 grid--center grid--reverse">
+      {% include video.html id="dLBic3P1yLg" title="True Devotion to Mary by St. Louis-Marie de Montfort" %}
+      <div class="media-caption">
+        <h3 class="content-heading">TRUE DEVOTION TO MARY</h3>
+        <div class="rich text">
+<p><strong>by ST. LOUIS MARIE DE MONTFORT</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">History of the Brown Scapular of Our Lady of Mount Carmel</h2>
+    <div class="grid grid--6-6 grid--center">
+      {% include video.html id="cqBwFHaZV0w" title="History of the Brown Scapular of Our Lady of Mount Carmel" %}
+      <div class="rich text-major">
+<p><strong>“Those who die wearing this scapular shall not suffer eternal fire!”</strong><br>
+<strong>–</strong><em><strong>Our Lady to St. Simon Stock</strong></em></p>
+<h1><strong>“Wear it devoutly and perseveringly; It is my garment. To be clothed in it means you are continually thinking of me, and I, in turn, am always thinking of you and helping you to secure eternal salvation.”</strong></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">PDF Viewer</h2>
+    {% include pdf-viewer.html file="/assets/pdf/oath-of-fidelity-bergoglio.pdf" title="The Oath of Fidelity to the Magisterium of Bergoglio?" thumb="/assets/img/pdf-oath-of-fidelity-bergoglio.png" %}
+  </div>
+</section>

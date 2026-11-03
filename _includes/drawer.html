@@ -1,0 +1,27 @@
+{%- comment -%} Full site menu, opened by the ☰ button. Edit _data/navigation.yml to change it. {%- endcomment -%}
+<div class="drawer-backdrop"></div>
+<nav class="drawer" id="drawer" aria-label="Site menu" aria-hidden="true">
+  <button class="drawer__close" type="button" data-close-drawer aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7l-1.4-1.4L9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg></button>
+  <ul class="drawer__list">
+  {%- for item in site.data.navigation.drawer %}
+    {%- if item.children %}
+    <li class="drawer__group">
+      <button class="drawer__group-toggle" type="button" aria-expanded="false">{{ item.title }} <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 5l6 6 6-6-1.4-1.4L8 8.2 3.4 3.6z"/></svg></button>
+      <ul class="drawer__sublist">
+        {%- for child in item.children %}
+        {%- if child.url contains "://" %}
+        <li><a class="drawer__sublink" href="{{ child.url }}" target="_blank" rel="noopener">{{ child.title }}</a></li>
+        {%- else %}
+        <li><a class="drawer__sublink" href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- elsif item.url contains "://" %}
+    <li><a class="drawer__link" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></li>
+    {%- else %}
+    <li><a class="drawer__link" href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+    {%- endif %}
+  {%- endfor %}
+  </ul>
+</nav>

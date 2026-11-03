@@ -1,0 +1,50 @@
+/* Video embeds */
+.video { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
+.video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.media-caption { text-align: center; align-self: center; }
+.media-caption .content-heading { margin-bottom: 16px; }
+
+/* PDF viewer */
+.pdf-viewer { text-align: center; }
+.pdf-viewer__title { font-family: var(--font-display); text-transform: uppercase; font-size: 19px; line-height: 1.4; margin-bottom: 8px; color: var(--ink); }
+.pdf-viewer__download { display: inline-flex; align-items: center; gap: 6px; color: var(--brown); text-decoration: none; font-size: 18px; }
+.pdf-viewer__download:hover { color: var(--brown-hover); }
+.pdf-viewer__download svg { width: 14px; height: 14px; }
+.pdf-viewer__frame { margin: 32px auto 0; max-width: 734px; border: 1px solid var(--rule); background: var(--panel); }
+.pdf-viewer__frame object { display: block; width: 100%; height: 520px; }
+@media (min-width: 768px) { .pdf-viewer__frame object { height: 950px; } }
+.pdf-viewer__frame img { width: 100%; }
+
+/* Buttons and forms */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 8px 40px; border: 0; border-radius: 48px;
+  background: var(--brown); color: #fff;
+  font-family: var(--font-display); font-size: 19px; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; line-height: 1.2; text-align: center;
+}
+.button:hover  { background: var(--brown-hover); color: #fff; }
+.button:active { background: var(--brown-active); }
+.button--block { width: 100%; }
+.button img { width: 22px; height: 22px; }
+
+.form-label { font-size: 18px; color: var(--ink); margin-bottom: 8px; }
+.field { margin-bottom: 24px; }
+.field input, .field textarea {
+  width: 100%; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0;
+  background: transparent; padding: 14px 8px 8px; font: inherit; font-size: 16px;
+  color: var(--ink); outline: none; resize: vertical;
+}
+.field input:focus, .field textarea:focus { border-bottom-color: var(--brown); }
+.form-note { font-size: 12px; color: var(--gray-2); text-align: center; margin-top: 16px; line-height: 1.6; }
+.form-note a { color: var(--brown); }
+.form-success { margin-top: 24px; padding: 16px 20px; border-left: 4px solid var(--brown); background: var(--panel); color: var(--ink); font-size: 16px; }
+
+.price { font-size: 22px; color: var(--ink); margin-bottom: 24px; }
+.cc-badges { width: 158px; margin: 8px 0 24px; }
+
+/* About card */
+.card { max-width: 365px; margin: 0 auto; text-align: center; }
+.card img { width: 100%; height: 274px; object-fit: cover; }
+.card__heading { font-size: 22px; margin: 24px 0 16px; color: var(--ink); }
+.card__text { font-size: 18px; }

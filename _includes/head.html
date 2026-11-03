@@ -1,0 +1,10 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<meta name="theme-color" content="{{ site.theme_color | default: '#854204' }}">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% if site.theme_color %}<style>:root { --brown: {{ site.theme_color }}; }</style>{% endif %}
+</head>

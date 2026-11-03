@@ -1,0 +1,13 @@
+<section class="hero">
+  <div class="container">
+    <img class="hero-image" src="{{ '/assets/img/hero.jpg' | relative_url }}" alt="The sanctuary of Our Lady of the Most Holy Trinity Chapel: the Sacred Heart statue surrounded by red and white roses before the high altar">
+    <div class="hero-text">
+      <h1 class="tagline">{{ site.title }}</h1>
+      <div class="subtagline">
+        <p><strong>{{ site.tagline }}</strong></p>
+        <p>{{ site.chapel.address }}</p>
+        <p>phone: <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
