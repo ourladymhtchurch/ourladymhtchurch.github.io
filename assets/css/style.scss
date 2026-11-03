@@ -1,15 +1,16 @@
 ---
 # Jekyll compiles this file, with the partials in _sass/olmht, into assets/css/style.css.
-# (The web fonts are linked separately from _includes/head.html: assets/fonts/fonts.css)
+# @import is used (rather than @use) so the stylesheet also builds on GitHub's
+# older Jekyll 3 "deploy from branch" builder. Web fonts are linked from _includes/head.html.
 ---
-@use "olmht/variables";
-@use "olmht/base";
-@use "olmht/layout";
-@use "olmht/header";
-@use "olmht/hero";
-@use "olmht/typography";
-@use "olmht/home";
-@use "olmht/components";
-@use "olmht/documents";
-@use "olmht/footer";
-@use "olmht/drawer";
+@import "olmht/variables";
+@import "olmht/base";
+@import "olmht/layout";
+@import "olmht/header";
+@import "olmht/hero";
+@import "olmht/typography";
+@import "olmht/home";
+@import "olmht/components";
+@import "olmht/documents";
+@import "olmht/footer";
+@import "olmht/drawer";
