@@ -37,6 +37,10 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 
 - **Mass times**: edit `_data/schedule.yml`. Each Mass is a block with `date`, `time`, `feast`,
   `confessions`, `rosary` and an optional `note`. Add or remove blocks as needed.
+  The **Next Mass** box at the top of the home page reads this list and shows the first
+  Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
+  are being updated and asks visitors to call. Write dates and times as the existing entries
+  do (`"Sunday, November 8, 2026"`, `"8:00 AM"`) so the box can tell which Mass is next.
 - **Notices**: edit `_data/notices.yml`. Each notice is a `text:` block; links are written as
   `[words](https://address)`.
 - **Announcement text** (the paragraphs beside the altar photo): near the top of `index.html`.

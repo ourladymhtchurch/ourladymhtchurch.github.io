@@ -1,14 +1,69 @@
+/* Home page hero: "Next Mass" card, altar photo, chapel name and address.
+   Phones stack them card → photo → name. From 768px the photo sits on the left and
+   the name and card on the right, so all of it is visible without scrolling. */
 .hero { background: var(--brown); color: #fff; text-align: center; }
-.hero .container { padding-bottom: 104px; }
-.hero-image { width: 100%; }
-.hero-text { padding-top: 24px; }
+.hero .container { padding-top: 16px; padding-bottom: 80px; }
+.hero__grid { display: grid; grid-template-areas: "next" "image" "text"; }
+.next-mass  { grid-area: next; margin-bottom: 20px; }
+.hero-image { grid-area: image; width: 100%; }
+.hero-text  { grid-area: text; padding-top: 24px; }
 .tagline {
   font-family: var(--font-display); text-transform: uppercase;
   color: #fff; font-size: 28px; line-height: 1.2;
 }
-.subtagline { font-size: 28px; line-height: 1.5; max-width: 750px; margin: 24px auto 0; overflow-wrap: anywhere; }
+.subtagline { font-size: 24px; line-height: 1.5; max-width: 750px; margin: 20px auto 0; overflow-wrap: anywhere; }
 .subtagline a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--peach); padding-bottom: 2px; }
-@media (min-width: 768px)  { .tagline { font-size: 33px; } .subtagline { font-size: 30px; } }
-@media (min-width: 1024px) { .hero-text { padding-top: 56px; } }
-@media (min-width: 1280px) { .tagline { font-size: 39px; } .subtagline { font-size: 32px; } }
-@media (min-width: 1920px) { .tagline { font-size: 42px; } .subtagline { font-size: 36px; } }
+
+@media (min-width: 768px) {
+  .hero { text-align: left; }
+  .hero .container { padding-top: 32px; padding-bottom: 72px; }
+  .hero__grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: 1fr auto auto 1fr;
+    grid-template-areas: "image ." "image text" "image next" "image .";
+    column-gap: 48px;
+  }
+  .hero-text { padding-top: 0; }
+  .next-mass { margin: 28px 0 0; }
+  .next-mass .next-mass__call { display: none; }   /* the phone number is shown just above */
+  .tagline { font-size: 26px; }
+  .subtagline { font-size: 19px; margin: 14px 0 0; max-width: none; }
+}
+@media (min-width: 1024px) { .tagline { font-size: 31px; } .subtagline { font-size: 21px; } }
+@media (min-width: 1280px) { .tagline { font-size: 36px; } .subtagline { font-size: 23px; } }
+@media (min-width: 1920px) { .tagline { font-size: 40px; } .subtagline { font-size: 25px; } }
+
+/* Next Mass card */
+.next-mass {
+  background: #fff; color: var(--ink); text-align: left;
+  border-radius: 10px; padding: 18px 22px 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+.next-mass__eyebrow {
+  font-family: var(--font-display); text-transform: uppercase;
+  font-size: 13px; letter-spacing: .12em; color: var(--brown); margin-bottom: 8px;
+}
+.next-mass__when { font-size: 19px; line-height: 1.35; color: var(--ink); }
+.next-mass__date { display: block; font-family: var(--font-display); font-size: 18px; }
+.next-mass__time { display: block; font-size: 30px; font-weight: 700; line-height: 1.2; color: var(--brown); margin-top: 2px; }
+.next-mass__feast { font-size: 17px; line-height: 1.4; color: var(--slate); margin-top: 6px; }
+.next-mass__meta { font-size: 15px; color: var(--gray); margin-top: 6px; }
+.next-mass__meta a { color: var(--brown); }
+.next-mass__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 16px; }
+.next-mass__button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 8px 20px; border: 2px solid var(--brown); border-radius: 44px;
+  background: var(--brown); color: #fff;
+  font-family: var(--font-display); font-size: 14px; letter-spacing: .04em; text-transform: uppercase;
+  text-decoration: none; line-height: 1.2;
+}
+.next-mass__button:hover { background: var(--brown-hover); border-color: var(--brown-hover); color: #fff; }
+.next-mass__button--outline { background: transparent; color: var(--brown); }
+.next-mass__button--outline:hover { background: var(--brown); border-color: var(--brown); }
+.next-mass__link {
+  color: var(--brown); font-size: 15px; font-weight: 700;
+  text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px;
+}
+.next-mass__link::after { content: " \2193"; }
+.next-mass__link:hover { color: var(--brown-hover); }
+.next-mass a:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }

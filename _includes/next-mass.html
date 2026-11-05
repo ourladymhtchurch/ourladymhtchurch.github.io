@@ -1,0 +1,28 @@
+{%- comment -%}
+"Next Mass" card at the top of the home page. It reads the Masses in _data/schedule.yml.
+Each Mass gets a start time (its date + time, Central Time). The first Mass is shown
+before the page script runs. assets/js/main.js then shows the first Mass that has not
+ended yet, or a "being updated" message when every listed Mass is in the past.
+{%- endcomment -%}
+{%- assign masses = site.data.schedule.masses -%}
+{%- capture maps_url %}https://www.google.com/maps/search/?api=1&query={{ site.chapel.address | url_encode }}{% endcapture -%}
+<aside class="next-mass" aria-label="Next Mass" data-next-mass>
+  <p class="next-mass__eyebrow">Next Mass</p>
+  {%- for mass in masses %}
+  {%- assign starts = mass.date | append: " " | append: mass.time | date: "%Y-%m-%dT%H:%M:%S%:z" %}
+  <div class="next-mass__item" data-start="{{ starts }}"{% unless forloop.first %} hidden{% endunless %}>
+    <p class="next-mass__when"><span class="next-mass__date">{{ mass.date }}</span> <span class="next-mass__time">{{ mass.time }}</span></p>
+    {% if mass.feast %}<p class="next-mass__feast">{{ mass.feast }}</p>{% endif %}
+    {% if mass.confessions or mass.rosary %}<p class="next-mass__meta">{% if mass.confessions %}Confessions {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary {{ mass.rosary }}{% endif %}</p>{% endif %}
+  </div>
+  {%- endfor %}
+  <div class="next-mass__item" data-next-mass-none{% if masses.size > 0 %} hidden{% endif %}>
+    <p class="next-mass__when">This week's Mass times are being updated.</p>
+    <p class="next-mass__meta">Please call <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }} for the schedule.</p>
+  </div>
+  <div class="next-mass__actions">
+    <a class="next-mass__button" href="{{ maps_url }}" target="_blank" rel="noopener">Directions</a>
+    <a class="next-mass__button next-mass__button--outline next-mass__call" href="{{ site.chapel.phone_link }}">Call</a>
+    <a class="next-mass__link" href="#mass-schedule">Full schedule</a>
+  </div>
+</aside>

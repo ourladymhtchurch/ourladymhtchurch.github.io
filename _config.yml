@@ -7,6 +7,8 @@ description: >-
   Our Lady of the Most Holy Trinity Chapel is a Traditional Roman Catholic
   Chapel in Corpus Christi, Texas, offering the Traditional Latin Mass.
 lang: en
+# The chapel's time zone. Mass dates and times in _data/schedule.yml are read in it.
+timezone: America/Chicago
 
 chapel:
   legal_name: Our Lady of the Most Holy Trinity Church

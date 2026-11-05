@@ -66,4 +66,21 @@
       form.reset();
     });
   }
+
+  /* Next Mass card (home page): show the first Mass in _data/schedule.yml that has not
+     ended yet (counted as one hour after it starts). If every listed Mass is past, show
+     the "being updated" message instead. A Mass whose date could not be read is shown. */
+  var nextMass = document.querySelector('[data-next-mass]');
+  if (nextMass) {
+    var items = nextMass.querySelectorAll('[data-start]');
+    var cutoff = Date.now() - 60 * 60 * 1000;
+    var shown = null;
+    for (var i = 0; i < items.length && !shown; i++) {
+      var start = Date.parse(items[i].getAttribute('data-start'));
+      if (isNaN(start) || start > cutoff) shown = items[i];
+    }
+    Array.prototype.forEach.call(items, function (el) { el.hidden = el !== shown; });
+    var none = nextMass.querySelector('[data-next-mass-none]');
+    if (none) none.hidden = !!shown;
+  }
 })();
