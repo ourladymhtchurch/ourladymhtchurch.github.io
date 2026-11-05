@@ -4,3 +4,6 @@ _site/
 .sass-cache/
 vendor/
 .DS_Store
+
+# Local notes for Claude Code; never published
+CLAUDE.md

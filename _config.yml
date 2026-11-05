@@ -53,6 +53,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CLAUDE.md
   - start-site.command
   - vendor
   - node_modules
