@@ -13,6 +13,8 @@ ended yet, or a "being updated" message when every listed Mass is in the past.
   <div class="next-mass__item" data-start="{{ starts }}"{% unless forloop.first %} hidden{% endunless %}>
     <p class="next-mass__when"><span class="next-mass__date">{{ mass.date }}</span> <span class="next-mass__time">{{ mass.time }}</span></p>
     {% if mass.feast %}<p class="next-mass__feast">{{ mass.feast }}</p>{% endif %}
+    {%- assign celebrant = mass.celebrant | default: site.data.schedule.celebrant %}
+    {% if celebrant %}<p class="next-mass__celebrant">{{ celebrant }}</p>{% endif %}
     {% if mass.confessions or mass.rosary %}<p class="next-mass__meta">{% if mass.confessions %}Confessions {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary {{ mass.rosary }}{% endif %}</p>{% endif %}
   </div>
   {%- endfor %}

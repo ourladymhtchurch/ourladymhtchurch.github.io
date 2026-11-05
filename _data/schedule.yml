@@ -1,25 +1,43 @@
 # ---------------------------------------------------------------------------
 # Mass schedule shown on the home page. Add, remove or edit entries freely;
 # the page rebuilds from this file. Keep the two-space indentation.
+#
+# Each Mass can name its own priest with "celebrant". Write dates and times as
+# below ("Sunday, November 8, 2026", "8:00 AM") so the Next Mass box at the top
+# of the home page can tell which Mass is next.
 # ---------------------------------------------------------------------------
-celebrant: "Rev. Father Adam Joseph Craig, CMRI"
 
 masses:
-  - date: "Saturday, October 31, 2026"
+  - date: "Saturday, November 7, 2026"
     time: "8:00 AM"
-    feast: "Blessed Virgin Mary (St. Alphonsus Rodriguez)"
+    feast: "First Saturday, Blessed Virgin Mary (St. Willibrord, BC)"
+    celebrant: "Rev. Father Martin Sentman, CMRI"
     confessions: "7:30 AM"
     rosary: "7:35 AM"
-  - date: "Sunday, November 1, 2026"
+  - date: "Sunday, November 8, 2026"
     time: "8:00 AM"
-    feast: "All Saints' Day; 23rd Sunday after Pentecost"
-    confessions: "7:00 AM"
+    feast: "24th Sunday after Pentecost (Four Holy Crowned Martyrs)"
+    celebrant: "Rev. Father Martin Sentman, CMRI"
+    confessions: "7:20 AM"
     rosary: "7:35 AM"
-    note: "After the Holy Mass: exposition and adoration of the Most Blessed Sacrament and Benediction."
+    note: "After the Holy Mass: Adoration and Benediction of the Most Blessed Sacrament."
+  - date: "Saturday, November 14, 2026"
+    time: "8:00 AM"
+    feast: "Blessed Virgin Mary (St. Josaphat, BC)"
+    celebrant: "Rev. Father Adam Joseph Craig, CMRI"
+    confessions: "7:30 AM"
+    rosary: "7:35 AM"
+  - date: "Sunday, November 15, 2026"
+    time: "8:00 AM"
+    feast: "25th Sunday after Pentecost (St. Albert the Great, BC)"
+    celebrant: "Rev. Father Adam Joseph Craig, CMRI"
+    confessions: "7:20 AM"
+    rosary: "7:35 AM"
+    note: "After the Holy Mass: Adoration and Benediction of the Most Blessed Sacrament."
 
 sermon:
-  title: "Saint Alphonsus Maria de Liguori's Sermon for the 23rd Sunday after Pentecost -- On Impenitence"
-  url: "https://traditionalcatholicsermons.org/index_files/StAlphonsus_TwentyThirdSundayAfterPentecost_OnImpenitence.mp3"
+  title: "Saint Alphonsus Maria de Liguori's Sermon for the 24th Sunday after Pentecost -- On Blasphemy"
+  url: "https://traditionalcatholicsermons.org/index_files/StAlphonsus_TwentyFourthSundayAfterPentecost_OnBlasphemy.mp3"
 
 intentions:
   - "Please pray: for a true Pope, for Bishop Pivarunas and the CMRI, for Bishop Davila and the SST, and for the health of soul and body of the ill and dying...+"

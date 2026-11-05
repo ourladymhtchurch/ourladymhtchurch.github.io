@@ -30,6 +30,7 @@ permalink: "/"
         <p class="schedule__date">{{ mass.date }}</p>
         <p class="schedule__time">{{ mass.time }}</p>
         {% if mass.feast %}<p class="schedule__feast">{{ mass.feast }}</p>{% endif %}
+        {% if mass.celebrant %}<p class="schedule__celebrant">{{ mass.celebrant }}</p>{% endif %}
         {% if mass.confessions or mass.rosary %}<p class="schedule__meta">{% if mass.confessions %}Confessions at {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary at {{ mass.rosary }}{% endif %}</p>{% endif %}
         {% if mass.note %}<p class="schedule__note">{{ mass.note }}</p>{% endif %}
       </div>

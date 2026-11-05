@@ -36,7 +36,8 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 ## Everyday edits
 
 - **Mass times**: edit `_data/schedule.yml`. Each Mass is a block with `date`, `time`, `feast`,
-  `confessions`, `rosary` and an optional `note`. Add or remove blocks as needed.
+  `celebrant` (the priest), `confessions`, `rosary` and an optional `note`. Add or remove blocks
+  as needed.
   The **Next Mass** box at the top of the home page reads this list and shows the first
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
