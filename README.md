@@ -68,7 +68,8 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
   Documents page under its category.
 - **A new page**: copy `dress-code.html`, change the front matter (`title`, `permalink`) and the
   content, then add a link in `_data/navigation.yml`.
-- **Videos**: `{% include video.html id="YOUTUBE_ID" title="Title" %}`.
+- **Videos**: `{% include video.html id="YOUTUBE_ID" title="Title" %}`. Add `start="14"` to begin
+  playback 14 seconds in (the `t=14s` part of a YouTube link).
 - **PDFs**: put the file in `assets/pdf/` and use
   `{% include pdf-viewer.html file="/assets/pdf/name.pdf" title="Heading" %}`.
 - **Colors and fonts**: `_sass/olmht/_variables.scss` (the main brown can also be set with

@@ -1,2 +1,2 @@
-{%- comment -%} YouTube embed. Usage: {% include video.html id="VIDEO_ID" title="Video title" %} {%- endcomment -%}
-<div class="video"><iframe src="https://www.youtube.com/embed/{{ include.id }}?rel=0" title="{{ include.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+{%- comment -%} YouTube embed. Usage: {% include video.html id="VIDEO_ID" title="Video title" %}. Optional start="14" begins playback 14 seconds in. {%- endcomment -%}
+<div class="video"><iframe src="https://www.youtube.com/embed/{{ include.id }}?rel=0{% if include.start %}&amp;start={{ include.start }}{% endif %}" title="{{ include.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
