@@ -6,8 +6,8 @@ ended yet, or a "being updated" message when every listed Mass is in the past.
 {%- endcomment -%}
 {%- assign masses = site.data.schedule.masses -%}
 {%- capture maps_url %}https://www.google.com/maps/search/?api=1&query={{ site.chapel.address | url_encode }}{% endcapture -%}
-<aside class="next-mass" aria-label="Next Mass" data-next-mass>
-  <p class="next-mass__eyebrow">Next Mass</p>
+<aside class="next-mass" aria-label="Next Holy Latin Mass" data-next-mass>
+  <p class="next-mass__eyebrow">Next Holy Latin Mass</p>
   {%- for mass in masses %}
   {%- assign starts = mass.date | append: " " | append: mass.time | date: "%Y-%m-%dT%H:%M:%S%:z" %}
   <div class="next-mass__item" data-start="{{ starts }}"{% unless forloop.first %} hidden{% endunless %}>
@@ -19,7 +19,7 @@ ended yet, or a "being updated" message when every listed Mass is in the past.
   </div>
   {%- endfor %}
   <div class="next-mass__item" data-next-mass-none{% if masses.size > 0 %} hidden{% endif %}>
-    <p class="next-mass__when">This week's Mass times are being updated.</p>
+    <p class="next-mass__when">This week's Holy Latin Mass times are being updated.</p>
     <p class="next-mass__meta">Please call <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }} for the schedule.</p>
   </div>
   <div class="next-mass__actions">

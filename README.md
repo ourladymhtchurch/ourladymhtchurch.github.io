@@ -35,10 +35,16 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 
 ## Everyday edits
 
+**Wording:** on the site, always write **Holy Latin Mass** (and **Holy Latin Masses**), not
+"Mass", "Holy Mass" or "Latin Mass". For example: "Holy Latin Mass Schedule", "After the
+Holy Latin Mass: Adoration and Benediction". Leave quoted texts by other authors (papal
+documents, the Profession of Faith, Bishop Thuc's declaration) and the titles of outside
+resources exactly as written.
+
 - **Mass times**: edit `_data/schedule.yml`. Each Mass is a block with `date`, `time`, `feast`,
   `celebrant` (the priest), `confessions`, `rosary` and an optional `note`. Add or remove blocks
   as needed.
-  The **Next Mass** box at the top of the home page reads this list and shows the first
+  The **Next Holy Latin Mass** box at the top of the home page reads this list and shows the first
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
   do (`"Sunday, November 8, 2026"`, `"8:00 AM"`) so the box can tell which Mass is next.

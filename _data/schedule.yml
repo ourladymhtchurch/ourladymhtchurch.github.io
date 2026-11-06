@@ -3,7 +3,7 @@
 # the page rebuilds from this file. Keep the two-space indentation.
 #
 # Each Mass can name its own priest with "celebrant". Write dates and times as
-# below ("Sunday, November 8, 2026", "8:00 AM") so the Next Mass box at the top
+# below ("Sunday, November 8, 2026", "8:00 AM") so the Next Holy Latin Mass box at the top
 # of the home page can tell which Mass is next.
 # ---------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ masses:
     celebrant: "Rev. Father Martin Sentman, CMRI"
     confessions: "7:40 AM"
     rosary: "7:35 AM"
-    note: "After the Holy Mass: Adoration and Benediction of the Most Blessed Sacrament."
+    note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
   - date: "Saturday, November 14, 2026"
     time: "8:00 AM"
     feast: "Blessed Virgin Mary (St. Josaphat, BC)"
@@ -33,7 +33,7 @@ masses:
     celebrant: "Rev. Father Adam Joseph Craig, CMRI"
     confessions: "7:20 AM"
     rosary: "7:35 AM"
-    note: "After the Holy Mass: Adoration and Benediction of the Most Blessed Sacrament."
+    note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
 
 sermon:
   title: "Saint Alphonsus Maria de Liguori's Sermon for the 24th Sunday after Pentecost -- On Blasphemy"

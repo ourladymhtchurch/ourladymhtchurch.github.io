@@ -10,7 +10,7 @@
 primary:
   - title: "Home"
     url: /
-  - title: "Mass Schedule"
+  - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Documents"
     url: /documents/
@@ -28,7 +28,7 @@ primary:
 drawer:
   - title: "Home"
     url: /
-  - title: "Mass Schedule"
+  - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Documents"
     url: /documents/
