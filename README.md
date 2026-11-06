@@ -82,12 +82,27 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 3. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
    The included workflow builds the site on every push to `main` and publishes it at
    `https://<username>.github.io/church-website/`.
-4. To use the Chapel's own domain, add a file named `CNAME` containing `olmhtchurch.org`,
-   point the domain's DNS at GitHub Pages (see GitHub's custom-domain guide), and enter the
-   domain under **Settings → Pages → Custom domain**.
+4. To use the Chapel's own domain, point the domain's DNS at GitHub Pages and enter the domain
+   under **Settings → Pages → Custom domain**. Because the site is published by a GitHub
+   Actions workflow, no `CNAME` file is needed (GitHub ignores it).
 
 `_config.yml` has `url` and `baseurl` settings; the workflow fills in `baseurl` automatically
 for project sites, and it should stay empty for a custom domain.
+
+### How olmhtchurch.org is connected
+
+The site is published from the `ourladymhtchurch/ourladymhtchurch.github.io` repository, with
+`olmhtchurch.org` set as its custom domain. The domain is registered at GoDaddy, and its DNS
+records there point to GitHub:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| CNAME | `www` | `ourladymhtchurch.github.io` |
+| TXT | `_github-pages-challenge-ourladymhtchurch` | GitHub's domain-verification code |
+
+The MX, TXT (`@`), autodiscover, lync, sip and msoid records belong to the Chapel's Microsoft
+365 email. Leave them as they are.
 
 The old addresses from the GoDaddy site (for example `/profession-of-faith`) redirect to the
 new document pages, so existing links keep working.
