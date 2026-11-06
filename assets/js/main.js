@@ -1,6 +1,7 @@
 /* Our Lady of the Most Holy Trinity Chapel — site script
-   Handles the slide-in navigation drawer, its expandable groups,
-   highlighting the current page, and the (demo) contact form. */
+   Handles the slide-in navigation drawer, its expandable groups, highlighting the
+   current page, the (demo) contact form, the Next Holy Latin Mass card and the
+   click-to-play videos on the home page. */
 (function () {
   'use strict';
 
@@ -83,4 +84,25 @@
     var none = nextMass.querySelector('[data-next-mass-none]');
     if (none) none.hidden = !!shown;
   }
+
+  /* Click-to-play videos (_includes/youtube-facade.html): the page shows only a thumbnail,
+     and YouTube's player is loaded when the visitor clicks it. Without this script the
+     link simply opens the video on YouTube. */
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-youtube]'), function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var start = link.getAttribute('data-start');
+      var frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube.com/embed/' + encodeURIComponent(link.getAttribute('data-youtube')) +
+        '?rel=0&autoplay=1' + (start ? '&start=' + encodeURIComponent(start) : '');
+      frame.title = link.getAttribute('data-title') || 'Video';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      frame.allowFullscreen = true;
+      var box = document.createElement('div');
+      box.className = 'video';
+      box.appendChild(frame);
+      link.parentNode.replaceChild(box, link);
+      frame.focus();
+    });
+  });
 })();

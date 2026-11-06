@@ -1,8 +1,62 @@
 /* Video embeds */
 .video { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
 .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-.media-caption { text-align: center; align-self: center; }
-.media-caption .content-heading { margin-bottom: 16px; }
+
+/* Click-to-play video (youtube-facade.html): thumbnail + play button until clicked */
+.yt { position: relative; display: block; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.yt img { width: 100%; height: 100%; object-fit: cover; transition: opacity .2s; }
+.yt:hover img { opacity: .85; }
+.yt__play {
+  position: absolute; left: 50%; top: 50%; width: 68px; height: 68px; margin: -34px 0 0 -34px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--brown); color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .35); transition: transform .15s, background .15s;
+}
+.yt__play svg { width: 34px; height: 34px; margin-left: 4px; }
+.yt:hover .yt__play { background: var(--brown-hover); transform: scale(1.06); }
+.yt:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
+
+/* Cards: Featured Content and Devotions on the home page */
+.tiles { display: grid; gap: 24px; }
+.tiles + .tiles { margin-top: 24px; }
+@media (min-width: 768px) {
+  .tiles--two, .tiles--three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) { .tiles--three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tile { display: flex; flex-direction: column; min-width: 0; background: #fff; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.tile__media { aspect-ratio: 16 / 9; overflow: hidden; background: var(--panel); }   /* overflow keeps the box 16:9 */
+.tile__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.tile__body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 24px; }
+.tile__label {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+  font-family: var(--font-display); text-transform: uppercase; font-size: 13px; letter-spacing: .1em; color: var(--brown);
+}
+.tile__label svg { width: 18px; height: 18px; flex: none; }
+.tile__title { font-size: 21px; line-height: 1.3; font-weight: 700; color: var(--ink); }
+.tile__by { font-size: 16px; font-weight: 700; color: var(--slate); margin-top: 6px; }
+.tile__text { font-size: 16px; line-height: 1.65; color: var(--gray); margin-top: 8px; overflow-wrap: anywhere; }
+.tile__text.rich p + p { margin-top: 10px; }
+.tile__actions { margin-top: auto; padding-top: 18px; }
+.tile--audio { border-top: 4px solid var(--brown); }
+@media (min-width: 768px) {   /* wide card: whole row, picture left, text right */
+  .tile--wide { grid-column: 1 / -1; flex-direction: row; }
+  .tile--wide .tile__media { flex: 0 0 36%; aspect-ratio: auto; }
+  .tile--wide .tile__body { padding: 28px 32px; }
+}
+
+/* Small pill buttons (cards, "New to the Chapel?") */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 8px 22px; border: 2px solid var(--brown); border-radius: 44px;
+  background: var(--brown); color: #fff;
+  font-family: var(--font-display); font-size: 14px; letter-spacing: .04em; text-transform: uppercase;
+  text-decoration: none; line-height: 1.2; text-align: center;
+}
+.btn:hover { background: var(--brown-hover); border-color: var(--brown-hover); color: #fff; }
+.btn--outline { background: transparent; color: var(--brown); }
+.btn--outline:hover { background: var(--brown); border-color: var(--brown); color: #fff; }
+.btn:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
+.button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
 
 /* PDF viewer */
 .pdf-viewer { text-align: center; }

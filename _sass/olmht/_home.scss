@@ -1,6 +1,11 @@
-/* Announcements, Mass schedule and notices on the home page */
+/* Home page: Chapel News, Holy Latin Mass schedule, Prayer Intentions, Devotions intro.
+   The Featured Content and Devotions cards use the .tile styles in _components.scss. */
+.news-updated { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -24px 0 32px; }
+.news-list { list-style: none; margin: 40px 0 0; padding: 0; }
+.news-list li { font-size: 18px; color: var(--slate); padding: 16px 0; border-top: 1px solid var(--rule); }
+
 .schedule-celebrant { font-size: 20px; font-weight: 700; color: var(--slate); margin-bottom: 16px; }
-.schedule { display: grid; gap: 24px; margin: 0 0 32px; }
+.schedule { display: grid; gap: 24px; }
 @media (min-width: 768px) { .schedule { grid-template-columns: 1fr 1fr; } }
 .schedule__item { border-left: 4px solid var(--brown); padding: 6px 0 6px 20px; }
 .schedule__date { font-family: var(--font-display); font-size: 17px; color: var(--ink); line-height: 1.4; }
@@ -9,22 +14,14 @@
 .schedule__celebrant { font-size: 16px; font-weight: 700; color: var(--slate); margin-top: 6px; }
 .schedule__meta { font-size: 16px; color: var(--gray); margin-top: 6px; }
 .schedule__note { font-size: 16px; color: var(--gray); margin-top: 6px; font-style: italic; }
-.sermon { background: var(--panel); border-radius: 6px; padding: 20px 24px; margin: 0 0 32px; font-size: 18px; color: var(--slate); }
-.sermon__label { font-family: var(--font-display); text-transform: uppercase; font-size: 14px; letter-spacing: .08em; color: var(--brown); margin-bottom: 6px; }
-.sermon a { color: var(--brown); text-decoration: none; border-bottom: 1px solid var(--brown); overflow-wrap: anywhere; }
+
+.prayer { max-width: 860px; margin: 0 auto; }
 .intentions { list-style: none; margin: 0 0 32px; padding: 0; }
 .intentions li { font-size: 18px; font-weight: 700; color: var(--slate); padding: 10px 0; border-top: 1px solid var(--rule); }
 .intentions li:first-child { border-top: 0; }
 .quote { font-size: 20px; font-weight: 700; color: var(--slate); border-top: 1px solid var(--rule); padding-top: 24px; }
+.quote + .quote { margin-top: 24px; }
 .quote__attribution { display: block; font-size: 16px; font-weight: 400; color: var(--gray); margin-top: 4px; }
 
-.menu-title { font-size: 22px; color: var(--ink); margin-bottom: 32px; }
-.menu-columns { display: grid; gap: 0 24px; }
-@media (min-width: 768px) { .menu-columns { grid-template-columns: 1fr 1fr; } }
-.menu-item { margin-bottom: 48px; }
-@media (min-width: 768px) { .menu-item .text { max-width: 80%; } }
-.notice { font-size: 20px; font-weight: 700; color: var(--gray); line-height: 1.8; overflow-wrap: anywhere; }
-.notice p { margin: 0; }
-.notice p + p { margin-top: 8px; }
-.notice a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--brown); padding-bottom: 2px; }
-.notice a:hover { color: var(--brown); }
+.devotions-intro { max-width: 860px; margin: -16px auto 40px; text-align: center; font-size: 18px; font-style: italic; line-height: 1.7; color: var(--slate); }
+.devotions-intro .quote__attribution { font-style: normal; }

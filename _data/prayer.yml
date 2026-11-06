@@ -1,0 +1,17 @@
+# ---------------------------------------------------------------------------
+# "Prayer Intentions" section on the home page.
+#   intentions: one line per intention, shown as a list
+#   quotes:     shown under the intentions, each with an attribution
+# ---------------------------------------------------------------------------
+
+intentions:
+  - "Please pray: for a true Pope, for Bishop Pivarunas and the CMRI, for Bishop Davila and the SST, and for the health of soul and body of the ill and dying...+"
+  - "Please pray for Holy Priests and Religious Vocations, and Holy Catholic Marriages and Families."
+  - "Please pray, especially the Holy Rosary, for the conversion of sinners, the perseverance of the just, and the eternal rest of the faithful departed, especially the soul of + Rosa Esparza Macias, TOSF [09-04-1933 + 10-08-2026]."
+  - "Please pray the Rosary for: all the graces that we and our families need to become the saints that we are called to be, the conversion of sinners, the relief of the poor souls in Purgatory; true devotion to the Immaculate Heart of Mary for the reign of Jesus Christ the King over our nation, all nations, and for a true and holy Pope, more holy Catholic Bishops, Priests, Religious Vocations, and Third Order Seculars."
+
+quotes:
+  - text: "\"One day through the Rosary and Scapular, I will save the world.\" +"
+    attribution: "Blessed Virgin Mary to Saint Dominic"
+  - text: "\"Pray the Rosary daily... God wishes to establish in the world devotion to my Immaculate Heart. If people do what I tell you, many souls will be saved and there will be peace.\""
+    attribution: "Our Lady of the Rosary to the three shepherd children (Lucia, Jacinta, and Francisco) during the apparitions in Fatima, Portugal in 1917"

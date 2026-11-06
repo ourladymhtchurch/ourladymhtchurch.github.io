@@ -1,22 +1,16 @@
 # ---------------------------------------------------------------------------
-# Short notices shown in two columns on the home page.
-# "updated" is the heading above them. Each notice's text may use Markdown:
-# links as [text](https://address), *italics*, **bold**.
+# Chapel News on the home page.
+#   updated: the line under the "Chapel News" heading (change the date when
+#            you post news)
+#   items:   short notices, listed under the main news text. Each notice may use
+#            Markdown: links as [text](https://address), *italics*, **bold**.
+#            Example:
+#              items:
+#                - text: |
+#                    The chapel will be closed on Thanksgiving Day.
+# The main news text itself (beside the side-altar photo) is near the top of
+# index.html.
 # ---------------------------------------------------------------------------
 updated: "Updated 11.05.2026, Our Lady of the Most Holy Trinity, pray for us +"
 
-items:
-  - text: |
-      For a true Pope and Catholic Unity, please read the following "Open Letter from the Laity to their Bishops and Clergy":
-      <https://www.unamsanctam.org/open-letter>
-  - text: |
-      St. John Marie Vianney's Sermon: The Holy Family (Family life in a disturbed and wavering condition; Example of the Holy Family; Threefold mission of the family):
-      <https://www.jmjsite.com/ars/14_3Epiphany_Holy_Family.mp3>
-  - text: |
-      If you're new to the Chapel, welcome! Please read the [Dress Code](/dress-code/). When coming from no church, or a different church, one should speak to the Catholic Priest and learn and make with the Priest's direction and assistance: the [Tridentine Profession of Faith](/documents/profession-of-faith/) after studying the Baltimore Catechism.
-  - text: |
-      "There has been no other name given under heaven, except the name of Jesus, by which we can be saved. God has laid no other foundation of our salvation, of our perfection, and of our glory, except Jesus Christ. [...] If, then, we establish the solid devotion to our Blessed Lady, it is only to establish more perfectly the devotion to Jesus Christ, and to put forward an easy and secure means for finding Jesus Christ" (Treatise on True Devotion to the Blessed Virgin, De Montfort, 1863, p. 38).
-  - text: |
-      Please pray the Rosary for: all the graces that we and our families need to become the saints that we are called to be, the conversion of sinners, the relief of the poor souls in Purgatory; true devotion to the Immaculate Heart of Mary for the reign of Jesus Christ the King over our nation, all nations, and for a true and holy Pope, more holy Catholic Bishops, Priests, Religious Vocations, and Third Order Seculars.
-  - text: |
-      "Pray the Rosary daily... God wishes to establish in the world devotion to my Immaculate Heart. If people do what I tell you, many souls will be saved and there will be peace." -- Our Lady of the Rosary to the three shepherd children (Lucia, Jacinta, and Francisco) during the apparitions in Fatima, Portugal in 1917.
+items: []

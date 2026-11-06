@@ -3,10 +3,20 @@ layout: "default"
 title: "Home"
 permalink: "/"
 ---
+{% comment %}
+Home page sections, top to bottom:
+  hero (Next Holy Latin Mass card) · Chapel News · Holy Latin Mass Schedule · Featured Content ·
+  New to the Chapel? · Prayer Intentions · Devotions · The Papacy and Catholic Unity
+Most of the content comes from _data/: notices.yml (Chapel News), schedule.yml,
+featured.yml, prayer.yml and devotions.yml.
+{% endcomment %}
 {% include hero.html %}
+{% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
 
-<section class="section" id="announcements">
+<section class="section" id="chapel-news">
   <div class="container">
+    <h2 class="section-title">Chapel News</h2>
+    {% if site.data.notices.updated %}<p class="news-updated">{{ site.data.notices.updated }}</p>{% endif %}
     <div class="grid grid--4-8">
       <img src="{{ '/assets/img/chapel-altar.jpg' | relative_url }}" alt="Side altar of the chapel with the statue of the Sacred Heart and the image of the Holy Face">
       <div class="rich text text--slate">
@@ -16,11 +26,16 @@ permalink: "/"
 <p><a href="https://www.youtube.com/watch?v=cpnvANWHNDQ" target="_blank" rel="noopener"><strong>His Excellency, Bishop Mark Pivarunas (CMRI) tells his story</strong></a><strong>,</strong></p>
       </div>
     </div>
+    {% if site.data.notices.items.size > 0 %}
+    <ul class="news-list">
+      {% for item in site.data.notices.items %}<li class="rich">{{ item.text | markdownify | replace: 'href="/', hrefbase }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
   </div>
 </section>
 
-{% comment %} Mass times come from _data/schedule.yml {% endcomment %}
-<section class="section" id="mass-schedule">
+<section class="section section--panel" id="mass-schedule">
   <div class="container">
     <h2 class="section-title">Traditional Holy Latin Mass Schedule</h2>
     {% if site.data.schedule.celebrant %}<p class="schedule-celebrant">{{ site.data.schedule.celebrant }}</p>{% endif %}
@@ -36,163 +51,109 @@ permalink: "/"
       </div>
       {% endfor %}
     </div>
-    {% if site.data.schedule.sermon %}
-    <div class="sermon">
-      <p class="sermon__label">Sermon</p>
-      <p>{{ site.data.schedule.sermon.title }}</p>
-      <p><a href="{{ site.data.schedule.sermon.url }}" target="_blank" rel="noopener">Listen to the sermon (MP3)</a></p>
-    </div>
-    {% endif %}
-    {% if site.data.schedule.intentions %}
-    <ul class="intentions">
-      {% for item in site.data.schedule.intentions %}<li>{{ item }}</li>
+  </div>
+</section>
+
+{%- assign featured_large = site.data.featured.items | where_exp: "item", "item.type != 'audio'" -%}
+{%- assign featured_audio = site.data.featured.items | where: "type", "audio" %}
+<section class="section" id="featured">
+  <div class="container">
+    <h2 class="section-title">Featured Content</h2>
+    {% if featured_large.size > 0 %}
+    <div class="tiles tiles--two">
+      {% for item in featured_large %}
+      <article class="tile">
+        {% if item.type == "video" %}{% include youtube-facade.html id=item.youtube start=item.start title=item.title %}
+        {% elsif item.image %}<div class="tile__media"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | escape }}" loading="lazy"></div>{% endif %}
+        <div class="tile__body">
+          {% if item.label %}<p class="tile__label">{{ item.label }}</p>{% endif %}
+          <h3 class="tile__title">{{ item.title }}</h3>
+          {% if item.by %}<p class="tile__by">{{ item.by }}</p>{% endif %}
+          {% if item.text %}<p class="tile__text">{{ item.text }}</p>{% endif %}
+          {% if item.type == "link" and item.url %}<p class="tile__actions"><a class="btn" href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ item.button | default: "Open" }}</a></p>{% endif %}
+        </div>
+      </article>
       {% endfor %}
-    </ul>
+    </div>
     {% endif %}
-    {% if site.data.schedule.quote %}
-    <p class="quote">{{ site.data.schedule.quote.text }} <span class="quote__attribution">{{ site.data.schedule.quote.attribution }}</span></p>
+    {% if featured_audio.size > 0 %}
+    <div class="tiles tiles--three">
+      {% for item in featured_audio %}
+      <article class="tile tile--audio">
+        <div class="tile__body">
+          <p class="tile__label"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H5v-1a7 7 0 0 1 14 0v1h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z"/></svg>{{ item.label | default: "Sermon" }}</p>
+          <h3 class="tile__title">{{ item.title }}</h3>
+          {% if item.by %}<p class="tile__by">{{ item.by }}</p>{% endif %}
+          {% if item.text %}<p class="tile__text">{{ item.text }}</p>{% endif %}
+          <p class="tile__actions"><a class="btn btn--outline" href="{{ item.url }}" target="_blank" rel="noopener">Listen (MP3)</a></p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
     {% endif %}
   </div>
 </section>
 
-<section class="section" id="featured-sermon">
+<section class="section section--panel" id="new-here">
   <div class="container">
-    <h2 class="section-title">Featured Sermon</h2>
-    <div class="grid grid--6-6 grid--center">
-      {% include video.html id="d7nFr9nXhSI" start="14" title="First Sermon: Fr. Martin Sentman, CMRI" %}
-      <div class="media-caption">
-        <h3 class="content-heading">First Sermon: Fr. Martin Sentman, CMRI</h3>
-        <div class="rich text">
-<p>Recorded by the Catholic Family Podcast.</p>
-<p><a href="https://www.youtube.com/watch?v=d7nFr9nXhSI&amp;t=14s" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </div>
-      </div>
+    <h2 class="section-title">New to the Chapel?</h2>
+    <div class="narrow">
+      <p class="text text--slate text--center">If you're new to the Chapel, welcome! Please read the Dress Code. When coming from no church, or a different church, one should speak to the Catholic Priest and learn and make with the Priest's direction and assistance: the Tridentine Profession of Faith after studying the Baltimore Catechism.</p>
+      <p class="button-row">
+        <a class="btn" href="{{ '/dress-code/' | relative_url }}">Dress Code</a>
+        <a class="btn btn--outline" href="{{ '/documents/profession-of-faith/' | relative_url }}">Profession of Faith</a>
+        <a class="btn btn--outline" href="https://www.cmri.org/baltimore-catechism-no-2/" target="_blank" rel="noopener">Baltimore Catechism</a>
+        <a class="btn btn--outline" href="{{ site.chapel.phone_link }}">Call {{ site.chapel.phone }}</a>
+      </p>
     </div>
   </div>
 </section>
 
-{% comment %} Notices come from _data/notices.yml {% endcomment %}
-{% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
-<section class="section" id="notices">
+<section class="section" id="prayer">
   <div class="container">
-    <h2 class="menu-title">{{ site.data.notices.updated }}</h2>
-    {% assign half = site.data.notices.items.size | plus: 1 | divided_by: 2 %}
-    <div class="menu-columns">
-      <div>
-        {% for item in site.data.notices.items limit: half %}
-        <div class="menu-item"><div class="notice">{{ item.text | markdownify | replace: 'href="/', hrefbase }}</div></div>
+    <h2 class="section-title">Prayer Intentions</h2>
+    <div class="prayer">
+      {% if site.data.prayer.intentions %}
+      <ul class="intentions">
+        {% for item in site.data.prayer.intentions %}<li>{{ item }}</li>
         {% endfor %}
-      </div>
-      <div>
-        {% for item in site.data.notices.items offset: half %}
-        <div class="menu-item"><div class="notice">{{ item.text | markdownify | replace: 'href="/', hrefbase }}</div></div>
-        {% endfor %}
-      </div>
+      </ul>
+      {% endif %}
+      {% for quote in site.data.prayer.quotes %}
+      <p class="quote">{{ quote.text }} <span class="quote__attribution">{{ quote.attribution }}</span></p>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--panel" id="devotions">
   <div class="container">
-    <h2 class="section-title">Protect purity with modesty &amp; The Pledge of Modesty</h2>
-    <div class="grid grid--4-8">
-      <img src="{{ '/assets/img/maria-bambina.jpg' | relative_url }}" alt="Statue of Santa Maria Bambina, the infant Mary, resting among white flowers before the altar">
-      <div>
-        <h3 class="content-heading">Our Blessed Ever-Virgin Queen Mother, The IMMACULATE CONCEPTION, Santa Maria Bambina, pray for us...</h3>
-        <div class="rich text text--sm">
-<p><strong>St Alphonsus' Sermon:&nbsp;On Impurity</strong></p>
-<p><a href="https://traditionalcatholicsermons.org/index_files/StAlphonsus_SixteenthSundayAfterPentecost_OnImpurity.mp3" target="_blank" rel="noopener"><u>https://traditionalcatholicsermons.org/index_files/StAlphonsus_SixteenthSundayAfterPentecost_OnImpurity.mp3</u></a></p>
-<p><br></p>
-<p><strong>Pledge of Modesty</strong></p>
-<p>"I believe in the virtue of modesty as the guardian of chastity. I pledge myself to live and fight for the ideals of the virtue of purity and the observance of modesty. In particular, I pledge myself to live and fight for more decency in the printed and spoken word, and for a Mary-like modesty in dress and action. I promise also to set an example for my family and my associates, and to let others know where I stand in such matters, in the hope of leading them to greater purity of life. I hope to maintain these ideals by cultivating a strong personal devotion to the Sacred Heart of Jesus and to the Immaculate Heart of Mary."</p>
-<p>Amen +</p>
-<p>Source:</p>
-<p><a href="https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf" target="_blank" rel="noopener">https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf</a></p>
+    <h2 class="section-title">Devotions</h2>
+    {% assign intro = site.data.devotions.intro %}
+    {% if intro %}<p class="devotions-intro">{{ intro.text }} <span class="quote__attribution">{{ intro.attribution }}</span></p>{% endif %}
+    <div class="tiles tiles--three">
+      {% for item in site.data.devotions.items %}
+      <article class="tile{% if item.wide %} tile--wide{% endif %}">
+        {% if item.youtube %}{% include youtube-facade.html id=item.youtube start=item.start title=item.title %}
+        {% elsif item.image %}<div class="tile__media"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | escape }}" loading="lazy"></div>{% endif %}
+        <div class="tile__body">
+          {% if item.group %}<p class="tile__label">{{ item.group }}</p>{% endif %}
+          <h3 class="tile__title">{{ item.title }}</h3>
+          {% if item.text %}<div class="tile__text rich">{{ item.text | markdownify }}</div>{% endif %}
         </div>
-      </div>
+      </article>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="papacy">
   <div class="container">
-    <h2 class="section-title">THE importance of the daily Rosary for our times</h2>
-    <div class="grid grid--6-6 grid--center">
-      {% include video.html id="eWWGWhkJ8BQ" title="The Battle of Lepanto: how it affects our times" %}
-      <div class="rich text-major">
-<p><strong>October 7th, Feast of the Most Holy Rosary of the Blessed Ever-Virgin Mary&nbsp;</strong></p>
-<p><strong>(Our Lady of Victory at Lepanto, 1571)</strong></p>
-<h1><strong>WHY THE BATTLE OF LEPANTO IS IMPORTANT FOR OUR TIMES Our Lady of Victory and the Battle of Lepanto</strong></h1>
-      </div>
+    <h2 class="section-title">The Papacy and Catholic Unity</h2>
+    <div class="narrow">
+      <p class="text text--slate text--center">For a true Pope and Catholic Unity, please read the following "Open Letter from the Laity to their Bishops and Clergy".</p>
+      <p class="button-row"><a class="btn btn--outline" href="https://www.unamsanctam.org/open-letter" target="_blank" rel="noopener">Read the open letter</a></p>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Prophecy and Message from Our Lady of La Salette</h2>
-    {% include video.html id="9iIuaEVrnZQ" title="Prophecy and Message from Our Lady of La Salette" %}
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">The 8 Promises of Jesus to Devotees of His Most Holy Face</h2>
-    <div class="grid grid--6-6 grid--center">
-      {% include video.html id="NpObk_ItTkA" title="The 8 Promises of Jesus to Devotees of His Holy Face" %}
-      <div class="rich text-major">
-<p><strong>An Aspiration to the Eternal Father to be Frequently Recited during the Day</strong></p>
-<p><br></p>
-<p><strong>Eternal Father, we offer Thee the Holy Face of Jesus, covered with blood, sweat, dust and spittle in reparation for the crimes of communists, blasphemers, and for the profaners of the Holy Name and of the Holy Day. Amen.&nbsp;</strong></p>
-<p><br></p>
-<p>Source:</p>
-<p>Scanlan, (2012). <em>The Golden Arrow</em>. TAN Books.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="grid grid--6-6 grid--center">
-      {% include video.html id="Gv3wN35c1qc" title="The Secret of the Rosary - Full Audiobook" %}
-      <div class="media-caption">
-        <h3 class="content-heading">The Secret Of the Rosary - Full Audiobook</h3>
-        <div class="rich text">
-<p><strong>by ST. LOUIS MARIE DE MONTFORT.&nbsp;</strong></p>
-<p><strong>PRAYER, LORD JESUS CHRIST&nbsp;</strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="grid grid--6-6 grid--center grid--reverse">
-      {% include video.html id="dLBic3P1yLg" title="True Devotion to Mary by St. Louis-Marie de Montfort" %}
-      <div class="media-caption">
-        <h3 class="content-heading">TRUE DEVOTION TO MARY</h3>
-        <div class="rich text">
-<p><strong>by ST. LOUIS MARIE DE MONTFORT</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">History of the Brown Scapular of Our Lady of Mount Carmel</h2>
-    <div class="grid grid--6-6 grid--center">
-      {% include video.html id="cqBwFHaZV0w" title="History of the Brown Scapular of Our Lady of Mount Carmel" %}
-      <div class="rich text-major">
-<p><strong>“Those who die wearing this scapular shall not suffer eternal fire!”</strong><br>
-<strong>–</strong><em><strong>Our Lady to St. Simon Stock</strong></em></p>
-<h1><strong>“Wear it devoutly and perseveringly; It is my garment. To be clothed in it means you are continually thinking of me, and I, in turn, am always thinking of you and helping you to secure eternal salvation.”</strong></h1>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">PDF Viewer</h2>
     {% include pdf-viewer.html file="/assets/pdf/oath-of-fidelity-bergoglio.pdf" title="The Oath of Fidelity to the Magisterium of Bergoglio?" thumb="/assets/img/pdf-oath-of-fidelity-bergoglio.png" %}
   </div>
 </section>

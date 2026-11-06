@@ -19,13 +19,16 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | Path | What it holds |
 | --- | --- |
 | `_config.yml` | Site name, tagline, address, phone, main color, hosting address |
-| `_data/schedule.yml` | **Mass schedule**, sermon link, prayer intentions, quote (home page) |
-| `_data/notices.yml` | The short notices in two columns on the home page |
+| `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
+| `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
+| `_data/featured.yml` | Featured Content cards: sermons, conference recordings, links |
+| `_data/prayer.yml` | Prayer Intentions and the quotes under them |
+| `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
 | `_data/resources.yml` | The link groups on the Resources page |
 | `_data/document_categories.yml` | Section order and descriptions on the Documents page |
 | `_documents/` | One file per document: creeds, catechisms, papal documents, Fatima, etc. |
-| `index.html` | Home page: announcements, videos, PDF viewer |
+| `index.html` | Home page layout, the Chapel News text and the "New to the Chapel?" text |
 | `about.html`, `contact-us.html`, `donation.html`, `dress-code.html` | The other pages |
 | `documents.html`, `resources.html`, `404.html` | The Documents index, Resources page, not-found page |
 | `_layouts/`, `_includes/`, `_sass/` | The theme: page skeletons, reusable pieces, styles |
@@ -48,9 +51,21 @@ resources exactly as written.
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
   do (`"Sunday, November 8, 2026"`, `"8:00 AM"`) so the box can tell which Mass is next.
-- **Notices**: edit `_data/notices.yml`. Each notice is a `text:` block; links are written as
-  `[words](https://address)`.
-- **Announcement text** (the paragraphs beside the altar photo): near the top of `index.html`.
+- **Home page sections**, top to bottom: the Next Holy Latin Mass card, Chapel News, the
+  Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
+  and The Papacy and Catholic Unity (the Oath of Fidelity PDF).
+- **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
+  The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
+  when you post news. Short extra notices go in the same file under `items:`, each as a
+  `text:` block (links are written as `[words](https://address)`).
+- **Featured Content** (sermons, the Fatima Conference recordings): edit `_data/featured.yml`.
+  A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
+  `v=` in the address; `start: 14` begins 14 seconds in). `type: audio` is an MP3 sermon with a
+  Listen button. `type: link` opens another page, with an optional picture and button text.
+  Video and link cards show two to a row; sermon cards show three to a row below them.
+- **Prayer intentions and quotes**: `_data/prayer.yml`.
+- **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
+  `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.
 - **Menus**: `_data/navigation.yml`. Links beginning with `http` open in a new tab.
 - **A new document**: add a file to `_documents/`, for example `_documents/apostles-creed.md`:
 
@@ -74,8 +89,9 @@ resources exactly as written.
   Documents page under its category.
 - **A new page**: copy `dress-code.html`, change the front matter (`title`, `permalink`) and the
   content, then add a link in `_data/navigation.yml`.
-- **Videos**: `{% include video.html id="YOUTUBE_ID" title="Title" %}`. Add `start="14"` to begin
-  playback 14 seconds in (the `t=14s` part of a YouTube link).
+- **Videos** on other pages: `{% include video.html id="YOUTUBE_ID" title="Title" %}`. Add `start="14"`
+  to begin playback 14 seconds in (the `t=14s` part of a YouTube link). For a click-to-play
+  thumbnail that loads YouTube only when clicked, use `youtube-facade.html` with the same settings.
 - **PDFs**: put the file in `assets/pdf/` and use
   `{% include pdf-viewer.html file="/assets/pdf/name.pdf" title="Heading" %}`.
 - **Colors and fonts**: `_sass/olmht/_variables.scss` (the main brown can also be set with

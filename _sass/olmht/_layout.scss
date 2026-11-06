@@ -5,6 +5,7 @@
 
 .section { padding: 40px 0; }
 @media (min-width: 1024px) { .section { padding: 56px 0; } }
+.section--panel { background: var(--panel); }   /* light gray band; home sections alternate */
 .section--brown { background: var(--brown); color: #f4f3f2; }
 .section--brown .section-title,
 .section--brown .content-heading,
@@ -18,7 +19,7 @@
 .section--brown .pdf-viewer__download:hover { color: var(--peach); }
 
 .grid { display: grid; gap: 32px 48px; align-items: start; }
-.grid > *, .menu-columns > * { min-width: 0; }
+.grid > * { min-width: 0; }
 .grid > img { width: 100%; }
 @media (min-width: 768px) {
   .grid--4-8 { grid-template-columns: 1fr 2fr; }

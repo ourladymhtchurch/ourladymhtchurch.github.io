@@ -1,10 +1,13 @@
 # ---------------------------------------------------------------------------
-# Mass schedule shown on the home page. Add, remove or edit entries freely;
+# Holy Latin Mass schedule shown on the home page. Add, remove or edit entries freely;
 # the page rebuilds from this file. Keep the two-space indentation.
 #
 # Each Mass can name its own priest with "celebrant". Write dates and times as
 # below ("Sunday, November 8, 2026", "8:00 AM") so the Next Holy Latin Mass box at the top
 # of the home page can tell which Mass is next.
+#
+# Sermons are in _data/featured.yml; prayer intentions and quotes are in
+# _data/prayer.yml.
 # ---------------------------------------------------------------------------
 
 masses:
@@ -34,16 +37,3 @@ masses:
     confessions: "7:20 AM"
     rosary: "7:35 AM"
     note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
-
-sermon:
-  title: "Saint Alphonsus Maria de Liguori's Sermon for the 24th Sunday after Pentecost -- On Blasphemy"
-  url: "https://traditionalcatholicsermons.org/index_files/StAlphonsus_TwentyFourthSundayAfterPentecost_OnBlasphemy.mp3"
-
-intentions:
-  - "Please pray: for a true Pope, for Bishop Pivarunas and the CMRI, for Bishop Davila and the SST, and for the health of soul and body of the ill and dying...+"
-  - "Please pray for Holy Priests and Religious Vocations, and Holy Catholic Marriages and Families."
-  - "Please pray, especially the Holy Rosary, for the conversion of sinners, the perseverance of the just, and the eternal rest of the faithful departed, especially the soul of + Rosa Esparza Macias, TOSF [09-04-1933 + 10-08-2026]."
-
-quote:
-  text: "\"One day through the Rosary and Scapular, I will save the world.\" +"
-  attribution: "Blessed Virgin Mary to Saint Dominic"

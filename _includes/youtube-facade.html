@@ -1,0 +1,11 @@
+{%- comment -%}
+Click-to-play YouTube video: shows the video's thumbnail and a play button, and only
+loads YouTube's player when clicked (assets/js/main.js swaps it in). Without
+JavaScript the link opens the video on YouTube.
+Usage: {% include youtube-facade.html id="VIDEO_ID" title="Video title" start="14" %}
+{%- endcomment -%}
+<a class="yt" href="https://www.youtube.com/watch?v={{ include.id }}{% if include.start %}&amp;t={{ include.start }}s{% endif %}" target="_blank" rel="noopener" data-youtube="{{ include.id }}"{% if include.start %} data-start="{{ include.start }}"{% endif %} data-title="{{ include.title | escape }}">
+  <img src="https://i.ytimg.com/vi/{{ include.id }}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+  <span class="yt__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></span>
+  <span class="visually-hidden">Play video: {{ include.title }}</span>
+</a>

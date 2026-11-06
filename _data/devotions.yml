@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# "Devotions" cards on the home page, in this order. Each card has:
+#   group:   the small label above the title (keep cards of one group together)
+#   title:   the card heading
+#   youtube: a YouTube video id (the part after "v="); the video plays in the card
+#   image:   or, instead of a video, a picture (with image_alt describing it)
+#   text:    optional. Markdown: **bold**, *italics*, [link text](https://address).
+#            Leave a blank line between paragraphs.
+#   wide:    true makes the card fill a whole row on computers, picture on the left
+#            (good for a card with a long text)
+# "intro" is the quotation shown under the section heading.
+# ---------------------------------------------------------------------------
+
+intro:
+  text: "\"There has been no other name given under heaven, except the name of Jesus, by which we can be saved. God has laid no other foundation of our salvation, of our perfection, and of our glory, except Jesus Christ. [...] If, then, we establish the solid devotion to our Blessed Lady, it is only to establish more perfectly the devotion to Jesus Christ, and to put forward an easy and secure means for finding Jesus Christ\""
+  attribution: "Treatise on True Devotion to the Blessed Virgin, De Montfort, 1863, p. 38"
+
+items:
+  - group: "The Holy Rosary"
+    title: "The Importance of the Daily Rosary for Our Times"
+    youtube: eWWGWhkJ8BQ
+    text: |
+      **Why the Battle of Lepanto is important for our times: Our Lady of Victory and the Battle of Lepanto**
+
+      October 7th, Feast of the Most Holy Rosary of the Blessed Ever-Virgin Mary (Our Lady of Victory at Lepanto, 1571)
+
+  - group: "The Holy Rosary"
+    title: "The Secret of the Rosary (Full Audiobook)"
+    youtube: Gv3wN35c1qc
+    text: "By St. Louis Marie de Montfort"
+
+  - group: "Our Lady"
+    title: "Prophecy and Message from Our Lady of La Salette"
+    youtube: 9iIuaEVrnZQ
+
+  - group: "Our Lady"
+    title: "True Devotion to Mary"
+    youtube: dLBic3P1yLg
+    text: "By St. Louis Marie de Montfort"
+
+  - group: "Our Lady"
+    title: "History of the Brown Scapular of Our Lady of Mount Carmel"
+    youtube: cqBwFHaZV0w
+    text: |
+      **"Those who die wearing this scapular shall not suffer eternal fire!"** *(Our Lady to St. Simon Stock)*
+
+      "Wear it devoutly and perseveringly; It is my garment. To be clothed in it means you are continually thinking of me, and I, in turn, am always thinking of you and helping you to secure eternal salvation."
+
+  - group: "The Holy Face"
+    title: "The 8 Promises of Jesus to Devotees of His Most Holy Face"
+    youtube: NpObk_ItTkA
+    text: |
+      **An Aspiration to the Eternal Father to be Frequently Recited during the Day**
+
+      Eternal Father, we offer Thee the Holy Face of Jesus, covered with blood, sweat, dust and spittle in reparation for the crimes of communists, blasphemers, and for the profaners of the Holy Name and of the Holy Day. Amen.
+
+      Source: Scanlan, (2012). *The Golden Arrow*. TAN Books.
+
+  - group: "Modesty and Purity"
+    title: "Protect Purity with Modesty: The Pledge of Modesty"
+    wide: true
+    image: /assets/img/maria-bambina.jpg
+    image_alt: "Statue of Santa Maria Bambina, the infant Mary, resting among white flowers before the altar"
+    text: |
+      **Our Blessed Ever-Virgin Queen Mother, The IMMACULATE CONCEPTION, Santa Maria Bambina, pray for us...**
+
+      "I believe in the virtue of modesty as the guardian of chastity. I pledge myself to live and fight for the ideals of the virtue of purity and the observance of modesty. In particular, I pledge myself to live and fight for more decency in the printed and spoken word, and for a Mary-like modesty in dress and action. I promise also to set an example for my family and my associates, and to let others know where I stand in such matters, in the hope of leading them to greater purity of life. I hope to maintain these ideals by cultivating a strong personal devotion to the Sacred Heart of Jesus and to the Immaculate Heart of Mary."
+
+      Amen +
+
+      Source: [Archdiocese of Milwaukee, Decency and Modesty pastoral (PDF)](https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf)
