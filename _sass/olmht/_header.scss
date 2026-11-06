@@ -13,16 +13,16 @@
 .menu-button:hover { color: #c6c6c6; }
 .logo {
   flex: 1; text-align: center; padding: 0 12px;
-  font-family: var(--font-logo); font-weight: 700; font-size: 19px; line-height: 1.2;
+  font-family: var(--font-logo); font-weight: 600; font-size: 23px; line-height: 1.15;
   color: #fff; text-decoration: none;
 }
-@media (min-width: 768px) { .logo { font-size: 20px; } }
+@media (min-width: 768px) { .logo { font-size: 25px; } }
 @media (min-width: 1024px) {
-  .site-header__row { padding-top: 28px; padding-bottom: 28px; }
+  .site-header__row { padding-top: 26px; padding-bottom: 26px; }
   .menu-button { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); margin: 0; }
-  .logo { font-size: 21px; padding: 0 48px; }
+  .logo { font-size: 27px; padding: 0 48px; }
 }
-@media (min-width: 1920px) { .logo { font-size: 24px; } }
+@media (min-width: 1920px) { .logo { font-size: 30px; } }
 
 /* Row of primary links under the site name (desktop only; the ☰ menu has everything). */
 .primary-nav { display: none; border-top: 1px solid rgba(255, 255, 255, .18); }
