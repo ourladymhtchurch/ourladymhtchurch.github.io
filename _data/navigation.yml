@@ -38,6 +38,12 @@ drawer:
     url: /contact-us/
   - title: "About"
     url: /about/
+  - title: "Bishop Thuc"
+    children:
+      - title: "Declaration /Bishop Thuc"
+        url: /documents/declaration-bishop-thuc/
+      - title: "Bishop Thuc Brief Bio"
+        url: https://www.youtube.com/watch?v=ZLAGCavIYUw
   - title: "Bishop Pivarunas, CMRI"
     url: https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/
   - title: "Cong Mary Imm Queen- CMRI"
@@ -126,12 +132,6 @@ drawer:
         url: /documents/sun-miracle-10-13/
       - title: "Pope Urban VIII /Galileo"
         url: /documents/pope-urban-viii-galileo/
-  - title: "Bishop Thuc"
-    children:
-      - title: "Declaration /Bishop Thuc"
-        url: /documents/declaration-bishop-thuc/
-      - title: "Bishop Thuc Brief Bio"
-        url: https://www.youtube.com/watch?v=ZLAGCavIYUw
   - title: "Resources"
     children:
       - title: "Examination of Conscience"
