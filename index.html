@@ -51,6 +51,9 @@ featured.yml, prayer.yml and devotions.yml.
       </div>
       {% endfor %}
     </div>
+    {% if site.data.schedule.notice %}
+    <div class="schedule-notice rich">{{ site.data.schedule.notice | markdownify | replace: '<a href="http', '<a target="_blank" rel="noopener" href="http' }}</div>
+    {% endif %}
   </div>
 </section>
 

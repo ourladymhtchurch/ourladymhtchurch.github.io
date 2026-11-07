@@ -6,9 +6,19 @@
 # below ("Sunday, November 8, 2026", "8:00 AM") so the Next Holy Latin Mass box at the top
 # of the home page can tell which Mass is next.
 #
+# "notice" is the box shown under the Mass cards (for example, where Father offers the
+# Holy Latin Mass after Corpus Christi). Leave a blank line between paragraphs and write
+# links as <https://address>, <name@address> or [words](https://address). Delete the
+# notice (or leave it empty) to hide the box.
+#
 # Sermons are in _data/featured.yml; prayer intentions and quotes are in
 # _data/prayer.yml.
 # ---------------------------------------------------------------------------
+
+notice: |
+  On Sundays, after the Holy Latin Mass in Corpus Christi, Father travels to the new mission Our Lady of Mount Carmel Chapel (Nuestra Señora del Monte Carmelo Chapel) in San Antonio at the Candlewood Suites Airport to offer the Holy Latin Mass at 1 PM Sunday with Confessions at 12:30 PM.
+
+  To confirm future dates and times, visit: [www.facebook.com/NSDMCC](https://www.facebook.com/NSDMCC) or email: <NSDMCC@proton.me>
 
 masses:
   - date: "Saturday, November 7, 2026"

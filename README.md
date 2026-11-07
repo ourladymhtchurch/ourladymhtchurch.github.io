@@ -51,6 +51,8 @@ resources exactly as written.
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
   do (`"Sunday, November 8, 2026"`, `"8:00 AM"`) so the box can tell which Mass is next.
+  The box under the Mass cards (the San Antonio mission notice) is `notice:` at the top of
+  the same file. Delete it, or leave it empty, to hide the box.
 - **Home page sections**, top to bottom: the Next Holy Latin Mass card, Chapel News, the
   Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
   and The Papacy and Catholic Unity (the Oath of Fidelity PDF).
