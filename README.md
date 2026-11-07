@@ -135,5 +135,6 @@ new document pages, so existing links keep working.
 
 - The contact form shows a confirmation message but does not send email. To send email, add a
   form service address to the form in `contact-us.html` (see the comment there).
-- The "Donate here" button is a placeholder, as on the current site.
+- The Donate button on the donation page is the chapel's PayPal donate button. Its PayPal
+  button id (`hosted_button_id`) is in `donation.html`.
 - Search engines get a sitemap and page descriptions automatically (jekyll-seo-tag, jekyll-sitemap).

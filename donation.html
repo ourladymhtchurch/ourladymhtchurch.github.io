@@ -11,12 +11,12 @@ description: "Support Our Lady of the Most Holy Trinity Chapel."
       <div>
         <h1 class="content-heading">{{ site.chapel.legal_name }}</h1>
         <h2 class="heading-middle heading-middle--display">Donation</h2>
-        <div class="price">$0.00</div>
-        <a class="button" href="#donation-note"><img src="{{ '/assets/img/paypal-icon.png' | relative_url }}" alt=""> Donate here</a>
-        <img class="cc-badges" src="{{ '/assets/img/cc-badges.png' | relative_url }}" alt="Pay with PayPal or a debit/credit card">
-        <div class="rich text text--sm" id="donation-note">
-<p><strong>ONLINE DONATIONS ARE NOT YET AVAILABLE. You may mail to the Church address or put in the Sunday collection at Church.</strong></p>
-        </div>
+        {% comment %} PayPal donate button (hosted button from the chapel's PayPal account). {% endcomment %}
+        <form class="paypal-donate" action="https://www.paypal.com/donate" method="post" target="_top">
+          <input type="hidden" name="hosted_button_id" value="AYABM7BV2XAJ8">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
+          <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
       </div>
     </div>
   </div>
