@@ -66,7 +66,8 @@ resources exactly as written.
   the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the
   card `file:` and `poster:` instead of `youtube:`. GitHub refuses any file over 100 MB, so
   compress videos first (the November 8, 2026 sermon is about 90 MB for 11 minutes), and
-  remember the whole site should stay under about 1 GB. `type: audio` is an MP3 sermon with a
+  remember the whole site should stay under about 1 GB. Add `audio:` (an MP3 in
+  `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: audio` is an MP3 sermon with a
   Listen button. `type: link` opens another page, with an optional picture and button text.
   Video and link cards show two to a row (`wide: true` makes one fill a row, picture on the
   left); sermon cards show three to a row below them.

@@ -9,7 +9,9 @@
 #                 start (in seconds); or a video file kept on this site: file
 #                 (an .mp4 in assets/video/) and poster (a picture shown before
 #                 it plays). GitHub refuses files over 100 MB, so keep each
-#                 video file well under that.
+#                 video file well under that. Add audio (an .mp3, in
+#                 assets/audio/ or a web address) for a "Listen (MP3)" button
+#                 under the video.
 #   type: audio   an MP3 sermon. Needs url.
 #
 # wide: true makes a large card fill the whole row, picture on the left (useful
@@ -25,6 +27,7 @@ items:
     text: "Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
     file: /assets/video/sermon-2026-11-08-sentman.mp4
     poster: /assets/img/sermon-2026-11-08-sentman.jpg
+    audio: /assets/audio/sermon-2026-11-08-sentman.mp3
 
   - type: video
     label: "Sermon"
