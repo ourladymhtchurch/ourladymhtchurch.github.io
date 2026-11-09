@@ -62,9 +62,14 @@ resources exactly as written.
   `text:` block (links are written as `[words](https://address)`).
 - **Featured Content** (sermons, the Fatima Conference recordings): edit `_data/featured.yml`.
   A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
-  `v=` in the address; `start: 14` begins 14 seconds in). `type: audio` is an MP3 sermon with a
+  `v=` in the address; `start: 14` begins 14 seconds in). A video can also be a file kept on
+  the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the
+  card `file:` and `poster:` instead of `youtube:`. GitHub refuses any file over 100 MB, so
+  compress videos first (the November 8, 2026 sermon is about 90 MB for 11 minutes), and
+  remember the whole site should stay under about 1 GB. `type: audio` is an MP3 sermon with a
   Listen button. `type: link` opens another page, with an optional picture and button text.
-  Video and link cards show two to a row; sermon cards show three to a row below them.
+  Video and link cards show two to a row (`wide: true` makes one fill a row, picture on the
+  left); sermon cards show three to a row below them.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.

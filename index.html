@@ -65,8 +65,12 @@ featured.yml, prayer.yml and devotions.yml.
     {% if featured_large.size > 0 %}
     <div class="tiles tiles--two">
       {% for item in featured_large %}
-      <article class="tile">
-        {% if item.type == "video" %}{% include youtube-facade.html id=item.youtube start=item.start title=item.title %}
+      <article class="tile{% if item.wide %} tile--wide{% endif %}">
+        {% if item.type == "video" and item.file %}<video class="tile__video" controls preload="none" playsinline{% if item.poster %} poster="{{ item.poster | relative_url }}"{% endif %} aria-label="{{ item.title | escape }}">
+          <source src="{{ item.file | relative_url }}" type="video/mp4">
+          <a href="{{ item.file | relative_url }}">Download the video</a>
+        </video>
+        {% elsif item.type == "video" %}{% include youtube-facade.html id=item.youtube start=item.start title=item.title %}
         {% elsif item.image %}<div class="tile__media"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | escape }}" loading="lazy"></div>{% endif %}
         <div class="tile__body">
           {% if item.label %}<p class="tile__label">{{ item.label }}</p>{% endif %}

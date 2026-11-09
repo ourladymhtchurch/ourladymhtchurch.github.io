@@ -4,22 +4,27 @@
 # first, two to a row; sermons with type: audio follow, three to a row.
 #
 #   type: link    opens a web page. Needs url. image and button are optional.
-#   type: video   a YouTube video that plays inside the card. Needs youtube (the
-#                 id after "v=" in the address); start (in seconds) is optional.
+#   type: video   a video that plays inside the card. Either a YouTube video:
+#                 youtube (the id after "v=" in the address), with an optional
+#                 start (in seconds); or a video file kept on this site: file
+#                 (an .mp4 in assets/video/) and poster (a picture shown before
+#                 it plays). GitHub refuses files over 100 MB, so keep each
+#                 video file well under that.
 #   type: audio   an MP3 sermon. Needs url.
+#
+# wide: true makes a large card fill the whole row, picture on the left (useful
+# when there is an odd number of large cards).
 #
 # On the site, always write "Holy Latin Mass", not "Mass" (see README.md).
 # ---------------------------------------------------------------------------
 
 items:
-  - type: link
-    label: "CMRI Fatima Conference"
-    title: "2026 Fatima Conference Recordings"
-    text: "Watch the ten lectures, the keynote address, the Day of Recollection and the Pontifical Holy Latin Mass from the CMRI's 2026 Fatima Conference."
-    url: https://cmri.org/about-cmri/fatima-apostolate/annual-fatima-conference/2026-fatima-conference-lectures-and-pontifical-high-mass/
-    image: /assets/img/fatima.jpg
-    image_alt: "The chapel's mural of Our Lady holding the Rosary and the Brown Scapular, crowned by the Most Holy Trinity"
-    button: "Watch the recordings"
+  - type: video
+    label: "Sermon"
+    title: "Sermon for the 24th Sunday after Pentecost: Fr. Martin Sentman, CMRI"
+    text: "Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    file: /assets/video/sermon-2026-11-08-sentman.mp4
+    poster: /assets/img/sermon-2026-11-08-sentman.jpg
 
   - type: video
     label: "Sermon"
@@ -27,6 +32,16 @@ items:
     text: "Recorded by the Catholic Family Podcast."
     youtube: d7nFr9nXhSI
     start: 14
+
+  - type: link
+    wide: true
+    label: "CMRI Fatima Conference"
+    title: "2026 Fatima Conference Recordings"
+    text: "Watch the ten lectures, the keynote address, the Day of Recollection and the Pontifical Holy Latin Mass from the CMRI's 2026 Fatima Conference."
+    url: https://cmri.org/about-cmri/fatima-apostolate/annual-fatima-conference/2026-fatima-conference-lectures-and-pontifical-high-mass/
+    image: /assets/img/fatima.jpg
+    image_alt: "The chapel's mural of Our Lady holding the Rosary and the Brown Scapular, crowned by the Most Holy Trinity"
+    button: "Watch the recordings"
 
   - type: audio
     label: "Sermon"

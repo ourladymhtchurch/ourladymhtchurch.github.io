@@ -16,6 +16,9 @@
 .yt:hover .yt__play { background: var(--brown-hover); transform: scale(1.06); }
 .yt:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
 
+/* Video file kept on the site (featured.yml "file"); loads only when played */
+.tile__video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+
 /* Cards: Featured Content and Devotions on the home page */
 .tiles { display: grid; gap: 24px; }
 .tiles + .tiles { margin-top: 24px; }
@@ -40,7 +43,8 @@
 .tile--audio { border-top: 4px solid var(--brown); }
 @media (min-width: 768px) {   /* wide card: whole row, picture left, text right */
   .tile--wide { grid-column: 1 / -1; flex-direction: row; }
-  .tile--wide .tile__media { flex: 0 0 36%; aspect-ratio: auto; }
+  .tile--wide .tile__media { flex: 0 0 36%; aspect-ratio: auto; position: relative; min-height: 280px; }
+  .tile--wide .tile__media img { position: absolute; inset: 0; }   /* the text sets the height; the picture is cropped to it */
   .tile--wide .tile__body { padding: 28px 32px; }
 }
 
