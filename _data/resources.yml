@@ -2,13 +2,11 @@
 # Links shown on the Resources page, in groups. Links beginning with http
 # open in a new tab; site pages are written as /documents/<name>/ etc.
 # ---------------------------------------------------------------------------
-- title: Clergy and Congregations
-  description: The bishops and priestly societies that serve the Chapel.
+- title: Clergy and Congregation
+  description: The bishop and congregation that serve the Chapel.
   links:
     - { title: "Bishop Mark A. Pivarunas, CMRI", url: "https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/" }
     - { title: "Congregation of Mary Immaculate Queen (CMRI)", url: "https://cmri.org" }
-    - { title: "Bishop Martin Davila Gandara, SST", url: "https://obispoenmisiones.com/biografia/" }
-    - { title: "Society of Trent (SST)", url: "https://obispoenmisiones.com/sociedad-sacerdotal-trento/" }
 
 - title: Catholic Papacy and Unity
   description: Talks and writings on the papacy and the unity of the Church.
