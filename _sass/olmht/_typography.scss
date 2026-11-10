@@ -28,8 +28,8 @@
 .rich { line-height: 1.8; overflow-wrap: anywhere; }
 .rich p { margin: 0; }
 .rich ul, .rich ol { margin: 0; padding-left: 1.3em; }
-.rich a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--brown); padding-bottom: 2px; overflow-wrap: anywhere; }
-.rich a:hover { color: var(--brown); }
+.rich a { color: var(--link); font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; overflow-wrap: anywhere; }
+.rich a:hover { color: var(--link-hover); }
 .rich h1, .rich h2, .rich h3, .rich h4 { font-family: var(--font-body); color: inherit; line-height: 1.4; }
 .rich h1 { font-size: 24px; font-weight: 700; text-align: center; margin: 8px 0; }
 .rich h2 { font-size: 22px; margin: 16px 0 8px; }

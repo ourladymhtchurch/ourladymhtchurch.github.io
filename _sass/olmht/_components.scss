@@ -95,7 +95,7 @@
 }
 .field input:focus, .field textarea:focus { border-bottom-color: var(--brown); }
 .form-note { font-size: 12px; color: var(--gray-2); text-align: center; margin-top: 16px; line-height: 1.6; }
-.form-note a { color: var(--brown); }
+.form-note a { color: var(--link); font-weight: 700; }
 .form-success { margin-top: 24px; padding: 16px 20px; border-left: 4px solid var(--brown); background: var(--panel); color: var(--ink); font-size: 16px; }
 
 /* PayPal donate button (donation page) */

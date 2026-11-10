@@ -15,7 +15,8 @@
 .section--brown .eyebrow a,
 .section--brown .text,
 .section--brown .text--ink { color: #fff; }
-.section--brown .rich a { border-bottom-color: var(--peach); }
+.section--brown .rich a { color: inherit; border-bottom-color: var(--peach); }
+.section--brown .rich a:hover { color: var(--peach); }
 .section--brown .pdf-viewer__download:hover { color: var(--peach); }
 
 .grid { display: grid; gap: 32px 48px; align-items: start; }
