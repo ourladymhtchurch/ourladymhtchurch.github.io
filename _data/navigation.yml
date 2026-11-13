@@ -12,6 +12,8 @@ primary:
     url: /
   - title: "About"
     url: /about/
+  - title: "Dress Code"
+    url: /dress-code/
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -20,8 +22,6 @@ primary:
     url: /documents/
   - title: "Resources"
     url: /resources/
-  - title: "Dress Code"
-    url: /dress-code/
   - title: "Contact"
     url: /contact-us/
   - title: "Donate"
@@ -32,6 +32,8 @@ drawer:
     url: /
   - title: "About"
     url: /about/
+  - title: "Dress Code"
+    url: /dress-code/
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -74,8 +76,6 @@ drawer:
     url: https://thecatholicwire.org/the-crisis-in-the-catholic-church/do-we-have-a-bad-pope-or-no-pope-understanding-the-papacy-and-the-passion-of-the-church/
   - title: "THE CATHOLIC WIRE"
     url: https://thecatholicwire.org
-  - title: "Dress Code"
-    url: /dress-code/
   - title: "MODESTY IN DRESS"
     url: https://www.salvemariaregina.info/Modesty.html
   - title: "PROPHECY OF APOSTASY"
