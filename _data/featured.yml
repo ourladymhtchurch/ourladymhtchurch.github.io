@@ -38,7 +38,13 @@ items:
     start: 14
 
   - type: video
-    wide: true
+    label: "The Liturgical Year"
+    title: "St. Didacus (November 13)"
+    by: "From Dom Guéranger's The Liturgical Year"
+    text: "Video by the InPrincipio Podcast."
+    youtube: kueg3-Y9mjA
+
+  - type: video
     label: "The Liturgical Year"
     title: "St. Martin of Tours (November 11)"
     by: "From Dom Guéranger's The Liturgical Year"
