@@ -102,7 +102,7 @@ featured.yml, prayer.yml and devotions.yml.
           <h3 class="tile__title">{{ item.title }}</h3>
           {% if item.by %}<p class="tile__by">{{ item.by }}</p>{% endif %}
           {% if item.text %}<p class="tile__text">{{ item.text }}</p>{% endif %}
-          <p class="tile__actions"><a class="btn btn--outline" href="{{ item.url }}" target="_blank" rel="noopener">Listen (MP3)</a></p>
+          <p class="tile__actions"><a class="btn btn--outline" href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
         </div>
       </article>
       {% endfor %}

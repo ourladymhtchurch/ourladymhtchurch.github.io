@@ -68,7 +68,7 @@ resources exactly as written.
   compress videos first (the November 8, 2026 sermon is about 90 MB for 11 minutes), and
   remember the whole site should stay under about 1 GB. Add `audio:` (an MP3 in
   `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: audio` is an MP3 sermon with a
-  Listen button. `type: link` opens another page, with an optional picture and button text.
+  Listen button; its `url:` is a web address or an MP3 in `assets/audio/`. `type: link` opens another page, with an optional picture and button text.
   Video and link cards show two to a row (`wide: true` makes one fill a row, picture on the
   left); sermon cards show three to a row below them.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.

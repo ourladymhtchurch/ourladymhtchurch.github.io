@@ -12,7 +12,8 @@
 #                 video file well under that. Add audio (an .mp3, in
 #                 assets/audio/ or a web address) for a "Listen (MP3)" button
 #                 under the video.
-#   type: audio   an MP3 sermon. Needs url.
+#   type: audio   an MP3 sermon. Needs url: an .mp3 in assets/audio/ or a web
+#                 address.
 #
 # wide: true makes a large card fill the whole row, picture on the left (useful
 # when there is an odd number of large cards).
@@ -45,6 +46,13 @@ items:
     image: /assets/img/fatima.jpg
     image_alt: "The chapel's mural of Our Lady holding the Rosary and the Brown Scapular, crowned by the Most Holy Trinity"
     button: "Watch the recordings"
+
+  - type: audio
+    label: "Sermon"
+    title: "Feast of Christ the King"
+    by: "Father Brendan Hughes, CMRI"
+    text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    url: /assets/audio/sermon-2026-10-25-hughes.mp3
 
   - type: audio
     label: "Sermon"
