@@ -56,6 +56,13 @@ items:
 
   - type: audio
     label: "Sermon"
+    title: "Feast of All Saints"
+    by: "Father Adam Craig, CMRI"
+    text: "Sunday, November 1, 2026."
+    url: /assets/audio/sermon-2026-11-01-craig.mp3
+
+  - type: audio
+    label: "Sermon"
     title: "On Blasphemy"
     by: "St. Alphonsus Maria de Liguori"
     text: "Sermon for the 24th Sunday after Pentecost"
