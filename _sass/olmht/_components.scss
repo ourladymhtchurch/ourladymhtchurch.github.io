@@ -46,6 +46,9 @@
   .tile--wide .tile__media { flex: 0 0 36%; aspect-ratio: auto; position: relative; min-height: 280px; }
   .tile--wide .tile__media img { position: absolute; inset: 0; }   /* the text sets the height; the picture is cropped to it */
   .tile--wide .tile__body { padding: 28px 32px; }
+  /* a video (YouTube thumbnail, its player once clicked, or an MP4) takes half the row */
+  .tile--wide > .yt, .tile--wide > .video, .tile--wide > .tile__video { flex: 0 0 50%; align-self: center; }
+  .tile--wide > .video { padding-top: 0; aspect-ratio: 16 / 9; }
 }
 
 /* Small pill buttons (cards, "New to the Chapel?") */

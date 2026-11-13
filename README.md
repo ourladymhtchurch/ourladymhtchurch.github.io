@@ -69,8 +69,8 @@ resources exactly as written.
   remember the whole site should stay under about 1 GB. Add `audio:` (an MP3 in
   `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: audio` is an MP3 sermon with a
   Listen button; its `url:` is a web address or an MP3 in `assets/audio/`. `type: link` opens another page, with an optional picture and button text.
-  Video and link cards show two to a row (`wide: true` makes one fill a row, picture on the
-  left); sermon cards show three to a row below them.
+  Video and link cards show two to a row (`wide: true` makes one fill a row, picture or
+  video on the left); sermon cards show three to a row below them.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.

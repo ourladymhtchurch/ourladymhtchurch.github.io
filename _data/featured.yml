@@ -15,8 +15,8 @@
 #   type: audio   an MP3 sermon. Needs url: an .mp3 in assets/audio/ or a web
 #                 address.
 #
-# wide: true makes a large card fill the whole row, picture on the left (useful
-# when there is an odd number of large cards).
+# wide: true makes a large card fill the whole row, picture or video on the left
+# (useful when there is an odd number of large cards).
 #
 # On the site, always write "Holy Latin Mass", not "Mass" (see README.md).
 # ---------------------------------------------------------------------------
@@ -36,6 +36,14 @@ items:
     text: "Recorded by the Catholic Family Podcast."
     youtube: d7nFr9nXhSI
     start: 14
+
+  - type: video
+    wide: true
+    label: "The Liturgical Year"
+    title: "St. Martin of Tours (November 11)"
+    by: "From Dom Guéranger's The Liturgical Year"
+    text: "Video by the InPrincipio Podcast."
+    youtube: iRBPgi6-qRA
 
   - type: link
     wide: true
