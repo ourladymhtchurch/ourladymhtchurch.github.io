@@ -10,6 +10,8 @@
 primary:
   - title: "Home"
     url: /
+  - title: "About"
+    url: /about/
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -20,8 +22,6 @@ primary:
     url: /resources/
   - title: "Dress Code"
     url: /dress-code/
-  - title: "About"
-    url: /about/
   - title: "Contact"
     url: /contact-us/
   - title: "Donate"
@@ -30,6 +30,8 @@ primary:
 drawer:
   - title: "Home"
     url: /
+  - title: "About"
+    url: /about/
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -40,8 +42,6 @@ drawer:
     url: /resources/
   - title: "Contact Us"
     url: /contact-us/
-  - title: "About"
-    url: /about/
   - title: "Bishop Thuc"
     children:
       - title: "Declaration /Bishop Thuc"
