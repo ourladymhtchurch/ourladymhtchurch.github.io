@@ -12,6 +12,8 @@ primary:
     url: /
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
+  - title: "Chapel News"
+    url: /#chapel-news
   - title: "Documents"
     url: /documents/
   - title: "Resources"
@@ -30,6 +32,8 @@ drawer:
     url: /
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
+  - title: "Chapel News"
+    url: /#chapel-news
   - title: "Documents"
     url: /documents/
   - title: "Resources"

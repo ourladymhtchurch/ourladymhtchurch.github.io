@@ -34,6 +34,9 @@
   border-bottom: 2px solid transparent;
 }
 .primary-nav__list a:hover, .primary-nav__list a.is-active { border-bottom-color: var(--peach); }
-/* Tighter spacing while the container is 984px wide keeps the links on one row
-   ("Holy Latin Mass Schedule" is long). */
-@media (min-width: 1024px) and (max-width: 1279px) { .primary-nav__list a { padding-left: 10px; padding-right: 10px; } }
+/* Tighter spacing below 1920px keeps all nine links on one row ("Holy Latin Mass
+   Schedule" is long); the 984px container also gets slightly smaller text. */
+@media (min-width: 1280px) and (max-width: 1919px) { .primary-nav__list a { padding-left: 12px; padding-right: 12px; } }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .primary-nav__list a { padding-left: 7px; padding-right: 7px; font-size: 12px; letter-spacing: .08em; }
+}

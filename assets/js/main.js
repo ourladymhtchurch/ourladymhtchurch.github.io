@@ -32,6 +32,17 @@
       if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
     });
 
+    /* A link to a section of this page (Holy Latin Mass Schedule, Chapel News)
+       only scrolls, so close the drawer to show it. Focus stays put (closeDrawer
+       would move it to the menu button and scroll back to the top). */
+    drawer.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href]');
+      if (!link || link.target === '_blank' || !body.classList.contains('drawer-open')) return;
+      body.classList.remove('drawer-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      openBtn.setAttribute('aria-expanded', 'false');
+    });
+
     /* Expandable groups (Catholic Creeds, Resources, ...) */
     Array.prototype.forEach.call(drawer.querySelectorAll('.drawer__group-toggle'), function (btn) {
       btn.addEventListener('click', function () {
