@@ -59,7 +59,7 @@ resources exactly as written.
   applies; both boxes disappear.
 - **Home page sections**, top to bottom: the Next Holy Latin Mass card, Chapel News, the
   Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
-  and The Papacy and Catholic Unity (the Oath of Fidelity PDF).
+  The Papacy and Catholic Unity (the Oath of Fidelity PDF), and a Donate band with the PayPal button.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
   The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
   when you post news. Short extra notices go in the same file under `items:`, each as a
@@ -146,5 +146,7 @@ new document pages, so existing links keep working.
 - The contact form shows a confirmation message but does not send email. To send email, add a
   form service address to the form in `contact-us.html` (see the comment there).
 - The Donate button on the donation page is the chapel's PayPal donate button. Its PayPal
-  button id (`hosted_button_id`) is in `donation.html`.
+  button id (`hosted_button_id`) is in `donation.html`. The home, About and Contact Us pages
+  end with a "Donate" band holding a second PayPal button, whose id is in
+  `_includes/donate-band.html`.
 - Search engines get a sitemap and page descriptions automatically (jekyll-seo-tag, jekyll-sitemap).

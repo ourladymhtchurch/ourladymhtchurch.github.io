@@ -6,7 +6,7 @@ permalink: "/"
 {% comment %}
 Home page sections, top to bottom:
   hero (Next Holy Latin Mass card) · Chapel News · Holy Latin Mass Schedule · Featured Content ·
-  New to the Chapel? · Prayer Intentions · Devotions · The Papacy and Catholic Unity
+  New to the Chapel? · Prayer Intentions · Devotions · The Papacy and Catholic Unity · Donate
 Most of the content comes from _data/: notices.yml (Chapel News), schedule.yml,
 featured.yml, prayer.yml and devotions.yml.
 {% endcomment %}
@@ -178,3 +178,5 @@ featured.yml, prayer.yml and devotions.yml.
     {% include pdf-viewer.html file="/assets/pdf/oath-of-fidelity-bergoglio.pdf" title="The Oath of Fidelity to the Magisterium of Bergoglio?" thumb="/assets/img/pdf-oath-of-fidelity-bergoglio.png" %}
   </div>
 </section>
+
+{% include donate-band.html %}
