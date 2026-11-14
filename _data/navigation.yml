@@ -14,6 +14,8 @@ primary:
     url: /about/
   - title: "Dress Code"
     url: /dress-code/
+  - title: "Modesty in Dress"
+    url: https://www.salvemariaregina.info/Modesty.html
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -34,6 +36,8 @@ drawer:
     url: /about/
   - title: "Dress Code"
     url: /dress-code/
+  - title: "Modesty in Dress"
+    url: https://www.salvemariaregina.info/Modesty.html
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -74,8 +78,6 @@ drawer:
         url: http://www.unamsanctam.org
   - title: "THE TRUE PAPACY"
     url: https://thecatholicwire.org/the-crisis-in-the-catholic-church/do-we-have-a-bad-pope-or-no-pope-understanding-the-papacy-and-the-passion-of-the-church/
-  - title: "MODESTY IN DRESS"
-    url: https://www.salvemariaregina.info/Modesty.html
   - title: "PROPHECY OF APOSTASY"
     url: http://www.marienfried.com/catholic%20teachings/prophecy%20of%20apostasy.html
   - title: "FALSE ECUMENISM IN ACTION"

@@ -34,9 +34,14 @@
   border-bottom: 2px solid transparent;
 }
 .primary-nav__list a:hover, .primary-nav__list a.is-active { border-bottom-color: var(--peach); }
-/* Tighter spacing below 1920px keeps all nine links on one row ("Holy Latin Mass
-   Schedule" is long); the 984px container also gets slightly smaller text. */
-@media (min-width: 1280px) and (max-width: 1919px) { .primary-nav__list a { padding-left: 12px; padding-right: 12px; } }
+/* Keeping all ten links on one row ("Holy Latin Mass Schedule" and "Modesty in Dress" are
+   long): the row spans the whole window instead of the page container, spacing is tighter
+   below 1920px, and the text gets slightly smaller on narrower screens. */
+@media (min-width: 1024px) { .primary-nav .container { width: 100%; } }
+@media (min-width: 1280px) and (max-width: 1919px) { .primary-nav__list a { padding-left: 9px; padding-right: 9px; } }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .primary-nav__list a { padding-left: 7px; padding-right: 7px; font-size: 12px; letter-spacing: .08em; }
+}
+@media (min-width: 1024px) and (max-width: 1151px) {
+  .primary-nav__list a { padding-left: 6px; padding-right: 6px; font-size: 11px; letter-spacing: .06em; }
 }

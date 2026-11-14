@@ -15,7 +15,11 @@
           {%- if page.url == "/" %}{% assign active = true %}{% endif -%}
         {%- elsif item.url contains "#" -%}
         {%- elsif page.url contains item.url %}{% assign active = true %}{% endif -%}
+        {%- if item.url contains "://" %}
+        <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></li>
+        {%- else %}
         <li><a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endif %}
         {% endfor %}
       </ul>
     </div>
