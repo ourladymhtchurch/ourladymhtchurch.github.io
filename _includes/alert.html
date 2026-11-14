@@ -1,0 +1,13 @@
+{%- comment -%}
+Urgent red box (for example, a cancellation) from "alert" in _data/schedule.yml.
+The home page shows it twice: at the top of the hero, above the Next Holy Latin Mass card
+(include it with modifier="hero"), and under the Holy Latin Mass Schedule heading.
+Nothing is shown when "alert" is missing or empty.
+{%- endcomment -%}
+{%- assign alert_text = site.data.schedule.alert | strip -%}
+{%- if alert_text != "" -%}
+<div class="alert{% if include.modifier %} alert--{{ include.modifier }}{% endif %}">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.25 5h2.5v7h-2.5V7zm0 9h2.5v2.5h-2.5V16z"/></svg>
+  <div class="rich">{{ alert_text | markdownify | replace: '<a href="http', '<a target="_blank" rel="noopener" href="http' }}</div>
+</div>
+{%- endif -%}

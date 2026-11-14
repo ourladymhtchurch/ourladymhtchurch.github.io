@@ -11,9 +11,10 @@
 # links as <https://address>, <name@address> or [words](https://address). Delete the
 # notice (or leave it empty) to hide the box.
 #
-# "alert" is an urgent red box shown right under the "Traditional Holy Latin Mass
-# Schedule" heading, above the Mass cards (for example, a cancellation). Delete it
-# (or leave it empty) to hide the box.
+# "alert" is an urgent red box (for example, a cancellation). It is shown twice on the
+# home page: at the very top, above the Next Holy Latin Mass card, and right under the
+# "Traditional Holy Latin Mass Schedule" heading. Delete it (or leave it empty) to hide
+# both boxes.
 #
 # Sermons are in _data/featured.yml; prayer intentions and quotes are in
 # _data/prayer.yml.

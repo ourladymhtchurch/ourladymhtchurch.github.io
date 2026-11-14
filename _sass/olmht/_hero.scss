@@ -3,6 +3,12 @@
    the name and card on the right, so all of it is visible without scrolling. */
 .hero { background: var(--brown); color: #fff; text-align: center; }
 .hero .container { padding-top: 16px; padding-bottom: 80px; }
+.hero .alert--hero {   /* "alert" from _data/schedule.yml, above everything else in the hero
+                          (.hero raises it over .alert, which loads later in _home.scss) */
+  margin-bottom: 20px; padding: 18px 20px;
+  border-width: 3px; box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  font-size: 21px;
+}
 .hero__grid { display: grid; grid-template-areas: "next" "image" "text"; }
 .next-mass  { grid-area: next; margin-bottom: 20px; }
 .hero-image { grid-area: image; width: 100%; }
@@ -23,6 +29,8 @@
     grid-template-areas: "image ." "image text" "image next" "image .";
     column-gap: 48px;
   }
+  .hero .alert--hero { margin-bottom: 32px; padding: 22px 28px; font-size: 24px; }
+  .hero .alert--hero svg { width: 32px; height: 32px; margin-top: 2px; }
   .hero-text { padding-top: 0; }
   .next-mass { margin: 28px 0 0; }
   .next-mass .next-mass__call { display: none; }   /* the phone number is shown just above */

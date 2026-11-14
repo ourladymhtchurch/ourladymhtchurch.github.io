@@ -4,15 +4,17 @@
 .news-list { list-style: none; margin: 40px 0 0; padding: 0; }
 .news-list li { font-size: 18px; color: var(--slate); padding: 16px 0; border-top: 1px solid var(--rule); }
 
-/* Urgent box under the schedule heading ("alert" in _data/schedule.yml), e.g. a cancellation */
-.schedule-alert {
+/* Urgent red box ("alert" in _data/schedule.yml, _includes/alert.html), e.g. a cancellation.
+   Shown under the schedule heading; the larger hero version is .alert--hero in _hero.scss. */
+.alert {
   display: flex; align-items: flex-start; gap: 14px;
-  margin: 0 0 32px; padding: 18px 22px;
+  margin: 0 0 32px; padding: 18px 22px; text-align: left;
   background: var(--alert-bg); border: 2px solid var(--alert); border-radius: 10px;
-  font-size: 20px; font-weight: 700; line-height: 1.45; color: var(--alert);
+  font-size: 20px; font-weight: 700; color: var(--alert);
 }
-.schedule-alert svg { flex: none; width: 28px; height: 28px; margin-top: 1px; }
-.schedule-alert p + p { margin-top: 10px; }
+.alert .rich { line-height: 1.45; }
+.alert svg { flex: none; width: 28px; height: 28px; margin-top: 1px; }
+.alert p + p { margin-top: 10px; }
 
 .schedule-celebrant { font-size: 20px; font-weight: 700; color: var(--slate); margin-bottom: 16px; }
 .schedule { display: grid; gap: 24px; }

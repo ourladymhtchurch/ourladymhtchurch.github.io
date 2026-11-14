@@ -1,5 +1,7 @@
 <section class="hero">
-  <div class="container hero__grid">
+  <div class="container">
+  {% include alert.html modifier="hero" %}
+  <div class="hero__grid">
     {% include next-mass.html %}
     <img class="hero-image" src="{{ '/assets/img/hero.jpg' | relative_url }}" alt="The sanctuary of Our Lady of the Most Holy Trinity Chapel: the Sacred Heart statue surrounded by red and white roses before the high altar">
     <div class="hero-text">
@@ -10,5 +12,6 @@
         <p>phone: <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }}</p>
       </div>
     </div>
+  </div>
   </div>
 </section>
