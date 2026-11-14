@@ -11,9 +11,16 @@
 # links as <https://address>, <name@address> or [words](https://address). Delete the
 # notice (or leave it empty) to hide the box.
 #
+# "alert" is an urgent red box shown right under the "Traditional Holy Latin Mass
+# Schedule" heading, above the Mass cards (for example, a cancellation). Delete it
+# (or leave it empty) to hide the box.
+#
 # Sermons are in _data/featured.yml; prayer intentions and quotes are in
 # _data/prayer.yml.
 # ---------------------------------------------------------------------------
+
+alert: |
+  Holy Latin Mass cancelled for Saturday 8 AM, November 14, due to flight difficulties.
 
 notice: |
   On Sundays, after the Holy Latin Mass in Corpus Christi, Father travels to the new mission Our Lady of Mount Carmel Chapel (Nuestra Señora del Monte Carmelo Chapel) in San Antonio at the Candlewood Suites Airport to offer the Holy Latin Mass at 1 PM with Confessions at 12:30 PM. To confirm future dates and times, visit: [www.facebook.com/NSDMCC](https://www.facebook.com/NSDMCC) or email: <NSDMCC@proton.me>

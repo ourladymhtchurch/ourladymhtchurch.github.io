@@ -49,6 +49,12 @@ featured.yml, prayer.yml and devotions.yml.
 <section class="section section--panel" id="mass-schedule">
   <div class="container">
     <h2 class="section-title">Traditional Holy Latin Mass Schedule</h2>
+    {% if site.data.schedule.alert %}
+    <div class="schedule-alert">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.25 5h2.5v7h-2.5V7zm0 9h2.5v2.5h-2.5V16z"/></svg>
+      <div class="rich">{{ site.data.schedule.alert | markdownify | replace: '<a href="http', '<a target="_blank" rel="noopener" href="http' }}</div>
+    </div>
+    {% endif %}
     {% if site.data.schedule.celebrant %}<p class="schedule-celebrant">{{ site.data.schedule.celebrant }}</p>{% endif %}
     <div class="schedule">
       {% for mass in site.data.schedule.masses %}

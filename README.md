@@ -53,6 +53,9 @@ resources exactly as written.
   do (`"Sunday, November 8, 2026"`, `"8:00 AM"`) so the box can tell which Mass is next.
   The box under the Mass cards (the San Antonio mission notice) is `notice:` at the top of
   the same file. Delete it, or leave it empty, to hide the box.
+  For urgent news such as a cancellation, `alert:` (also at the top of the file) shows a red
+  box right under the schedule heading, above the Mass cards. Delete it, or leave it empty,
+  once it no longer applies.
 - **Home page sections**, top to bottom: the Next Holy Latin Mass card, Chapel News, the
   Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
   and The Papacy and Catholic Unity (the Oath of Fidelity PDF).
