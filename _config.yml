@@ -16,6 +16,9 @@ chapel:
   phone: 361-857-6279
   phone_note: (MARY)
   phone_link: "tel:3618576279"
+  # The chapel's PayPal donate button (its hosted_button_id), used on the Donation page and
+  # in the Donate band at the bottom of the home, About and Contact Us pages.
+  paypal_button_id: "38SGHLWVDXMRE"
 
 # Where the site lives. For a GitHub Pages *project* site, set url to
 # "https://<username>.github.io" and baseurl to "/<repository-name>".

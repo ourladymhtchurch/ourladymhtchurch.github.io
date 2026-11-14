@@ -145,8 +145,8 @@ new document pages, so existing links keep working.
 
 - The contact form shows a confirmation message but does not send email. To send email, add a
   form service address to the form in `contact-us.html` (see the comment there).
-- The Donate button on the donation page is the chapel's PayPal donate button. Its PayPal
-  button id (`hosted_button_id`) is in `donation.html`. The home, About and Contact Us pages
-  end with a "Donate" band holding a second PayPal button, whose id is in
-  `_includes/donate-band.html`.
+- The Donate buttons are the chapel's PayPal donate button: on the donation page, and in the
+  "Donate" band at the bottom of the home, About and Contact Us pages. Their PayPal button id
+  is `paypal_button_id` in `_config.yml`, so changing it there updates every button. (After
+  editing `_config.yml`, restart the preview to see the change.)
 - Search engines get a sitemap and page descriptions automatically (jekyll-seo-tag, jekyll-sitemap).
