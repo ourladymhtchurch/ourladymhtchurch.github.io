@@ -16,8 +16,9 @@
 # "Traditional Holy Latin Mass Schedule" heading. Delete it (or leave it empty) to hide
 # both boxes.
 #
-# A Mass can also have a "sermon" (title, by, text, and url: an .mp3 in assets/audio/ or
-# a web address), shown at the bottom of its card with a "Listen (MP3)" button.
+# A Mass can also list "sermons", each with title, by, text, and url (an .mp3 in
+# assets/audio/ or a web address). They are shown at the bottom of its card, in this
+# order, each with a "Listen (MP3)" button.
 #
 # Other sermons are in _data/featured.yml; prayer intentions and quotes are in
 # _data/prayer.yml.
@@ -34,11 +35,15 @@ masses:
     confessions: "7:20 AM"
     rosary: "7:35 AM"
     note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
-    sermon:
-      title: "On the Death of the Just"
-      by: "St. Alphonsus Maria de Liguori"
-      text: "Sermon for the 25th Sunday after Pentecost (Resumed Sixth Sunday after Epiphany)"
-      url: https://traditionalcatholicsermons.org/index_files/StAlphonsus_ForTheSixthSundayAfterEpiphany_OnTheDeathOfTheJust.mp3
+    sermons:
+      - title: "25th Sunday after Pentecost (Resumed Sixth Sunday after Epiphany)"
+        by: "Father Adam Craig, CMRI"
+        text: "Sunday, November 15, 2026, at Our Lady of the Most Holy Trinity Chapel."
+        url: /assets/audio/sermon-2026-11-15-craig.mp3
+      - title: "On the Death of the Just"
+        by: "St. Alphonsus Maria de Liguori"
+        text: "Sermon for the 25th Sunday after Pentecost (Resumed Sixth Sunday after Epiphany)"
+        url: https://traditionalcatholicsermons.org/index_files/StAlphonsus_ForTheSixthSundayAfterEpiphany_OnTheDeathOfTheJust.mp3
   - date: "Sunday, November 22, 2026"
     time: "8:00 AM"
     feast: "Last Sunday after Pentecost (St. Cecilia, VM)"

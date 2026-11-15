@@ -60,15 +60,15 @@ featured.yml, prayer.yml and devotions.yml.
         {% if mass.celebrant %}<p class="schedule__celebrant">{{ mass.celebrant }}</p>{% endif %}
         {% if mass.confessions or mass.rosary %}<p class="schedule__meta">{% if mass.confessions %}Confessions at {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary at {{ mass.rosary }}{% endif %}</p>{% endif %}
         {% if mass.note %}<p class="schedule__note">{{ mass.note }}</p>{% endif %}
-        {% if mass.sermon %}
+        {% for sermon in mass.sermons %}
         <div class="schedule__sermon">
           <p class="schedule__sermon-label">Sermon</p>
-          <p class="schedule__sermon-title">{{ mass.sermon.title }}</p>
-          {% if mass.sermon.by %}<p class="schedule__sermon-by">{{ mass.sermon.by }}</p>{% endif %}
-          {% if mass.sermon.text %}<p class="schedule__sermon-text">{{ mass.sermon.text }}</p>{% endif %}
-          <p class="schedule__sermon-actions"><a class="btn btn--outline" href="{% if mass.sermon.url contains '://' %}{{ mass.sermon.url }}{% else %}{{ mass.sermon.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
+          <p class="schedule__sermon-title">{{ sermon.title }}</p>
+          {% if sermon.by %}<p class="schedule__sermon-by">{{ sermon.by }}</p>{% endif %}
+          {% if sermon.text %}<p class="schedule__sermon-text">{{ sermon.text }}</p>{% endif %}
+          <p class="schedule__sermon-actions"><a class="btn btn--outline" href="{% if sermon.url contains '://' %}{{ sermon.url }}{% else %}{{ sermon.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
         </div>
-        {% endif %}
+        {% endfor %}
       </div>
       {% endfor %}
     </div>
