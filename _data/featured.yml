@@ -23,6 +23,7 @@
 
 items:
   - type: video
+    wide: true
     label: "Sermon"
     title: "Sermon for the 24th Sunday after Pentecost (Resumed Fifth Sunday after Epiphany): Fr. Martin Sentman, CMRI"
     text: "Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
@@ -43,6 +44,13 @@ items:
     by: "From Dom Guéranger's The Liturgical Year"
     text: "Video by the InPrincipio Podcast."
     youtube: kueg3-Y9mjA
+
+  - type: video
+    label: "The Liturgical Year"
+    title: "Pope St. Martin I (November 12)"
+    by: "From Dom Guéranger's The Liturgical Year"
+    text: "Video by the InPrincipio Podcast."
+    youtube: 5a_o7SUXZOc
 
   - type: video
     label: "The Liturgical Year"

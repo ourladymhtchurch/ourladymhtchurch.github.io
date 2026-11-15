@@ -49,6 +49,7 @@
   /* a video (YouTube thumbnail, its player once clicked, or an MP4) takes half the row */
   .tile--wide > .yt, .tile--wide > .video, .tile--wide > .tile__video { flex: 0 0 50%; align-self: center; }
   .tile--wide > .video { padding-top: 0; aspect-ratio: 16 / 9; }
+  .tile--wide > .tile__video { width: 50%; min-width: 0; }   /* an MP4's width: 100% would otherwise fill the row */
 }
 
 /* Small pill buttons (cards, "New to the Chapel?") */
