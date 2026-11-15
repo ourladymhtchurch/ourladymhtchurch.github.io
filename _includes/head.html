@@ -4,7 +4,12 @@
 {% seo %}
 <meta name="theme-color" content="{{ site.theme_color | default: '#854204' }}">
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+{%- comment -%}
+?v= is the build time, so each deploy gives the stylesheet a new address. Browsers keep
+GitHub Pages files for 10 minutes; without it, a reload could show the new page with the
+old stylesheet (main.js in _layouts/default.html gets the same).
+{%- endcomment %}
 <link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 {% if site.theme_color %}<style>:root { --brown: {{ site.theme_color }}; }</style>{% endif %}
 </head>
