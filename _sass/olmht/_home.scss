@@ -26,6 +26,13 @@
 .schedule__celebrant { font-size: 16px; font-weight: 700; color: var(--slate); margin-top: 6px; }
 .schedule__meta { font-size: 16px; color: var(--gray); margin-top: 6px; }
 .schedule__note { font-size: 16px; color: var(--gray); margin-top: 6px; font-style: italic; }
+/* MP3 sermon at the bottom of a Mass card ("sermon" in _data/schedule.yml) */
+.schedule__sermon { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.schedule__sermon-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--brown); }
+.schedule__sermon-title { font-size: 17px; font-weight: 700; color: var(--ink); margin-top: 2px; }
+.schedule__sermon-by { font-size: 16px; color: var(--slate); }
+.schedule__sermon-text { font-size: 15px; color: var(--gray); margin-top: 2px; }
+.schedule__sermon-actions { margin-top: 10px; }
 /* Notice under the Mass cards ("notice" in _data/schedule.yml) */
 .schedule-notice {
   margin-top: 40px; padding: 20px 24px; background: #fff;

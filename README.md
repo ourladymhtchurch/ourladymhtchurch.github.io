@@ -46,7 +46,8 @@ resources exactly as written.
 
 - **Mass times**: edit `_data/schedule.yml`. Each Mass is a block with `date`, `time`, `feast`,
   `celebrant` (the priest), `confessions`, `rosary` and an optional `note`. Add or remove blocks
-  as needed.
+  as needed. A Mass can also have a `sermon` (`title`, `by`, `text` and `url`, an MP3 address),
+  shown at the bottom of its card with a "Listen (MP3)" button; see the November 15 entry.
   The **Next Holy Latin Mass** box at the top of the home page reads this list and shows the first
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
