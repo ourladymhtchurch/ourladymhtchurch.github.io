@@ -31,14 +31,6 @@ items:
     audio: /assets/audio/sermon-2026-11-08-sentman.mp3
 
   - type: video
-    label: "Sermon"
-    title: "First Sermon (after ordination April 28, 2025): Fr. Martin Sentman, CMRI"
-    text: "Recorded by the Catholic Family Podcast."
-    youtube: d7nFr9nXhSI
-    start: 14
-
-  - type: video
-    wide: true
     label: "The Liturgical Year"
     title: "St. Josaphat (November 14)"
     by: "From Dom Guéranger's The Liturgical Year"
