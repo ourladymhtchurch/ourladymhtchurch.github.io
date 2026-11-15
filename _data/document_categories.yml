@@ -1,11 +1,19 @@
 # Order and descriptions of the sections on the Documents page.
 # Each file in _documents/ names one of these in its "category" line.
+# A section can also list links to other websites under "links:"; each shows as a card
+# after the section's documents and opens in a new tab ("cover" is the text on the card's
+# brown cover, which stands in for a picture; "summary" is the line under the title).
 - name: Catholic Creeds
   description: Professions of the Catholic Faith.
 - name: Catechisms
   description: Instruction in Christian doctrine, in English and Spanish.
 - name: Papal Documents
   description: Bulls and teaching of the Roman Pontiffs.
+  links:
+    - title: Documents of Popes
+      url: https://web.archive.org/web/20200225125252/http://sedevacantist.com/encyclicals/papalindex.html
+      cover: Papal Encyclicals
+      summary: Encyclicals and other documents of the Popes, from Pius XII back to Gregory IX.
 - name: Our Lady of Fatima
   description: The message of Fatima, the Miracle of the Sun, and related teaching.
 - name: Bishop Thuc

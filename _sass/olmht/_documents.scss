@@ -12,6 +12,15 @@
 .doc-card__title a { text-decoration: none; }
 .doc-card__title a:hover { color: var(--brown); }
 .doc-card__summary { font-size: 16px; color: var(--gray); margin-top: 6px; line-height: 1.6; }
+/* A link to another website (links: in _data/document_categories.yml) has a brown cover
+   with its name in place of a picture. */
+.doc-card__cover {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  padding: 24px; text-align: center; text-decoration: none;
+  background: var(--brown); color: #fff;
+}
+.doc-card__cover-title { font-family: var(--font-logo); font-weight: 600; font-size: 36px; line-height: 1.1; }
+.doc-card__cover-note { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .8); }
 
 /* Resources */
 .resource-groups { display: grid; gap: 40px 48px; }

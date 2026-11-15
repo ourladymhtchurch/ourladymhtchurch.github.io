@@ -99,6 +99,10 @@ resources exactly as written.
   `intro`, `text_align: center`, `theme: brown`, and `pdf` / `pdf_title` / `pdf_thumb` /
   `pdf_link_text` to embed a PDF. The page appears at `/documents/<file-name>/` and on the
   Documents page under its category.
+- **A link to another website on the Documents page** (like Documents of Popes under Papal
+  Documents): add it under `links:` for that section in `_data/document_categories.yml`, with
+  `title`, `url`, `cover` (the words on its brown cover) and `summary`. It shows as a card
+  after the section's documents and opens in a new tab.
 - **A new page**: copy `dress-code.html`, change the front matter (`title`, `permalink`) and the
   content, then add a link in `_data/navigation.yml`.
 - **Videos** on other pages: `{% include video.html id="YOUTUBE_ID" title="Title" %}`. Add `start="14"`

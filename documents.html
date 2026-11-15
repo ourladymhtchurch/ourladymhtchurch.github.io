@@ -7,7 +7,7 @@ description: Creeds, catechisms, papal documents, the message of Fatima and othe
 <p class="narrow text text--md text--center page-intro">Creeds, catechisms, papal documents and other texts kept on this site. Each one may be read online; documents with a PDF can also be downloaded.</p>
 {% for cat in site.data.document_categories %}
 {%- assign docs = site.documents | where: "category", cat.name | sort: "order" -%}
-{%- if docs.size > 0 %}
+{%- if docs.size > 0 or cat.links %}
 <div class="doc-category" id="{{ cat.name | slugify }}">
   <h2 class="doc-category__title">{{ cat.name }}</h2>
   {% if cat.description %}<p class="doc-category__desc">{{ cat.description }}</p>{% endif %}
@@ -21,6 +21,22 @@ description: Creeds, catechisms, papal documents, the message of Fatima and othe
       {%- endif %}
       <h3 class="doc-card__title"><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></h3>
       {% if doc.summary %}<p class="doc-card__summary">{{ doc.summary }}</p>{% endif %}
+    </article>
+    {%- endfor %}
+    {%- comment %} Links to other websites listed under the section in _data/document_categories.yml {% endcomment %}
+    {%- for link in cat.links %}
+    {%- if link.url contains "://" -%}
+      {%- capture link_attrs %}href="{{ link.url }}" target="_blank" rel="noopener"{% endcapture -%}
+    {%- else -%}
+      {%- capture link_attrs %}href="{{ link.url | relative_url }}"{% endcapture -%}
+    {%- endif %}
+    <article class="doc-card">
+      <a class="doc-card__image doc-card__cover" {{ link_attrs }} tabindex="-1" aria-hidden="true">
+        <span class="doc-card__cover-title">{{ link.cover | default: link.title }}</span>
+        {%- if link.url contains "://" %}<span class="doc-card__cover-note">Opens in a new tab</span>{% endif %}
+      </a>
+      <h3 class="doc-card__title"><a {{ link_attrs }}>{{ link.title }}</a></h3>
+      {% if link.summary %}<p class="doc-card__summary">{{ link.summary }}</p>{% endif %}
     </article>
     {%- endfor %}
   </div>
