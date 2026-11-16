@@ -21,8 +21,8 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_config.yml` | Site name, tagline, address, phone, main color, hosting address |
 | `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
 | `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
-| `_data/featured.yml` | Featured Content cards: the sermon video, other videos, conference recordings, links |
-| `_data/sermons.yml` | **Sermons page**: the MP3 sermons, in groups |
+| `_data/featured.yml` | Featured Content cards: the latest sermon (from `sermons.yml`), other videos, conference recordings, links |
+| `_data/sermons.yml` | **Sermons page**: the sermon videos (newest first) and the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
@@ -68,8 +68,9 @@ resources exactly as written.
   The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
   when you post news. Short extra notices go in the same file under `items:`, each as a
   `text:` block (links are written as `[words](https://address)`).
-- **Featured Content** (the sermon video, the Liturgical Year videos, the Fatima Conference
-  recordings): edit `_data/featured.yml`.
+- **Featured Content** (the latest sermon video, the Liturgical Year videos, the Fatima
+  Conference recordings): edit `_data/featured.yml`. The sermon card (`type: sermon`) needs
+  no editing: it always shows the first video in `_data/sermons.yml` (see Sermons page below).
   A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
   `v=` in the address; `start: 14` begins 14 seconds in). A video can also be a file kept on
   the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the
@@ -79,11 +80,18 @@ resources exactly as written.
   `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: link`
   opens another page, with an optional picture and button text. Cards show two to a row
   (`wide: true` makes one fill a row, picture or video on the left).
-- **Sermons page** (`/sermons/`, in both menus): every MP3 sermon is listed in
-  `_data/sermons.yml`, in groups ("Sermons at the Chapel", "Sermons of the Saints"). Each
-  sermon has `title`, `by`, `text` and `url` (an MP3 in `assets/audio/` or a web address).
-  Put a new chapel sermon at the top of its group. When a new sermon video replaces the one
-  on the home page, add the old video's MP3 here.
+- **Sermons page** (`/sermons/`, in both menus): edit `_data/sermons.yml`.
+  - **Video Sermons** (the top of the page): the `videos:` list, newest first. The first
+    video is shown large as the Latest Sermon, and also in Featured Content on the home page;
+    the others form the Video Sermon Archive under it. Each has `title`, `by`, `text`, either
+    `file:` + `poster:` (an `.mp4` in `assets/video/` and a picture in `assets/img/`) or
+    `youtube:` (with an optional `start:`), and an optional `audio:` MP3 for a "Listen (MP3)"
+    button. For a new sermon video, add it at the top of `videos:` and leave the older ones in
+    place: they move into the archive by themselves, and the home page updates too. Each
+    video file stays on the site, so keep an eye on the 1 GB limit (see Featured Content).
+  - **MP3 sermons**: the `groups:` ("Sermons at the Chapel", "Sermons of the Saints") list
+    sermons that have no video. Each has `title`, `by`, `text` and `url` (an MP3 in
+    `assets/audio/` or a web address). Put a new chapel sermon at the top of its group.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.

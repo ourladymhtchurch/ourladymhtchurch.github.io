@@ -8,8 +8,9 @@ Home page sections, top to bottom:
   hero (Next Holy Latin Mass card) · Chapel News · Holy Latin Mass Schedule · Featured Content ·
   New to the Chapel? · Prayer Intentions · Devotions · The Papacy and Catholic Unity · Donate
 Most of the content comes from _data/: notices.yml (Chapel News), schedule.yml,
-featured.yml, prayer.yml and devotions.yml. MP3 sermons are on the Sermons page
-(sermons.html, _data/sermons.yml).
+featured.yml, prayer.yml and devotions.yml. Sermons are on the Sermons page
+(sermons.html, _data/sermons.yml); the Featured "type: sermon" card shows the
+first video listed there.
 {% endcomment %}
 {% include hero.html %}
 {% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
@@ -89,6 +90,8 @@ featured.yml, prayer.yml and devotions.yml. MP3 sermons are on the Sermons page
     {% if featured_large.size > 0 %}
     <div class="tiles tiles--two">
       {% for item in featured_large %}
+      {% if item.type == "sermon" %}{% if site.data.sermons.videos.size > 0 %}{% include sermon-video-tile.html item=site.data.sermons.videos.first label=item.label wide=item.wide more=true %}{% endif %}
+      {% else %}
       <article class="tile{% if item.wide %} tile--wide{% endif %}">
         {% if item.type == "video" and item.file %}<video class="tile__video" controls preload="none" playsinline{% if item.poster %} poster="{{ item.poster | relative_url }}"{% endif %} aria-label="{{ item.title | escape }}">
           <source src="{{ item.file | relative_url }}" type="video/mp4">
@@ -105,6 +108,7 @@ featured.yml, prayer.yml and devotions.yml. MP3 sermons are on the Sermons page
           {% if item.type == "link" and item.url %}<p class="tile__actions"><a class="btn" href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ item.button | default: "Open" }}</a></p>{% endif %}
         </div>
       </article>
+      {% endif %}
       {% endfor %}
     </div>
     {% endif %}

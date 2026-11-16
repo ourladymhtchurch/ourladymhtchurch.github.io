@@ -22,6 +22,9 @@
 .doc-card__cover-title { font-family: var(--font-logo); font-weight: 600; font-size: 36px; line-height: 1.1; }
 .doc-card__cover-note { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .8); }
 
+/* Sermons page: the archive heading under the latest sermon video */
+.sermon-archive__title { font-family: var(--font-display); text-transform: uppercase; font-size: 15px; letter-spacing: .06em; color: var(--brown); margin: 40px 0 16px; }
+
 /* Resources */
 .resource-groups { display: grid; gap: 40px 48px; }
 @media (min-width: 768px) { .resource-groups { grid-template-columns: 1fr 1fr; } }

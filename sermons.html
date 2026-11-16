@@ -2,10 +2,31 @@
 layout: page
 title: Sermons
 permalink: /sermons/
-description: Recorded sermons from Our Lady of the Most Holy Trinity Chapel in Corpus Christi, Texas, and sermons of the saints, to listen to online.
+description: Sermons from Our Lady of the Most Holy Trinity Chapel in Corpus Christi, Texas, to watch or listen to online, and sermons of the saints.
 ---
-{%- comment %} The sermons and their groups are in _data/sermons.yml. {% endcomment %}
-<p class="narrow text text--md text--center page-intro rich">Recorded sermons to listen to online. Each one opens as an MP3 in a new tab. The latest sermon video is on the home page, under <a href="{{ '/#featured' | relative_url }}">Featured Content</a>.</p>
+{%- comment %}
+The sermon videos (videos:) and the MP3 sermon groups (groups:) are in
+_data/sermons.yml. The first video is shown large as the latest sermon (and in
+Featured Content on the home page); the rest form the archive under it.
+{% endcomment %}
+{%- assign videos = site.data.sermons.videos -%}
+<p class="narrow text text--md text--center page-intro rich">Sermons to watch or listen to online, newest first. The MP3 recordings open in a new tab.</p>
+{% if videos.size > 0 %}
+<div class="doc-category" id="video-sermons">
+  <h2 class="doc-category__title">Video Sermons</h2>
+  <p class="doc-category__desc">The most recent sermon at Our Lady of the Most Holy Trinity Chapel, with earlier sermon videos in the archive below it.</p>
+  <div class="tiles tiles--two">
+    {% include sermon-video-tile.html item=videos.first label="Latest Sermon" wide=true %}
+  </div>
+  {% if videos.size > 1 %}
+  <h3 class="sermon-archive__title" id="video-archive">Video Sermon Archive</h3>
+  <div class="tiles tiles--two">
+    {% for item in videos offset:1 %}{% include sermon-video-tile.html item=item %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}
 {% for group in site.data.sermons.groups %}
 <div class="doc-category" id="{{ group.title | slugify }}">
   <h2 class="doc-category__title">{{ group.title }}</h2>

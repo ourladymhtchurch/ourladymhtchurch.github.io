@@ -2,8 +2,11 @@
 # "Featured Content" cards on the home page, right after the Holy Latin Mass
 # schedule. Cards appear in this order, two to a row.
 #
-# MP3 sermons are on the Sermons page: add them to _data/sermons.yml, not here.
+# Sermons are on the Sermons page: add them to _data/sermons.yml, not here.
 #
+#   type: sermon  the chapel's most recent sermon video, taken from the top of
+#                 videos: in _data/sermons.yml, with "Listen (MP3)" and
+#                 "More sermons" buttons. Only label and wide are set here.
 #   type: link    opens a web page. Needs url. image and button are optional.
 #   type: video   a video that plays inside the card. Either a YouTube video:
 #                 youtube (the id after "v=" in the address), with an optional
@@ -23,15 +26,11 @@
 # ---------------------------------------------------------------------------
 
 items:
-  - type: video
+  # The chapel's most recent sermon: the first video in _data/sermons.yml.
+  # Nothing to change here for a new sermon; add its video there instead.
+  - type: sermon
     wide: true
     label: "Sermon"
-    title: "Sermon for the 25th Sunday after Pentecost"
-    by: "Rev. Father Adam Joseph Craig, CMRI"
-    text: "Sunday, November 15, 2026, 8:00 AM, at Our Lady of the Most Holy Trinity Chapel."
-    file: /assets/video/sermon-2026-11-15-craig.mp4
-    poster: /assets/img/sermon-2026-11-15-craig.jpg
-    audio: /assets/audio/sermon-2026-11-15-craig.mp3
 
   - type: video
     wide: true

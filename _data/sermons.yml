@@ -1,26 +1,54 @@
 # ---------------------------------------------------------------------------
 # The Sermons page (/sermons/), linked from the ☰ menu and the row of links at
-# the top of every page. Each group has a title, an optional description and its
-# sermons, shown in this order, three to a row. Each sermon has:
-#   title, by (who preached it), text (date or occasion), and
-#   url: an .mp3 in assets/audio/ or a web address. It opens in a new tab.
+# the top of every page.
 #
-# Put a new chapel sermon at the top of the first group. The sermon video on the
-# home page is in _data/featured.yml (its MP3 is the "Listen (MP3)" button under
-# the video). When a new video replaces it, add the old video's MP3 here.
+# videos: the sermon videos, newest first. The FIRST one is shown large at the
+# top of the Sermons page as the latest sermon, and also in Featured Content on
+# the home page (the "type: sermon" card in _data/featured.yml). The others form
+# the Video Sermon Archive under it, two to a row. Each video has:
+#   title, by (who preached it), text (date and place), and either
+#   file (an .mp4 in assets/video/) and poster (a picture in assets/img/ shown
+#   before it plays), or youtube (the id after "v=" in the address) with an
+#   optional start (in seconds). Add audio (an .mp3 in assets/audio/) for a
+#   "Listen (MP3)" button under the video.
+# For a new sermon video, add it at the top of videos: and leave the older ones
+# below it; they move into the archive by themselves. GitHub refuses files over
+# 100 MB and the whole site must stay under 1 GB, so compress each video first.
+#
+# groups: the MP3 sermons that have no video, in groups shown in this order,
+# three to a row. Each group has a title, an optional description and its
+# sermons. Each sermon has title, by, text, and url: an .mp3 in assets/audio/ or
+# a web address. It opens in a new tab. Put a new chapel sermon at the top of
+# the first group.
 #
 # On the site, always write "Holy Latin Mass", not "Mass" (see README.md).
 # ---------------------------------------------------------------------------
 
+videos:
+  - title: "Sermon for the 25th Sunday after Pentecost"
+    by: "Rev. Father Adam Joseph Craig, CMRI"
+    text: "Sunday, November 15, 2026, 8:00 AM, at Our Lady of the Most Holy Trinity Chapel."
+    file: /assets/video/sermon-2026-11-15-craig.mp4
+    poster: /assets/img/sermon-2026-11-15-craig.jpg
+    audio: /assets/audio/sermon-2026-11-15-craig.mp3
+
+  - title: "Sermon for the 24th Sunday after Pentecost (Resumed Fifth Sunday after Epiphany)"
+    by: "Father Martin Sentman, CMRI"
+    text: "Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    file: /assets/video/sermon-2026-11-08-sentman.mp4
+    poster: /assets/img/sermon-2026-11-08-sentman.jpg
+    audio: /assets/audio/sermon-2026-11-08-sentman.mp3
+
+  - title: "First Sermon (after ordination April 28, 2025)"
+    by: "Father Martin Sentman, CMRI"
+    text: "Recorded by the Catholic Family Podcast."
+    youtube: d7nFr9nXhSI
+    start: 14
+
 groups:
   - title: "Sermons at the Chapel"
-    description: "Preached at Our Lady of the Most Holy Trinity Chapel, newest first."
+    description: "Audio recordings of sermons preached at Our Lady of the Most Holy Trinity Chapel, newest first. Sermons with a video are under Video Sermons, each with its own Listen (MP3) button."
     sermons:
-      - title: "24th Sunday after Pentecost (Resumed Fifth Sunday after Epiphany)"
-        by: "Father Martin Sentman, CMRI"
-        text: "Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
-        url: /assets/audio/sermon-2026-11-08-sentman.mp3
-
       - title: "Feast of All Saints"
         by: "Father Adam Craig, CMRI"
         text: "Sunday, November 1, 2026."

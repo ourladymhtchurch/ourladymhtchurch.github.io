@@ -40,6 +40,7 @@
 .tile__text { font-size: 16px; line-height: 1.65; color: var(--gray); margin-top: 8px; overflow-wrap: anywhere; }
 .tile__text.rich p + p { margin-top: 10px; }
 .tile__actions { margin-top: auto; padding-top: 18px; }
+.tile__actions--row { display: flex; flex-wrap: wrap; gap: 10px; }   /* more than one button */
 .tile--audio { border-top: 4px solid var(--brown); }
 @media (min-width: 768px) {   /* wide card: whole row, picture left, text right */
   .tile--wide { grid-column: 1 / -1; flex-direction: row; }

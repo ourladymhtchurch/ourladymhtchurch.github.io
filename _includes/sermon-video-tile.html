@@ -1,0 +1,27 @@
+{%- comment -%}
+One sermon video card, from the videos: list in _data/sermons.yml. Used at the
+top of the Sermons page and, for the newest one, in Featured Content on the home
+page. Pass the sermon as item: title, by, text, and either file + poster (an
+.mp4 in assets/video/ and its picture) or youtube (+ optional start), plus an
+optional audio (.mp3) for a "Listen (MP3)" button.
+Options: label (default "Sermon"), wide=true (fills the row, video on the left),
+more=true (adds a "More sermons" button to the Sermons page).
+{%- endcomment -%}
+{%- assign s = include.item -%}
+<article class="tile{% if include.wide %} tile--wide{% endif %}">
+  {% if s.file %}<video class="tile__video" controls preload="none" playsinline{% if s.poster %} poster="{{ s.poster | relative_url }}"{% endif %} aria-label="{{ s.title | escape }}">
+    <source src="{{ s.file | relative_url }}" type="video/mp4">
+    <a href="{{ s.file | relative_url }}">Download the video</a>
+  </video>
+  {% elsif s.youtube %}{% include youtube-facade.html id=s.youtube start=s.start title=s.title %}{% endif %}
+  <div class="tile__body">
+    <p class="tile__label">{{ include.label | default: "Sermon" }}</p>
+    <h3 class="tile__title">{{ s.title }}</h3>
+    {% if s.by %}<p class="tile__by">{{ s.by }}</p>{% endif %}
+    {% if s.text %}<p class="tile__text">{{ s.text }}</p>{% endif %}
+    {% if s.audio or include.more %}<p class="tile__actions tile__actions--row">
+      {%- if s.audio %}<a class="btn btn--outline" href="{% if s.audio contains '://' %}{{ s.audio }}{% else %}{{ s.audio | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a>{% endif -%}
+      {%- if include.more %}<a class="btn btn--outline" href="{{ '/sermons/' | relative_url }}">More sermons</a>{% endif -%}
+    </p>{% endif %}
+  </div>
+</article>
