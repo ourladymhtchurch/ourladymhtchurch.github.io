@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+  YouTube channel banner, 2048 x 1152. Render it to youtube-banner.png with:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --hide-scrollbars --force-device-scale-factor=1 --window-size=2048,1152 \
+      --virtual-time-budget=3000 --screenshot=youtube-banner.png youtube-banner.html
+  YouTube shows all of it only on TVs. Computers show the middle band (2048 x 338,
+  y 407-745) and phones only its centre (1235 x 338), so every word and the
+  mural sit inside that centre box (.safe). This folder starts with "_", so
+  Jekyll never publishes it.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>YouTube Banner</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  :root {
+    --brown: #854204;
+    --brown-deep: #3d1c01;
+    --gold: #e3b26f;
+    --peach: #fea57a;
+    --cream: #fff8ef;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 2048px; height: 1152px; overflow: hidden; background: var(--brown-deep); }
+  .banner {
+    position: relative; width: 2048px; height: 1152px; overflow: hidden;
+    background:
+      radial-gradient(ellipse 1100px 520px at 50% 50%, rgba(169, 86, 7, .55), transparent 70%),
+      linear-gradient(180deg, #2e1501 0%, #5a2a02 34%, var(--brown) 50%, #5a2a02 66%, #2e1501 100%);
+  }
+  /* soft rays of light from behind the mural, as in the mural itself */
+  .rays {
+    position: absolute; left: 0; top: 0; width: 2048px; height: 1152px;
+    background: repeating-conic-gradient(from 0deg at 642px 576px, rgba(255, 220, 160, .05) 0deg 3deg, transparent 3deg 10deg);
+    -webkit-mask-image: radial-gradient(circle at 642px 576px, #000 0, rgba(0,0,0,.6) 260px, transparent 720px);
+            mask-image: radial-gradient(circle at 642px 576px, #000 0, rgba(0,0,0,.6) 260px, transparent 720px);
+  }
+  /* faint gold lines framing the band that computers show */
+  .band-line { position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(227, 178, 111, .55) 20%, rgba(227, 178, 111, .55) 80%, transparent); }
+  .band-line--top { top: 380px; }
+  .band-line--bottom { top: 770px; }
+
+  .safe { position: absolute; left: 406px; top: 407px; width: 1236px; height: 338px; display: flex; align-items: center; gap: 52px; padding: 0 60px 0 74px; }
+
+  /* the mural, in the gable shape of the chapel's sanctuary wall */
+  .gable { flex: none; width: 250px; height: 292px; padding: 6px; background: var(--gold);
+           clip-path: polygon(0 13%, 50% 0, 100% 13%, 100% 100%, 0 100%);
+           filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .45)); }
+  .gable img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0;
+               clip-path: polygon(0 12%, 50% 0, 100% 12%, 100% 100%, 0 100%); }
+
+  .text { flex: 1; min-width: 0; color: var(--cream); }
+  .kicker { font-family: 'Archivo Black', Arial, sans-serif; text-transform: uppercase; letter-spacing: .16em; font-size: 20px; color: var(--peach); }
+  .name { font-family: 'Grenze Gotisch', Georgia, serif; font-weight: 600; font-size: 92px; line-height: .98; margin-top: 10px; text-shadow: 0 3px 14px rgba(0, 0, 0, .35); }
+  .rule { display: flex; align-items: center; gap: 16px; margin: 14px 0 10px; width: 760px; }
+  .rule::before, .rule::after { content: ""; flex: 1; height: 2px; background: var(--gold); opacity: .8; }
+  .rule svg { width: 30px; height: 30px; color: var(--gold); flex: none; }
+  .place { font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 25px; letter-spacing: .02em; color: rgba(255, 248, 239, .92); }
+  .place span { color: var(--gold); padding: 0 12px; }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="rays"></div>
+  <div class="band-line band-line--top"></div>
+  <div class="band-line band-line--bottom"></div>
+  <div class="safe">
+    <div class="gable"><img src="../assets/img/trinity-coronation.jpg" alt=""></div>
+    <div class="text">
+      <p class="kicker">A Traditional Roman Catholic Chapel</p>
+      <h1 class="name">Our Lady of the Most<br>Holy Trinity Chapel</h1>
+      <div class="rule"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.5 2h3v6.5H20v3h-6.5V22h-3V11.5H4v-3h6.5z"/></svg></div>
+      <p class="place">Traditional Holy Latin Mass<span>·</span>Corpus Christi, Texas</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
