@@ -22,7 +22,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
 | `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
 | `_data/featured.yml` | Featured Content cards: the latest sermon (from `sermons.yml`), other videos, conference recordings, links |
-| `_data/sermons.yml` | **Sermons page**: the sermon videos (newest first) and the MP3 sermons, in groups |
+| `_data/sermons.yml` | **Sermons page**: the chapel's sermon videos (newest first), Bishop Pivarunas' sermons and lectures, and the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
@@ -89,6 +89,12 @@ resources exactly as written.
     button. For a new sermon video, add it at the top of `videos:` and leave the older ones in
     place: they move into the archive by themselves, and the home page updates too. Each
     video file stays on the site, so keep an eye on the 1 GB limit (see Featured Content).
+  - **Other video sections** (`video_groups:`), after the chapel's videos: "Selected Sermons
+    or Lectures of Bishop Pivarunas". Each section has a `title`, an optional `description`
+    and its `videos`, newest first, written like the chapel videos, plus an optional `label`
+    (the small word above the title, such as Lecture or Interview). Chapel News on the home
+    page keeps only the bishop's two latest talks and links to this section; when a new talk
+    goes into Chapel News, add it at the top of this section too.
   - **MP3 sermons**: the `groups:` ("Sermons at the Chapel", "Sermons of the Saints") list
     sermons that have no video. Each has `title`, `by`, `text` and `url` (an MP3 in
     `assets/audio/` or a web address). Put a new chapel sermon at the top of its group.

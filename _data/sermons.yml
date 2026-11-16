@@ -15,6 +15,11 @@
 # below it; they move into the archive by themselves. GitHub refuses files over
 # 100 MB and the whole site must stay under 1 GB, so compress each video first.
 #
+# video_groups: more sections of videos, after the chapel's sermon videos, in
+# this order, two to a row. Each section has a title, an optional description
+# and its videos (newest first), written like the videos above, plus an
+# optional label (the small word above the title, default "Sermon").
+#
 # groups: the MP3 sermons that have no video, in groups shown in this order,
 # three to a row. Each group has a title, an optional description and its
 # sermons. Each sermon has title, by, text, and url: an .mp3 in assets/audio/ or
@@ -44,6 +49,46 @@ videos:
     text: "Recorded by the Catholic Family Podcast."
     youtube: d7nFr9nXhSI
     start: 14
+
+video_groups:
+  - title: "Selected Sermons or Lectures of Bishop Pivarunas"
+    description: "Talks by His Excellency Bishop Mark A. Pivarunas, CMRI, Superior General of the Congregation of Mary Immaculate Queen, newest first. The videos play from YouTube."
+    videos:
+      - label: "Lecture"
+        title: "“Strike the Shepherd and the Sheep Shall Be Scattered” (Zach. 13:7)"
+        by: "His Excellency Bishop Mark Pivarunas, CMRI"
+        text: "October 9, 2026. The 7th Lecture of the 2026 Fatima Conference."
+        youtube: v6ElD6rhY74
+
+      - label: "Talk"
+        title: "An Imperfect General Council Is the Answer, But We Need to Have Unity First"
+        by: "His Excellency Bishop Mark Pivarunas, CMRI"
+        text: "A short talk on Catholic unity (3 minutes), posted April 13, 2026, by Traditional Catholic Sermons."
+        youtube: VijomUKdPpw
+
+      - label: "Interview"
+        title: "SSPX, Sedevacantism and Authority"
+        by: "His Excellency Bishop Mark Pivarunas, CMRI"
+        text: "March 3, 2026, on the Catholic Family Podcast."
+        youtube: mqegmBCrYSI
+
+      - label: "Lecture"
+        title: "“Defense of the Catholic Church in Our Times”"
+        by: "His Excellency Bishop Mark Pivarunas, CMRI"
+        text: "October 10, 2025. The 7th Lecture of the 2025 Fatima Conference."
+        youtube: egYmct__sBU
+
+      - label: "Interview"
+        title: "Bishop Pivarunas Tells His Story"
+        by: "His Excellency Bishop Mark Pivarunas, CMRI"
+        text: "January 11, 2023, on the Catholic Family Podcast."
+        youtube: cpnvANWHNDQ
+
+      - label: "Lecture"
+        title: "The Case for Sedevacantism: An Apologetic for Traditional Catholicism"
+        by: "His Excellency Bishop Mark Pivarunas, CMRI"
+        text: "October 2012."
+        youtube: nqgIlh5PGuE
 
 groups:
   - title: "Sermons at the Chapel"
