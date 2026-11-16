@@ -21,7 +21,8 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_config.yml` | Site name, tagline, address, phone, main color, hosting address |
 | `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
 | `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
-| `_data/featured.yml` | Featured Content cards: sermons, conference recordings, links |
+| `_data/featured.yml` | Featured Content cards: the sermon video, other videos, conference recordings, links |
+| `_data/sermons.yml` | **Sermons page**: the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
@@ -30,7 +31,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_documents/` | One file per document: creeds, catechisms, papal documents, Fatima, etc. |
 | `index.html` | Home page layout, the Chapel News text and the "New to the Chapel?" text |
 | `about.html`, `contact-us.html`, `donation.html`, `dress-code.html` | The other pages |
-| `documents.html`, `resources.html`, `404.html` | The Documents index, Resources page, not-found page |
+| `documents.html`, `resources.html`, `sermons.html`, `404.html` | The Documents index, Resources page, Sermons page, not-found page |
 | `_layouts/`, `_includes/`, `_sass/` | The theme: page skeletons, reusable pieces, styles |
 | `assets/img`, `assets/pdf`, `assets/fonts`, `assets/js` | Images, PDFs, web fonts, menu script |
 | `.github/workflows/jekyll.yml` | Builds and publishes the site on GitHub Pages |
@@ -48,8 +49,8 @@ resources exactly as written.
   `celebrant` (the priest), `confessions`, `rosary` and an optional `note`. Add or remove blocks
   as needed. A Mass can also list `sermons` (each with `title`, `by`, `text` and `url`, an MP3
   in `assets/audio/` or a web address), shown at the bottom of its card in that order, each
-  with a "Listen (MP3)" button; see the November 15 entry. When you delete that Mass's block,
-  its sermons leave the page too, so move any you want to keep to `_data/featured.yml`.
+  with a "Listen (MP3)" button. When you delete that Mass's block, its sermons leave the
+  page too, so move any you want to keep to `_data/sermons.yml` (the Sermons page).
   The **Next Holy Latin Mass** box at the top of the home page reads this list and shows the first
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
@@ -67,17 +68,22 @@ resources exactly as written.
   The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
   when you post news. Short extra notices go in the same file under `items:`, each as a
   `text:` block (links are written as `[words](https://address)`).
-- **Featured Content** (sermons, the Fatima Conference recordings): edit `_data/featured.yml`.
+- **Featured Content** (the sermon video, the Liturgical Year videos, the Fatima Conference
+  recordings): edit `_data/featured.yml`.
   A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
   `v=` in the address; `start: 14` begins 14 seconds in). A video can also be a file kept on
   the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the
   card `file:` and `poster:` instead of `youtube:`. GitHub refuses any file over 100 MB, so
   compress videos first (the November 15, 2026 sermon is about 80 MB for 16½ minutes), and
   remember the whole site should stay under about 1 GB. Add `audio:` (an MP3 in
-  `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: audio` is an MP3 sermon with a
-  Listen button; its `url:` is a web address or an MP3 in `assets/audio/`. `type: link` opens another page, with an optional picture and button text.
-  Video and link cards show two to a row (`wide: true` makes one fill a row, picture or
-  video on the left); sermon cards show three to a row below them.
+  `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: link`
+  opens another page, with an optional picture and button text. Cards show two to a row
+  (`wide: true` makes one fill a row, picture or video on the left).
+- **Sermons page** (`/sermons/`, in both menus): every MP3 sermon is listed in
+  `_data/sermons.yml`, in groups ("Sermons at the Chapel", "Sermons of the Saints"). Each
+  sermon has `title`, `by`, `text` and `url` (an MP3 in `assets/audio/` or a web address).
+  Put a new chapel sermon at the top of its group. When a new sermon video replaces the one
+  on the home page, add the old video's MP3 here.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------
 # "Featured Content" cards on the home page, right after the Holy Latin Mass
-# schedule. Cards appear in this order. Large cards (type: link or video) come
-# first, two to a row; sermons with type: audio follow, three to a row.
+# schedule. Cards appear in this order, two to a row.
+#
+# MP3 sermons are on the Sermons page: add them to _data/sermons.yml, not here.
 #
 #   type: link    opens a web page. Needs url. image and button are optional.
 #   type: video   a video that plays inside the card. Either a YouTube video:
@@ -12,8 +13,8 @@
 #                 video file well under that. Add audio (an .mp3, in
 #                 assets/audio/ or a web address) for a "Listen (MP3)" button
 #                 under the video.
-#   type: audio   an MP3 sermon. Needs url: an .mp3 in assets/audio/ or a web
-#                 address.
+#   type: audio   an MP3 card (three to a row, after the others). Needs url.
+#                 Sermons belong on the Sermons page instead (see above).
 #
 # wide: true makes a large card fill the whole row, picture or video on the left
 # (useful when there is an odd number of large cards).
@@ -69,45 +70,3 @@ items:
     image: /assets/img/fatima.jpg
     image_alt: "The chapel's mural of Our Lady holding the Rosary and the Brown Scapular, crowned by the Most Holy Trinity"
     button: "Watch the recordings"
-
-  - type: audio
-    label: "Sermon"
-    title: "Feast of Christ the King"
-    by: "Father Brendan Hughes, CMRI"
-    text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel."
-    url: /assets/audio/sermon-2026-10-25-hughes.mp3
-
-  - type: audio
-    label: "Sermon"
-    title: "Feast of All Saints"
-    by: "Father Adam Craig, CMRI"
-    text: "Sunday, November 1, 2026."
-    url: /assets/audio/sermon-2026-11-01-craig.mp3
-
-  - type: audio
-    label: "Sermon"
-    title: "24th Sunday after Pentecost (Resumed Fifth Sunday after Epiphany)"
-    by: "Father Martin Sentman, CMRI"
-    text: "Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
-    url: /assets/audio/sermon-2026-11-08-sentman.mp3
-
-  - type: audio
-    label: "Sermon"
-    title: "On Blasphemy"
-    by: "St. Alphonsus Maria de Liguori"
-    text: "Sermon for the 24th Sunday after Pentecost"
-    url: https://traditionalcatholicsermons.org/index_files/StAlphonsus_TwentyFourthSundayAfterPentecost_OnBlasphemy.mp3
-
-  - type: audio
-    label: "Sermon"
-    title: "On Impurity"
-    by: "St. Alphonsus Maria de Liguori"
-    text: "Sermon for the 16th Sunday after Pentecost"
-    url: https://traditionalcatholicsermons.org/index_files/StAlphonsus_SixteenthSundayAfterPentecost_OnImpurity.mp3
-
-  - type: audio
-    label: "Sermon"
-    title: "The Holy Family"
-    by: "St. John Marie Vianney"
-    text: "Family life in a disturbed and wavering condition; Example of the Holy Family; Threefold mission of the family"
-    url: https://www.jmjsite.com/ars/14_3Epiphany_Holy_Family.mp3

@@ -5,7 +5,7 @@
 #   footer:  the links in the footer
 # Links that start with http:// or https:// open in a new tab.
 # Page addresses: /about/, /contact-us/, /donation/, /dress-code/, /documents/,
-# /resources/, and /documents/<file-name>/ for anything in the _documents folder.
+# /resources/, /sermons/, and /documents/<file-name>/ for anything in the _documents folder.
 # ---------------------------------------------------------------------------
 primary:
   - title: "Home"
@@ -20,6 +20,8 @@ primary:
     url: /#mass-schedule
   - title: "Chapel News"
     url: /#chapel-news
+  - title: "Sermons"
+    url: /sermons/
   - title: "Documents"
     url: /documents/
   - title: "Resources"
@@ -42,6 +44,8 @@ drawer:
     url: /#mass-schedule
   - title: "Chapel News"
     url: /#chapel-news
+  - title: "Sermons"
+    url: /sermons/
   - title: "Documents"
     url: /documents/
   - title: "Resources"

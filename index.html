@@ -8,7 +8,8 @@ Home page sections, top to bottom:
   hero (Next Holy Latin Mass card) · Chapel News · Holy Latin Mass Schedule · Featured Content ·
   New to the Chapel? · Prayer Intentions · Devotions · The Papacy and Catholic Unity · Donate
 Most of the content comes from _data/: notices.yml (Chapel News), schedule.yml,
-featured.yml, prayer.yml and devotions.yml.
+featured.yml, prayer.yml and devotions.yml. MP3 sermons are on the Sermons page
+(sermons.html, _data/sermons.yml).
 {% endcomment %}
 {% include hero.html %}
 {% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
@@ -109,16 +110,7 @@ featured.yml, prayer.yml and devotions.yml.
     {% endif %}
     {% if featured_audio.size > 0 %}
     <div class="tiles tiles--three">
-      {% for item in featured_audio %}
-      <article class="tile tile--audio">
-        <div class="tile__body">
-          <p class="tile__label"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H5v-1a7 7 0 0 1 14 0v1h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z"/></svg>{{ item.label | default: "Sermon" }}</p>
-          <h3 class="tile__title">{{ item.title }}</h3>
-          {% if item.by %}<p class="tile__by">{{ item.by }}</p>{% endif %}
-          {% if item.text %}<p class="tile__text">{{ item.text }}</p>{% endif %}
-          <p class="tile__actions"><a class="btn btn--outline" href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
-        </div>
-      </article>
+      {% for item in featured_audio %}{% include sermon-tile.html item=item %}
       {% endfor %}
     </div>
     {% endif %}

@@ -1,0 +1,15 @@
+{%- comment -%}
+One MP3 sermon card, used on the Sermons page (and by any type: audio card in
+_data/featured.yml). Pass the sermon as item: title, by, text, url (an .mp3 in
+assets/audio/ or a web address) and an optional label (default "Sermon").
+{%- endcomment -%}
+{%- assign s = include.item -%}
+<article class="tile tile--audio">
+  <div class="tile__body">
+    <p class="tile__label"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H5v-1a7 7 0 0 1 14 0v1h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z"/></svg>{{ s.label | default: "Sermon" }}</p>
+    <h3 class="tile__title">{{ s.title }}</h3>
+    {% if s.by %}<p class="tile__by">{{ s.by }}</p>{% endif %}
+    {% if s.text %}<p class="tile__text">{{ s.text }}</p>{% endif %}
+    <p class="tile__actions"><a class="btn btn--outline" href="{% if s.url contains '://' %}{{ s.url }}{% else %}{{ s.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
+  </div>
+</article>

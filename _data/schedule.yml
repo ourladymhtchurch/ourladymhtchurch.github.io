@@ -18,9 +18,10 @@
 #
 # A Mass can also list "sermons", each with title, by, text, and url (an .mp3 in
 # assets/audio/ or a web address). They are shown at the bottom of its card, in this
-# order, each with a "Listen (MP3)" button.
+# order, each with a "Listen (MP3)" button. When the Mass is removed, its sermons go
+# with it, so move any worth keeping to _data/sermons.yml (the Sermons page).
 #
-# Other sermons are in _data/featured.yml; prayer intentions and quotes are in
+# Other sermons are in _data/sermons.yml; prayer intentions and quotes are in
 # _data/prayer.yml.
 # ---------------------------------------------------------------------------
 
@@ -28,26 +29,17 @@ notice: |
   On Sundays, after the Holy Latin Mass in Corpus Christi, Father travels to the new mission Our Lady of Mount Carmel Chapel (Nuestra Señora del Monte Carmelo Chapel) in San Antonio at the Candlewood Suites Airport to offer the Holy Latin Mass at 1 PM with Confessions at 12:30 PM. To confirm future dates and times, visit: [www.facebook.com/NSDMCC](https://www.facebook.com/NSDMCC) or email: <NSDMCC@proton.me>
 
 masses:
-  - date: "Sunday, November 15, 2026"
-    time: "8:00 AM"
-    feast: "25th Sunday after Pentecost (St. Albert the Great, BC)"
-    celebrant: "Rev. Father Adam Joseph Craig, CMRI"
-    confessions: "7:20 AM"
-    rosary: "7:35 AM"
-    note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
-    sermons:
-      - title: "25th Sunday after Pentecost (Resumed Sixth Sunday after Epiphany)"
-        by: "Father Adam Craig, CMRI"
-        text: "Sunday, November 15, 2026, at Our Lady of the Most Holy Trinity Chapel."
-        url: /assets/audio/sermon-2026-11-15-craig.mp3
-      - title: "On the Death of the Just"
-        by: "St. Alphonsus Maria de Liguori"
-        text: "Sermon for the 25th Sunday after Pentecost (Resumed Sixth Sunday after Epiphany)"
-        url: https://traditionalcatholicsermons.org/index_files/StAlphonsus_ForTheSixthSundayAfterEpiphany_OnTheDeathOfTheJust.mp3
   - date: "Sunday, November 22, 2026"
     time: "8:00 AM"
     feast: "Last Sunday after Pentecost (St. Cecilia, VM)"
     celebrant: "Rev. Father Brendan Hughes, CMRI"
+    confessions: "7:20 AM"
+    rosary: "7:35 AM"
+    note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
+  - date: "Sunday, November 29, 2026"
+    time: "8:00 AM"
+    feast: "First Sunday of Advent (St. Saturninus, M)"
+    celebrant: "Rev. Father Adam Joseph Craig, CMRI"
     confessions: "7:20 AM"
     rosary: "7:35 AM"
     note: "After the Holy Latin Mass: Adoration and Benediction of the Most Blessed Sacrament."
