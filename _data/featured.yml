@@ -34,32 +34,12 @@ items:
     audio: /assets/audio/sermon-2026-11-15-craig.mp3
 
   - type: video
+    wide: true
     label: "The Liturgical Year"
-    title: "St. Josaphat (November 14)"
+    title: "St. Gertrude (November 16)"
     by: "From Dom Guéranger's The Liturgical Year"
     text: "Video by the InPrincipio Podcast."
-    youtube: dFJ7L77S26g
-
-  - type: video
-    label: "The Liturgical Year"
-    title: "St. Didacus (November 13)"
-    by: "From Dom Guéranger's The Liturgical Year"
-    text: "Video by the InPrincipio Podcast."
-    youtube: kueg3-Y9mjA
-
-  - type: video
-    label: "The Liturgical Year"
-    title: "Pope St. Martin I (November 12)"
-    by: "From Dom Guéranger's The Liturgical Year"
-    text: "Video by the InPrincipio Podcast."
-    youtube: 5a_o7SUXZOc
-
-  - type: video
-    label: "The Liturgical Year"
-    title: "St. Martin of Tours (November 11)"
-    by: "From Dom Guéranger's The Liturgical Year"
-    text: "Video by the InPrincipio Podcast."
-    youtube: iRBPgi6-qRA
+    youtube: TkE7gtMWp9o
 
   - type: link
     wide: true
