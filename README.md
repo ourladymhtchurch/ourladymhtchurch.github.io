@@ -101,7 +101,7 @@ resources exactly as written.
     or Lectures of Bishop Pivarunas". Each section has a `title`, an optional `description`
     and its `videos`, newest first, written like the chapel videos, plus an optional `label`
     (the small word above the title, such as Lecture or Interview). Chapel News on the home
-    page keeps only the bishop's two latest talks and links to this section; when a new talk
+    page shows only the bishop's latest talk and links to this section; when a new talk
     goes into Chapel News, add it at the top of this section too.
   - **MP3 sermons**: the `groups:` ("Sermons at the Chapel", "Sermons of the Saints") list
     sermons that have no video. Each has `title`, `by`, `text` and `url` (an MP3 in
