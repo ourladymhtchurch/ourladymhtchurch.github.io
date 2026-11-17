@@ -49,3 +49,23 @@
 @media (min-width: 1024px) and (max-width: 1151px) {
   .primary-nav__list a { padding-left: 5px; padding-right: 5px; font-size: 10.5px; letter-spacing: .04em; }
 }
+
+/* A primary link with a list under it (Media, the sections of the Media page): a small arrow
+   after the word, and the list drops down under it on hover or keyboard focus. On a touch
+   screen the first tap opens the list and a second tap follows the link. */
+.primary-nav__menu { position: relative; }
+.primary-nav__caret { width: 9px; height: 9px; margin-left: 5px; vertical-align: 1px; }
+.primary-nav__sub {
+  display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); z-index: 1000;
+  width: max-content; max-width: 420px; list-style: none; margin: 0; padding: 8px 0;
+  background: var(--brown); border-top: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 0 0 8px 8px; box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+}
+.primary-nav__menu:hover > .primary-nav__sub,
+.primary-nav__menu:focus-within > .primary-nav__sub { display: block; }
+.primary-nav__list .primary-nav__sub a {
+  display: block; padding: 10px 22px; border-bottom: 0;
+  font-size: 15px; line-height: 1.35; letter-spacing: 0; text-transform: none;
+}
+.primary-nav__list .primary-nav__sub a:hover,
+.primary-nav__list .primary-nav__sub a:focus-visible { background: rgba(255, 255, 255, .14); }

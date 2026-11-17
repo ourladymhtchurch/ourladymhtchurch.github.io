@@ -19,7 +19,7 @@
 # A Mass can also list "sermons", each with title, by, text, and url (an .mp3 in
 # assets/audio/ or a web address). They are shown at the bottom of its card, in this
 # order, each with a "Listen (MP3)" button. When the Mass is removed, its sermons go
-# with it, so move any worth keeping to _data/sermons.yml (the Sermons page).
+# with it, so move any worth keeping to _data/sermons.yml (the Media page).
 #
 # Other sermons are in _data/sermons.yml; prayer intentions and quotes are in
 # _data/prayer.yml.

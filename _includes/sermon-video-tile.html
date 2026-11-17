@@ -1,14 +1,15 @@
 {%- comment -%}
-One sermon video card, from _data/sermons.yml (videos: or a video_groups: list).
-Used on the Sermons page and, for the newest chapel sermon, in Featured Content
-on the home page. Pass the sermon as item: title, by, text, and either file + poster (an
+One video card, from _data/sermons.yml (mass_videos:, videos: or a video_groups: list).
+Used on the Media page (/sermons/) and, for the newest chapel sermon, in Featured Content
+on the home page. Pass the video as item: title, by, text, and either file + poster (an
 .mp4 in assets/video/ and its picture) or youtube (+ optional start), plus an
-optional audio (.mp3) for a "Listen (MP3)" button.
+optional audio (.mp3) for a "Listen (MP3)" button. portrait: true gives an MP4 filmed
+upright (a phone held vertically) a tall frame instead of the usual 16:9.
 Options: label (or the item's own label; default "Sermon"), wide=true (fills the row, video on the left),
-more=true (adds a "More sermons" button to the Sermons page).
+more=true (adds a "More sermons" button to the Video Sermons section of the Media page).
 {%- endcomment -%}
 {%- assign s = include.item -%}
-<article class="tile{% if include.wide %} tile--wide{% endif %}">
+<article class="tile{% if include.wide %} tile--wide{% endif %}{% if s.portrait %} tile--portrait{% endif %}">
   {% if s.file %}<video class="tile__video" controls preload="none" playsinline{% if s.poster %} poster="{{ s.poster | relative_url }}"{% endif %} aria-label="{{ s.title | escape }}">
     <source src="{{ s.file | relative_url }}" type="video/mp4">
     <a href="{{ s.file | relative_url }}">Download the video</a>
@@ -21,7 +22,7 @@ more=true (adds a "More sermons" button to the Sermons page).
     {% if s.text %}<p class="tile__text">{{ s.text }}</p>{% endif %}
     {% if s.audio or include.more %}<p class="tile__actions tile__actions--row">
       {%- if s.audio %}<a class="btn btn--outline" href="{% if s.audio contains '://' %}{{ s.audio }}{% else %}{{ s.audio | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a>{% endif -%}
-      {%- if include.more %}<a class="btn btn--outline" href="{{ '/sermons/' | relative_url }}">More sermons</a>{% endif -%}
+      {%- if include.more %}<a class="btn btn--outline" href="{{ '/sermons/#video-sermons' | relative_url }}">More sermons</a>{% endif -%}
     </p>{% endif %}
   </div>
 </article>

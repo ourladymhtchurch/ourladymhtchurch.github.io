@@ -51,12 +51,13 @@
       });
     });
 
-    /* Highlight the current page and open the group that contains it */
+    /* Highlight the current page and open the group that contains it. A link to a
+       section of this page (Media's sections) only opens its group. */
     var here = window.location.pathname.replace(/index\.html$/, '');
     Array.prototype.forEach.call(drawer.querySelectorAll('a[href]'), function (a) {
-      if (a.origin !== window.location.origin || a.hash) return;
+      if (a.origin !== window.location.origin) return;
       if (a.pathname.replace(/index\.html$/, '') === here) {
-        a.classList.add('is-active');
+        if (!a.hash) a.classList.add('is-active');
         var group = a.closest('.drawer__group');
         if (group) {
           group.classList.add('drawer__group--open');

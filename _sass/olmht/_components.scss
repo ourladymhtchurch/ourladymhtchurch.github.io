@@ -18,6 +18,9 @@
 
 /* Video file kept on the site (featured.yml "file"); loads only when played */
 .tile__video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+/* An MP4 filmed upright (portrait: true in sermons.yml): a tall frame, at most 600px high
+   (shorter on short screens), with black at the sides where the card is wider */
+.tile--portrait .tile__video { aspect-ratio: 9 / 16; max-height: min(75vh, 600px); }
 
 /* Cards: Featured Content and Devotions on the home page */
 .tiles { display: grid; gap: 24px; }
@@ -51,6 +54,8 @@
   .tile--wide > .yt, .tile--wide > .video, .tile--wide > .tile__video { flex: 0 0 50%; align-self: center; }
   .tile--wide > .video { padding-top: 0; aspect-ratio: 16 / 9; }
   .tile--wide > .tile__video { width: 50%; min-width: 0; }   /* an MP4's width: 100% would otherwise fill the row */
+  /* an upright MP4 in a wide card: only as wide as its own frame, the text takes the rest */
+  .tile--wide.tile--portrait > .tile__video { flex: 0 0 auto; width: auto; height: min(75vh, 600px); max-height: none; }
 }
 
 /* Small pill buttons (cards, "New to the Chapel?") */

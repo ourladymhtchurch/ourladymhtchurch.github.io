@@ -1,9 +1,17 @@
 # ---------------------------------------------------------------------------
-# The Sermons page (/sermons/), linked from the ☰ menu and the row of links at
-# the top of every page.
+# The Media page (/sermons/), "Media" in the ☰ menu and in the row of links at
+# the top of every page. Its sections, in order: mass_videos, videos,
+# video_groups, groups (below). The Media menus in _data/navigation.yml link to
+# each section; update them when a section is added or renamed.
+#
+# mass_videos: the first section, "Holy Latin Mass and Excerpts": recordings of
+# the Holy Latin Mass at the chapel, whole or in part, newest first, two to a
+# row. Its title, description and videos are written like a video_groups entry
+# (below). Add wide: true to a video to make it fill the row, and portrait: true
+# to an MP4 filmed upright (a phone held vertically), which gets a tall frame.
 #
 # videos: the sermon videos, newest first. The FIRST one is shown large at the
-# top of the Sermons page as the latest sermon, and also in Featured Content on
+# top of the Video Sermons section as the latest sermon, and also in Featured Content on
 # the home page (the "type: sermon" card in _data/featured.yml). The others form
 # the Video Sermon Archive under it, two to a row. Each video has:
 #   title, by (who preached it), text (date and place), and either
@@ -28,6 +36,19 @@
 #
 # On the site, always write "Holy Latin Mass", not "Mass" (see README.md).
 # ---------------------------------------------------------------------------
+
+mass_videos:
+  title: "Holy Latin Mass and Excerpts"
+  description: "Recordings of the Holy Latin Mass at Our Lady of the Most Holy Trinity Chapel, whole or in part, newest first."
+  videos:
+    - label: "Excerpt"
+      title: "Feast of Christ the King"
+      by: "Holy Latin Mass offered by Rev. Father Brendan Hughes, CMRI"
+      text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel, with singing by the Sacred Heart Singers."
+      file: /assets/video/mass-2026-10-25-hughes-excerpt.mp4
+      poster: /assets/img/mass-2026-10-25-hughes-excerpt.jpg
+      portrait: true
+      wide: true
 
 videos:
   - title: "Sermon for the 25th Sunday after Pentecost"

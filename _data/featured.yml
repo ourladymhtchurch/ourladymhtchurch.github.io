@@ -2,7 +2,7 @@
 # "Featured Content" cards on the home page, right after the Holy Latin Mass
 # schedule. Cards appear in this order, two to a row.
 #
-# Sermons are on the Sermons page: add them to _data/sermons.yml, not here.
+# Sermons are on the Media page (/sermons/): add them to _data/sermons.yml, not here.
 #
 #   type: sermon  the chapel's most recent sermon video, taken from the top of
 #                 videos: in _data/sermons.yml, with "Listen (MP3)" and
@@ -17,7 +17,7 @@
 #                 assets/audio/ or a web address) for a "Listen (MP3)" button
 #                 under the video.
 #   type: audio   an MP3 card (three to a row, after the others). Needs url.
-#                 Sermons belong on the Sermons page instead (see above).
+#                 Sermons belong on the Media page instead (see above).
 #
 # wide: true makes a large card fill the whole row, picture or video on the left
 # (useful when there is an odd number of large cards).

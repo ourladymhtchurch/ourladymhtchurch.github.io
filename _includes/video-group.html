@@ -1,0 +1,15 @@
+{%- comment -%}
+One section of video cards on the Media page (sermons.html), from _data/sermons.yml:
+mass_videos: or an entry of video_groups:. Pass it as group: title (also the
+section's #anchor, in lower case with dashes), an optional description, and its
+videos, two to a row. A video with wide: true fills the row.
+{%- endcomment -%}
+{%- assign g = include.group -%}
+<div class="doc-category" id="{{ g.title | slugify }}">
+  <h2 class="doc-category__title">{{ g.title }}</h2>
+  {% if g.description %}<p class="doc-category__desc">{{ g.description }}</p>{% endif %}
+  <div class="tiles tiles--two">
+    {% for item in g.videos %}{% include sermon-video-tile.html item=item wide=item.wide %}
+    {% endfor %}
+  </div>
+</div>

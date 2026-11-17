@@ -15,7 +15,21 @@
           {%- if page.url == "/" %}{% assign active = true %}{% endif -%}
         {%- elsif item.url contains "#" -%}
         {%- elsif page.url contains item.url %}{% assign active = true %}{% endif -%}
-        {%- if item.url contains "://" %}
+        {%- if item.children %}
+        {%- comment %} A link with a list under it (Media): the list drops down on hover or keyboard focus. {% endcomment %}
+        <li class="primary-nav__menu">
+          <a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}<svg class="primary-nav__caret" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 5l6 6 6-6-1.4-1.4L8 8.2 3.4 3.6z"/></svg></a>
+          <ul class="primary-nav__sub">
+            {%- for child in item.children %}
+            {%- if child.url contains "://" %}
+            <li><a href="{{ child.url }}" target="_blank" rel="noopener">{{ child.title }}</a></li>
+            {%- else %}
+            <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+            {%- endif %}
+            {%- endfor %}
+          </ul>
+        </li>
+        {%- elsif item.url contains "://" %}
         <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></li>
         {%- else %}
         <li><a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a></li>

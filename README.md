@@ -22,7 +22,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
 | `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
 | `_data/featured.yml` | Featured Content cards: the latest sermon (from `sermons.yml`), other videos, conference recordings, links |
-| `_data/sermons.yml` | **Sermons page**: the chapel's sermon videos (newest first), Bishop Pivarunas' sermons and lectures, and the MP3 sermons, in groups |
+| `_data/sermons.yml` | **Media page** (`/sermons/`): recordings of the Holy Latin Mass, the chapel's sermon videos (newest first), Bishop Pivarunas' sermons and lectures, and the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
@@ -31,7 +31,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_documents/` | One file per document: creeds, catechisms, papal documents, Fatima, etc. |
 | `index.html` | Home page layout, the Chapel News text and the "New to the Chapel?" text |
 | `about.html`, `contact-us.html`, `donation.html`, `dress-code.html` | The other pages |
-| `documents.html`, `resources.html`, `sermons.html`, `404.html` | The Documents index, Resources page, Sermons page, not-found page |
+| `documents.html`, `resources.html`, `sermons.html`, `404.html` | The Documents index, Resources page, Media page, not-found page |
 | `_layouts/`, `_includes/`, `_sass/` | The theme: page skeletons, reusable pieces, styles |
 | `assets/img`, `assets/pdf`, `assets/fonts`, `assets/js` | Images, PDFs, web fonts, menu script |
 | `.github/workflows/jekyll.yml` | Builds and publishes the site on GitHub Pages |
@@ -50,7 +50,7 @@ resources exactly as written.
   as needed. A Mass can also list `sermons` (each with `title`, `by`, `text` and `url`, an MP3
   in `assets/audio/` or a web address), shown at the bottom of its card in that order, each
   with a "Listen (MP3)" button. When you delete that Mass's block, its sermons leave the
-  page too, so move any you want to keep to `_data/sermons.yml` (the Sermons page).
+  page too, so move any you want to keep to `_data/sermons.yml` (the Media page).
   The **Next Holy Latin Mass** box at the top of the home page reads this list and shows the first
   Mass that hasn't happened yet. Once every Mass listed is in the past, it says the times
   are being updated and asks visitors to call. Write dates and times as the existing entries
@@ -70,7 +70,7 @@ resources exactly as written.
   `text:` block (links are written as `[words](https://address)`).
 - **Featured Content** (the latest sermon video, the Liturgical Year videos, the Fatima
   Conference recordings): edit `_data/featured.yml`. The sermon card (`type: sermon`) needs
-  no editing: it always shows the first video in `_data/sermons.yml` (see Sermons page below).
+  no editing: it always shows the first video in `_data/sermons.yml` (see Media page below).
   A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
   `v=` in the address; `start: 14` begins 14 seconds in). A video can also be a file kept on
   the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the
@@ -80,8 +80,16 @@ resources exactly as written.
   `assets/audio/`) to a video card for a "Listen (MP3)" button under the video. `type: link`
   opens another page, with an optional picture and button text. Cards show two to a row
   (`wide: true` makes one fill a row, picture or video on the left).
-- **Sermons page** (`/sermons/`, in both menus): edit `_data/sermons.yml`.
-  - **Video Sermons** (the top of the page): the `videos:` list, newest first. The first
+- **Media page** (`/sermons/`, "Media" in both menus; it was called the Sermons page until
+  November 17, 2026, and keeps its address so old links work): edit `_data/sermons.yml`.
+  The Media menu lists the page's sections; when you add or rename a section, update the
+  Media lists in `_data/navigation.yml` too (see Menus below).
+  - **Holy Latin Mass and Excerpts** (the top of the page): `mass_videos:`, recordings of the
+    Holy Latin Mass, whole or in part, newest first. It has a `title`, a `description` and
+    its `videos`, written like the chapel videos below, with a `label` (such as Excerpt).
+    A video filmed with the phone held upright gets `portrait: true` (a tall frame instead
+    of a wide one), and `wide: true` lets a card fill the row with the text beside it.
+  - **Video Sermons**: the `videos:` list, newest first. The first
     video is shown large as the Latest Sermon, and also in Featured Content on the home page;
     the others form the Video Sermon Archive under it. Each has `title`, `by`, `text`, either
     `file:` + `poster:` (an `.mp4` in `assets/video/` and a picture in `assets/img/`) or
@@ -101,7 +109,11 @@ resources exactly as written.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.
-- **Menus**: `_data/navigation.yml`. Links beginning with `http` open in a new tab.
+- **Menus**: `_data/navigation.yml`. Links beginning with `http` open in a new tab. An item
+  with `children:` has a list of links under it: in the ☰ menu it opens and closes, and in
+  the row of links (Media) the list drops down when the mouse is over it. A link to one
+  section of a page is the page's address, `#` and the section's title in lower case with
+  dashes, such as `/sermons/#video-sermons`.
 - **A new document**: add a file to `_documents/`, for example `_documents/apostles-creed.md`:
 
   ```

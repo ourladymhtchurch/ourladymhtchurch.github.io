@@ -5,7 +5,14 @@
 #   footer:  the links in the footer
 # Links that start with http:// or https:// open in a new tab.
 # Page addresses: /about/, /contact-us/, /donation/, /dress-code/, /documents/,
-# /resources/, /sermons/, and /documents/<file-name>/ for anything in the _documents folder.
+# /resources/, /sermons/ (the Media page), and /documents/<file-name>/ for anything in
+# the _documents folder. A section of a page is its address plus # and the section's
+# title in lower case with dashes, e.g. /sermons/#video-sermons.
+#
+# children: a list of links under one menu item. In the drawer, the item becomes a
+# heading that opens and closes its list. In the primary row, the item keeps its own
+# url and its children drop down under it when the mouse is over it (Media lists
+# the sections of the Media page; keep both copies of that list the same).
 # ---------------------------------------------------------------------------
 primary:
   - title: "Home"
@@ -20,8 +27,19 @@ primary:
     url: /#mass-schedule
   - title: "Chapel News"
     url: /#chapel-news
-  - title: "Sermons"
+  - title: "Media"
     url: /sermons/
+    children:
+      - title: "Holy Latin Mass and Excerpts"
+        url: /sermons/#holy-latin-mass-and-excerpts
+      - title: "Video Sermons"
+        url: /sermons/#video-sermons
+      - title: "Selected Sermons or Lectures of Bishop Pivarunas"
+        url: /sermons/#selected-sermons-or-lectures-of-bishop-pivarunas
+      - title: "Sermons at the Chapel"
+        url: /sermons/#sermons-at-the-chapel
+      - title: "Sermons of the Saints"
+        url: /sermons/#sermons-of-the-saints
   - title: "Documents"
     url: /documents/
   - title: "Resources"
@@ -44,8 +62,18 @@ drawer:
     url: /#mass-schedule
   - title: "Chapel News"
     url: /#chapel-news
-  - title: "Sermons"
-    url: /sermons/
+  - title: "Media"
+    children:
+      - title: "Holy Latin Mass and Excerpts"
+        url: /sermons/#holy-latin-mass-and-excerpts
+      - title: "Video Sermons"
+        url: /sermons/#video-sermons
+      - title: "Selected Sermons or Lectures of Bishop Pivarunas"
+        url: /sermons/#selected-sermons-or-lectures-of-bishop-pivarunas
+      - title: "Sermons at the Chapel"
+        url: /sermons/#sermons-at-the-chapel
+      - title: "Sermons of the Saints"
+        url: /sermons/#sermons-of-the-saints
   - title: "Documents"
     url: /documents/
   - title: "Resources"
