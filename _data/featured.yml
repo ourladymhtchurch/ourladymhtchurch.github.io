@@ -32,6 +32,16 @@ items:
     wide: true
     label: "Sermon"
 
+  # The chapel's own video on its YouTube channel (added 2026-11-17 through the
+  # YouTube pipeline, Church YouTube/PIPELINE.md, step 9).
+  - type: video
+    wide: true
+    label: "Holy Latin Mass"
+    title: "Feast of Christ the King"
+    by: "Excerpt of the Holy Latin Mass offered by Rev. Father Brendan Hughes, CMRI"
+    text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel, with singing by the Sacred Heart Singers."
+    youtube: T1iqo-P0lz8
+
   - type: video
     wide: true
     label: "The Liturgical Year"
