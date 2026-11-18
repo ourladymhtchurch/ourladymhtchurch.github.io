@@ -35,6 +35,8 @@
 .resource-group li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 17px; line-height: 1.5; overflow-wrap: anywhere; }
 .resource-group a { color: var(--link); font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
 .resource-group a:hover { color: var(--link-hover); }
+/* The Oath of Fidelity PDF at the bottom of the Resources page (moved from the home page on 2026-11-17) */
+.resource-pdf { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--rule); scroll-margin-top: 24px; }
 .resource-note { font-size: 14px; color: var(--gray-2); }
 
 /* Related documents under a document */

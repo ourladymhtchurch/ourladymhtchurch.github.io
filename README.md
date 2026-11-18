@@ -26,7 +26,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
-| `_data/resources.yml` | The link groups on the Resources page |
+| `_data/resources.yml` | The link groups on the Resources page (the Oath of Fidelity PDF at the bottom of that page is in `resources.html`) |
 | `_data/document_categories.yml` | Section order and descriptions on the Documents page |
 | `_documents/` | One file per document: creeds, catechisms, papal documents, Fatima, etc. |
 | `index.html` | Home page layout, the Chapel News text and the "New to the Chapel?" text |
@@ -63,7 +63,7 @@ resources exactly as written.
   applies; both boxes disappear.
 - **Home page sections**, top to bottom: the Next Holy Latin Mass card, Chapel News, the
   Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
-  The Papacy and Catholic Unity (the Oath of Fidelity PDF), and a Donate band with the PayPal button.
+  The Papacy and Catholic Unity (the open letter), and a Donate band with the PayPal button.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
   To show a link there as a brown button (like "Watch on YouTube"), copy that line:
   `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.
