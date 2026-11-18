@@ -11,12 +11,8 @@ description: "Support Our Lady of the Most Holy Trinity Chapel."
       <div>
         <h1 class="content-heading">{{ site.chapel.legal_name }}</h1>
         <h2 class="heading-middle heading-middle--display">Donation</h2>
-        {% comment %} PayPal donate button (hosted button from the chapel's PayPal account; its id is paypal_button_id in _config.yml). {% endcomment %}
-        <form class="paypal-donate" action="https://www.paypal.com/donate" method="post" target="_top">
-          <input type="hidden" name="hosted_button_id" value="{{ site.chapel.paypal_button_id }}">
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
-          <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
+        {% comment %} The appeal and PayPal donate button, shared with the Donate band (_includes/paypal-donate.html). {% endcomment %}
+        {% include paypal-donate.html %}
       </div>
     </div>
   </div>

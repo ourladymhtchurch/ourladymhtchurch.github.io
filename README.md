@@ -189,5 +189,7 @@ new document pages, so existing links keep working.
 - The Donate buttons are the chapel's PayPal donate button: on the donation page, and in the
   "Donate" band at the bottom of the home, About and Contact Us pages. Their PayPal button id
   is `paypal_button_id` in `_config.yml`, so changing it there updates every button. (After
-  editing `_config.yml`, restart the preview to see the change.)
+  editing `_config.yml`, restart the preview to see the change.) The appeal above every Donate
+  button ("For the greater love and glory of Almighty God…") and the button itself are in
+  `_includes/paypal-donate.html`, so one edit there changes all four pages.
 - Search engines get a sitemap and page descriptions automatically (jekyll-seo-tag, jekyll-sitemap).

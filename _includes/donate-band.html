@@ -1,15 +1,11 @@
 {%- comment -%}
-"Donate" band with the chapel's PayPal donate button, at the bottom of the home, About and
-Contact Us pages. The Donation page (donation.html) shows the same button. Its PayPal id is
-paypal_button_id in _config.yml.
+"Donate" band with the chapel's PayPal donate button and its appeal, at the bottom of the
+home, About and Contact Us pages. The button and appeal are in paypal-donate.html, which the
+Donation page (donation.html) uses too.
 {%- endcomment -%}
 <section class="section section--panel donate-band" id="donate">
   <div class="container">
     <h2 class="section-title">Donate</h2>
-    <form class="paypal-donate" action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="hosted_button_id" value="{{ site.chapel.paypal_button_id }}">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
-      <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
+    {% include paypal-donate.html %}
   </div>
 </section>
