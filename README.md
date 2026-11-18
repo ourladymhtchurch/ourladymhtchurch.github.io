@@ -65,6 +65,8 @@ resources exactly as written.
   Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
   The Papacy and Catholic Unity (the Oath of Fidelity PDF), and a Donate band with the PayPal button.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
+  To show a link there as a brown button (like "Watch on YouTube"), copy that line:
+  `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.
   The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
   when you post news. Short extra notices go in the same file under `items:`, each as a
   `text:` block (links are written as `[words](https://address)`).

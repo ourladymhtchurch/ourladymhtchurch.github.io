@@ -70,6 +70,10 @@
 .btn--outline { background: transparent; color: var(--brown); }
 .btn--outline:hover { background: var(--brown); border-color: var(--brown); color: #fff; }
 .btn:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
+/* A button inside written text (.rich, e.g. Chapel News): keep the button look, not the blue link style */
+.rich p.rich__button { margin-top: 14px; }
+.rich a.btn { color: #fff; font-weight: 400; border: 2px solid var(--brown); padding-bottom: 8px; overflow-wrap: normal; }
+.rich a.btn:hover { color: #fff; border-color: var(--brown-hover); }
 .button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
 
 /* PDF viewer */
