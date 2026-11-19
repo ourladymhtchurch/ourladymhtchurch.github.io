@@ -95,8 +95,10 @@ resources exactly as written.
     video is shown large as the Latest Sermon, and also in Featured Content on the home page;
     the others form the Video Sermon Archive under it. Each has `title`, `by`, `text`, either
     `file:` + `poster:` (an `.mp4` in `assets/video/` and a picture in `assets/img/`) or
-    `youtube:` (with an optional `start:`), and an optional `audio:` MP3 for a "Listen (MP3)"
-    button. For a new sermon video, add it at the top of `videos:` and leave the older ones in
+    `youtube:` (with an optional `start:`), and an optional `audio:` MP3, shown as a "Listen
+    (MP3)" button on the home page's latest-sermon card only: the video cards on the Media
+    page have no MP3 button, so also list the MP3 under "Sermons at the Chapel" (below).
+    For a new sermon video, add it at the top of `videos:` and leave the older ones in
     place: they move into the archive by themselves, and the home page updates too. Each
     video file stays on the site, so keep an eye on the 1 GB limit (see Featured Content).
   - **Other video sections** (`video_groups:`), after the chapel's videos: "Selected Sermons
@@ -105,9 +107,10 @@ resources exactly as written.
     (the small word above the title, such as Lecture or Interview). Chapel News on the home
     page shows only the bishop's latest talk and links to this section; when a new talk
     goes into Chapel News, add it at the top of this section too.
-  - **MP3 sermons**: the `groups:` ("Sermons at the Chapel", "Sermons of the Saints") list
-    sermons that have no video. Each has `title`, `by`, `text` and `url` (an MP3 in
-    `assets/audio/` or a web address). Put a new chapel sermon at the top of its group.
+  - **MP3 sermons**: the `groups:` ("Sermons at the Chapel", "Sermons of the Saints"). Every
+    chapel sermon MP3 goes in "Sermons at the Chapel", whether or not the sermon also has a
+    video. Each has `title`, `by`, `text` and `url` (an MP3 in `assets/audio/` or a web
+    address). Put a new chapel sermon at the top of its group.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.

@@ -11,8 +11,10 @@ shown in this order: the Holy Latin Mass recordings (mass_videos:), the chapel's
 sermon videos (videos:), the other video sections (video_groups:, such as Bishop
 Pivarunas' sermons and lectures) and the MP3 sermon groups (groups:). The first
 chapel sermon video is shown large as the latest sermon (and in Featured Content
-on the home page); the rest form the archive under it. The Media links in both
-menus (_data/navigation.yml) list these sections.
+on the home page); the rest form the archive under it. On this page the video
+cards have no "Listen (MP3)" button (no_mp3=true): every chapel sermon MP3 is
+listed in "Sermons at the Chapel" (the user's choice on 2026-11-19). The Media
+links in both menus (_data/navigation.yml) list these sections.
 {% endcomment %}
 {%- assign videos = site.data.sermons.videos -%}
 <p class="narrow text text--md text--center page-intro rich">Recordings of the Holy Latin Mass, sermons and lectures to watch or listen to online, newest first. The MP3 recordings open in a new tab.</p>
@@ -22,12 +24,12 @@ menus (_data/navigation.yml) list these sections.
   <h2 class="doc-category__title">Video Sermons</h2>
   <p class="doc-category__desc">The most recent sermon at Our Lady of the Most Holy Trinity Chapel, with earlier sermon videos in the archive below it.</p>
   <div class="tiles tiles--two">
-    {% include sermon-video-tile.html item=videos.first label="Latest Sermon" wide=true %}
+    {% include sermon-video-tile.html item=videos.first label="Latest Sermon" wide=true no_mp3=true %}
   </div>
   {% if videos.size > 1 %}
   <h3 class="sermon-archive__title" id="video-archive">Video Sermon Archive</h3>
   <div class="tiles tiles--two">
-    {% for item in videos offset:1 %}{% include sermon-video-tile.html item=item %}
+    {% for item in videos offset:1 %}{% include sermon-video-tile.html item=item no_mp3=true %}
     {% endfor %}
   </div>
   {% endif %}

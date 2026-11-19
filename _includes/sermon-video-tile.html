@@ -6,9 +6,12 @@ on the home page. Pass the video as item: title, by, text, and either file + pos
 optional audio (.mp3) for a "Listen (MP3)" button. portrait: true gives an MP4 filmed
 upright (a phone held vertically) a tall frame instead of the usual 16:9.
 Options: label (or the item's own label; default "Sermon"), wide=true (fills the row, video on the left),
-more=true (adds a "More sermons" button to the Video Sermons section of the Media page).
+more=true (adds a "More sermons" button to the Video Sermons section of the Media page),
+no_mp3=true (leaves out the "Listen (MP3)" button; the Media page lists every chapel
+sermon MP3 in its "Sermons at the Chapel" section instead, the user's choice on 2026-11-19).
 {%- endcomment -%}
 {%- assign s = include.item -%}
+{%- assign mp3 = s.audio -%}{%- if include.no_mp3 -%}{%- assign mp3 = nil -%}{%- endif -%}
 <article class="tile{% if include.wide %} tile--wide{% endif %}{% if s.portrait %} tile--portrait{% endif %}">
   {% if s.file %}<video class="tile__video" controls preload="none" playsinline{% if s.poster %} poster="{{ s.poster | relative_url }}"{% endif %} aria-label="{{ s.title | escape }}">
     <source src="{{ s.file | relative_url }}" type="video/mp4">
@@ -20,8 +23,8 @@ more=true (adds a "More sermons" button to the Video Sermons section of the Medi
     <h3 class="tile__title">{{ s.title }}</h3>
     {% if s.by %}<p class="tile__by">{{ s.by }}</p>{% endif %}
     {% if s.text %}<p class="tile__text">{{ s.text }}</p>{% endif %}
-    {% if s.audio or include.more %}<p class="tile__actions tile__actions--row">
-      {%- if s.audio %}<a class="btn btn--outline" href="{% if s.audio contains '://' %}{{ s.audio }}{% else %}{{ s.audio | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a>{% endif -%}
+    {% if mp3 or include.more %}<p class="tile__actions tile__actions--row">
+      {%- if mp3 %}<a class="btn btn--outline" href="{% if mp3 contains '://' %}{{ mp3 }}{% else %}{{ mp3 | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a>{% endif -%}
       {%- if include.more %}<a class="btn btn--outline" href="{{ '/sermons/#video-sermons' | relative_url }}">More sermons</a>{% endif -%}
     </p>{% endif %}
   </div>
