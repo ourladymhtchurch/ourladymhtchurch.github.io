@@ -32,6 +32,18 @@ items:
     wide: true
     label: "Sermon"
 
+  # The chapel's sermon for the 24th Sunday after Pentecost on its YouTube channel
+  # (uploaded 2026-11-19 through the YouTube pipeline; added here at the user's
+  # request the same day).
+  - type: video
+    wide: true
+    label: "Sermon"
+    title: "Seeing Souls as God Sees Them"
+    by: "Rev. Father Martin Sentman, CMRI"
+    text: "Sermon for the 24th Sunday after Pentecost, Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    youtube: NGYm8lWSghI
+    audio: /assets/audio/sermon-2026-11-08-sentman.mp3
+
   # The chapel's sermon for All Saints on its YouTube channel (uploaded 2026-11-19
   # through the YouTube pipeline; added here at the user's request the same day).
   - type: video
