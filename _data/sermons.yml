@@ -56,8 +56,9 @@ videos:
   - title: "Sermon for the 25th Sunday after Pentecost"
     by: "Rev. Father Adam Joseph Craig, CMRI"
     text: "Sunday, November 15, 2026, 8:00 AM, at Our Lady of the Most Holy Trinity Chapel."
-    file: /assets/video/sermon-2026-11-15-craig.mp4
-    poster: /assets/img/sermon-2026-11-15-craig.jpg
+    # On the chapel's YouTube channel since 2026-11-20 ("Mustard Seed: True Church");
+    # the self-hosted MP4 and its poster were removed then, at the user's request.
+    youtube: Iyhg2ummA8o
     audio: /assets/audio/sermon-2026-11-15-craig.mp3
 
   - title: "Sermon for the 24th Sunday after Pentecost (Resumed Fifth Sunday after Epiphany)"
