@@ -1,0 +1,102 @@
+# ---------------------------------------------------------------------------
+# The summaries below the chapel's story on the About page (about.html), in order.
+# Each one is its own band (light gray and white in turn) with the picture beside the
+# summary: on the left, then on the right, and so on. On phones the picture is on top.
+#
+#   id:        the section's address on the page, e.g. /about/#bishop-thuc
+#              (a document page with "about: bishop-thuc" links back to it)
+#   label:     the small brown line above the title (optional)
+#   title:     the heading
+#   image:     the picture; image_alt describes it for screen readers
+#   frame:     true shows the whole picture on white with a thin border (a crest, a
+#              letter's first page) instead of filling the frame
+#   text:      the summary (Markdown: *italic*, **bold**, [link](address))
+#   links:     buttons; the first is brown, the rest outlined. An address with ://
+#              opens in a new tab (other websites).
+#
+# Write "Holy Latin Mass" wherever the chapel's own words would say "Mass".
+# ---------------------------------------------------------------------------
+summaries:
+  - id: bishop-thuc
+    label: "Declaration · Munich, 1982"
+    title: "Bishop Thuc"
+    image: /assets/img/bishop-thuc.jpg
+    image_alt: "Archbishop Peter Martin Ngo-Dinh-Thuc holding a cane and a crucifix"
+    text: >-
+      On February 25, 1982, in Munich, Archbishop Peter Martin Ngo-Dinh-Thuc, Archbishop of
+      Hue, Vietnam, declared the See of the Catholic Church in Rome to be vacant. He rejected
+      the new rites brought in after Vatican II, upheld the Holy Latin Mass of St. Pius V, and
+      bound himself, as a Catholic bishop, to do all that is needed so that the Catholic
+      Church endures for the eternal salvation of souls.
+    links:
+      - title: "Read the Declaration"
+        url: /documents/declaration-bishop-thuc/
+      - title: "Brief Biography (video)"
+        url: https://www.youtube.com/watch?v=ZLAGCavIYUw
+
+  - id: bishop-carmona
+    label: "Letter · May 18, 1982"
+    title: "Bishop Moisés Carmona"
+    image: /assets/img/bishop-carmona.jpg
+    image_alt: "Bishop Moisés Carmona in choir dress with a pectoral cross"
+    text: >-
+      Bishop Moisés Carmona of Mexico was consecrated by Archbishop Thuc on October 17, 1981.
+      In his letter “In Defense of My Episcopal Consecration” he explains why he accepted it:
+      the Holy See has been vacant since the death of Pope Pius XII, the faithful are asking
+      for the Catholic sacraments, and “necessity makes licit what is illicit,” so that
+      the episcopal succession may continue. In 1991 he consecrated
+      Bishop Mark A. Pivarunas.
+    links:
+      - title: "Read His Letter on cmri.org"
+        url: https://cmri.org/articles-on-the-traditional-catholic-faith/bishop-carmonas-defense-of-his-acceptance-of-episcopal-consecration/
+
+  - id: bishop-pivarunas
+    label: "Superior General of the CMRI"
+    title: "Bishop Mark A. Pivarunas, CMRI"
+    image: /assets/img/bishop-pivarunas.jpg
+    image_alt: "Bishop Mark A. Pivarunas giving a lecture, with a statue of Our Lady of Fatima behind him"
+    text: >-
+      His Excellency Bishop Mark Anthony Pivarunas entered the Congregation of Mary
+      Immaculate Queen in 1974, was ordained a priest in 1985, was elected its Superior
+      General in 1989, and was consecrated a bishop by Bishop Moisés Carmona on September 24,
+      1991. He founded Mater Dei Seminary in Omaha and travels throughout the world to
+      confirm and to ordain, true to his motto *Animam pro ovibus ponere*, “To lay down my
+      life for the sheep.” Since October 2026 he has graciously provided Catholic priests
+      for our Chapel.
+    links:
+      - title: "Biography and Pastoral Letters on cmri.org"
+        url: https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/
+
+  - id: cmri
+    label: "Religious Congregation"
+    title: "The CMRI"
+    image: /assets/img/cmri-emblem.jpg
+    image_alt: "Crest of the Congregation of Mary Immaculate Queen: a crowned shield, white and blue, with stars and the monogram of Mary under a cross"
+    frame: true
+    text: >-
+      The Congregation of Mary Immaculate Queen (CMRI) is a religious congregation of
+      priests, Brothers and Sisters, begun in 1967 in Coeur d’Alene, Idaho, to spread the
+      message of Our Lady of Fatima. Its priests serve over 120 Holy Latin Mass centers in
+      the United States and abroad, and its Sisters teach in its schools, all to preserve
+      the Catholic Faith as it has been taught for 2,000 years.
+    links:
+      - title: "History of the CMRI on cmri.org"
+        url: https://cmri.org/about-cmri/history-of-cmri/
+      - title: "Visit cmri.org"
+        url: https://cmri.org/
+
+  - id: submission-to-the-magisterium
+    label: "Letter to the Members · February 2026"
+    title: "Submission to the Magisterium"
+    image: /assets/img/pdf-dear-concerned-souls-2026-02-06.png
+    image_alt: "First page of the letter “Dear Concerned Souls” of February 6, 2026"
+    frame: true
+    text: >-
+      On the Feast of the Purification of the Blessed Virgin Mary, February 2, 2026, our
+      Chapel declined conditions that would have required it to reject Baptism of Desire,
+      Baptism of Blood and Periodic Continence, and submitted, in humility and in imitation
+      of Our Blessed Mother, to the Magisterium of the Catholic Church. This letter to the
+      members of the Chapel explains why, and asks your prayers.
+    links:
+      - title: "Read the Letter"
+        url: /documents/submission-to-magisterium/

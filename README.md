@@ -25,6 +25,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_data/sermons.yml` | **Media page** (`/sermons/`): recordings of the Holy Latin Mass, the chapel's sermon videos (newest first), Bishop Pivarunas' sermons and lectures, and the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
+| `_data/about.yml` | The summaries below the chapel's story on the About page (Bishop Thuc, Bishop Carmona, Bishop Pivarunas, the CMRI, Submission to the Magisterium) |
 | `_data/navigation.yml` | The menus: primary links, the ☰ drawer, footer links |
 | `_data/resources.yml` | The link groups on the Resources page (the Oath of Fidelity PDF at the bottom of that page is in `resources.html`) |
 | `_data/document_categories.yml` | Section order and descriptions on the Documents page |
@@ -111,6 +112,17 @@ resources exactly as written.
     chapel sermon MP3 goes in "Sermons at the Chapel", whether or not the sermon also has a
     video. Each has `title`, `by`, `text` and `url` (an MP3 in `assets/audio/` or a web
     address). Put a new chapel sermon at the top of its group.
+- **About page** (`/about/`): the chapel's story is written in `about.html`, beside the mural.
+  Below it, each summary in `_data/about.yml` is its own band (light gray and white in turn)
+  with its picture on the left, then the right: Bishop Thuc, Bishop Moisés Carmona, Bishop
+  Pivarunas, the CMRI and Submission to the Magisterium. Each has an `id` (its address,
+  such as `/about/#bishop-thuc`), an optional `label` (the small brown line), a `title`, an
+  `image` with `image_alt`, the summary `text`, and `links` (buttons: the first brown, the
+  rest outlined; web addresses open in a new tab). `frame: true` shows the whole picture on
+  white with a thin border, for a crest or a letter's first page. Bishop Carmona's letter,
+  Bishop Pivarunas's biography and the CMRI's history are on cmri.org; Bishop Thuc's
+  declaration and the Submission letter are documents on this site (see `about:` under
+  "A new document"). Since November 19, 2026 these five are not in the ☰ menu.
 - **Prayer intentions and quotes**: `_data/prayer.yml`.
 - **Devotions** (the video cards near the bottom): `_data/devotions.yml`. Each card has a
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.
@@ -118,7 +130,8 @@ resources exactly as written.
   with `children:` has a list of links under it: in the ☰ menu it opens and closes, and in
   the row of links (Media) the list drops down when the mouse is over it. A link to one
   section of a page is the page's address, `#` and the section's title in lower case with
-  dashes, such as `/sermons/#video-sermons`.
+  dashes, such as `/sermons/#video-sermons`. The pages summarized on the About page are
+  reached from there, not from the ☰ menu.
 - **A new document**: add a file to `_documents/`, for example `_documents/apostles-creed.md`:
 
   ```
@@ -138,7 +151,11 @@ resources exactly as written.
   (`large` or `plain`), `subtitle`, `subtitle_style` (`plain`, `plain-lg`), `image_position: right`,
   `intro`, `text_align: center`, `theme: brown`, and `pdf` / `pdf_title` / `pdf_thumb` /
   `pdf_link_text` to embed a PDF. The page appears at `/documents/<file-name>/` and on the
-  Documents page under its category.
+  Documents page under its category. A document summarized on the About page also gets
+  `about:` with its summary's `id` in `_data/about.yml` (Bishop Thuc's declaration has
+  `about: bishop-thuc`): it then opens with a light gray title band, "About Us" above the
+  title linking back to its summary, the picture in the About page's frame, and a "Back to
+  About Us" button at the end.
 - **A link to another website on the Documents page** (like Documents of Popes under Papal
   Documents): add it under `links:` for that section in `_data/document_categories.yml`, with
   `title`, `url`, `cover` (the words on its brown cover) and `summary`. It shows as a card

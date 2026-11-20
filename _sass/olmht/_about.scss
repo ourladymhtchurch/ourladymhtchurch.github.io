@@ -1,0 +1,54 @@
+/* About page (about.html): the chapel's story, with the mural beside it. On wide screens
+   the mural stays in view while the long text scrolls past. */
+@media (min-width: 768px) { .about-intro > img { position: sticky; top: 24px; } }
+
+/* About page: the summaries below the chapel's story, from _data/about.yml.
+   Each is a band with its picture beside the text from 768px: left, then right, in turn
+   (--reverse). On phones the picture sits on top, at most 300px wide. */
+.about-summary__grid { display: grid; gap: 28px 56px; align-items: center; }
+.about-summary__grid > * { min-width: 0; }
+.about-summary__media { width: 100%; max-width: 300px; margin: 0 auto; }
+.about-summary__media img {
+  display: block; width: 100%; aspect-ratio: 4 / 5;
+  object-fit: cover; object-position: 50% 20%;
+}
+/* frame: true — the whole picture on white with a thin border (a crest, a letter's first page) */
+.about-summary__media--framed img { object-fit: contain; background: #fff; border: 1px solid var(--rule); padding: 16px; }
+@media (min-width: 768px) {
+  .about-summary__grid { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); }
+  .about-summary__grid--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 300px); }
+  .about-summary__grid--reverse .about-summary__media { order: 2; }
+}
+.about-summary__label {
+  font-family: var(--font-display); text-transform: uppercase;
+  font-size: 13px; letter-spacing: .1em; color: var(--brown); margin-bottom: 8px;
+}
+.about-summary__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.about-summary .rich p + p { margin-top: 12px; }
+
+/* Two light gray bands in a row (the last summary and the Donate band): a line between */
+.section--panel + .section--panel { border-top: 1px solid var(--rule); }
+
+/* A document reached from the About page ("about:" in its front matter, _layouts/document.html):
+   a light gray title band that links back to the About page, the picture in the same
+   frame as on the About page (it stays in view while the text scrolls on wide screens),
+   and a "Back to About Us" button at the end. */
+.doc-header { padding: 40px 0 36px; text-align: center; }
+@media (min-width: 1024px) { .doc-header { padding: 56px 0 48px; } }
+.doc-header__title { font-size: 24px; line-height: 1.3; margin: 0 auto; max-width: 900px; text-wrap: balance; }
+@media (min-width: 768px) { .doc-header__title { font-size: 30px; } }
+.doc-header__summary { max-width: 760px; margin: 14px auto 0; font-size: 17px; line-height: 1.6; color: var(--gray); }
+.doc-feature { display: grid; gap: 32px 56px; align-items: start; }
+.doc-feature > * { min-width: 0; }
+.doc-feature__media { width: 100%; max-width: 300px; margin: 0 auto; }
+.doc-feature__media img { display: block; width: 100%; height: auto; }
+@media (min-width: 768px) {
+  .doc-feature { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); }
+  .doc-feature__media { position: sticky; top: 24px; }
+}
+.doc-feature__back { margin-top: 48px; }
+/* Space between paragraphs, except next to an empty <p><br></p> line, which already
+   makes a gap (so the documents' own text and blank lines stay as they are) */
+.doc-about .rich > p + p { margin-top: 1em; }
+.doc-about .rich > p:has(> br:only-child),
+.doc-about .rich > p:has(> br:only-child) + p { margin-top: 0; }

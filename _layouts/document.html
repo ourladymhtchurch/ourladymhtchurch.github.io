@@ -12,6 +12,10 @@ Document layout. Front matter options:
   text_align:     center (optional)
   theme:          brown (optional colored section)
   pdf / pdf_title / pdf_thumb / pdf_link_text: embedded PDF viewer
+  about:          the id of this document's summary on the About page (_data/about.yml),
+                  e.g. bishop-thuc. The page then opens with a light gray title band
+                  ("About Us" above the title, the summary line under it), shows the
+                  picture in the About page's frame, and ends with "Back to About Us".
 {%- endcomment -%}
 {%- assign title_class = "section-title" -%}
 {%- if page.title_style == "large" %}{% assign title_class = "section-title section-title--large" %}
@@ -29,12 +33,36 @@ Document layout. Front matter options:
   {%- when "plain-lg" %}{% assign subtitle_class = "content-heading content-heading--plain-lg" %}
 {%- endcase -%}
 
-<section class="section{% if page.theme == 'brown' %} section--brown{% endif %}">
+{%- if page.about %}
+{%- capture about_url %}{{ '/about/' | relative_url }}#{{ page.about }}{% endcapture %}
+<section class="section section--panel doc-header">
   <div class="container">
+    <p class="eyebrow"><a href="{{ about_url }}">About Us</a></p>
+    <h1 class="section-title doc-header__title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="doc-header__summary">{{ page.summary }}</p>{% endif %}
+  </div>
+</section>
+{%- endif %}
+
+<section class="section{% if page.theme == 'brown' %} section--brown{% endif %}{% if page.about %} doc-about{% endif %}">
+  <div class="container">
+    {% unless page.about %}
     {% if page.category %}<p class="eyebrow"><a href="{{ '/documents/' | relative_url }}#{{ page.category | slugify }}">{{ page.category }}</a></p>{% endif %}
     <h1 class="{{ title_class }}">{{ page.title }}</h1>
+    {% endunless %}
 
-    {% if page.image %}
+    {% if page.about and page.image %}
+    <div class="doc-feature">
+      <div class="doc-feature__media about-summary__media"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}"></div>
+      <div>
+        {% if page.subtitle %}<h2 class="{{ subtitle_class }}">{{ page.subtitle }}</h2>{% endif %}
+        {% if page.intro %}<p class="text text--md text--ink document-intro">{{ page.intro }}</p>{% endif %}
+        <div class="{{ text_class }}">
+{{ content }}
+        </div>
+      </div>
+    </div>
+    {% elsif page.image %}
     <div class="grid {% if page.image_position == 'right' %}grid--8-4{% else %}grid--4-8{% endif %}">
       {% unless page.image_position == 'right' %}<img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}">{% endunless %}
       <div>
@@ -59,6 +87,8 @@ Document layout. Front matter options:
     {% if page.pdf %}
     {% include pdf-viewer.html title=page.pdf_title file=page.pdf thumb=page.pdf_thumb link_text=page.pdf_link_text %}
     {% endif %}
+
+    {% if page.about %}<p class="button-row doc-feature__back"><a class="btn btn--outline" href="{{ about_url }}">Back to About Us</a></p>{% endif %}
   </div>
 </section>
 

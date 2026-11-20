@@ -1,7 +1,10 @@
 # ---------------------------------------------------------------------------
 # Site menus.
 #   primary: the row of links under the site name (shown on desktop)
-#   drawer:  the full menu behind the ☰ button (every page and link)
+#   drawer:  the full menu behind the ☰ button (every page and link, except the five
+#            reached from the About page's summaries since 2026-11-19: Bishop Thuc,
+#            Bishop Carmona, Bishop Pivarunas, the CMRI and Submission to the
+#            Magisterium; their summaries are in _data/about.yml)
 #   footer:  the links in the footer
 # Links that start with http:// or https:// open in a new tab.
 # Page addresses: /about/, /contact-us/, /donation/, /dress-code/, /documents/,
@@ -80,18 +83,6 @@ drawer:
     url: /resources/
   - title: "Contact Us"
     url: /contact-us/
-  - title: "Bishop Thuc"
-    children:
-      - title: "Declaration /Bishop Thuc"
-        url: /documents/declaration-bishop-thuc/
-      - title: "Bishop Thuc Brief Bio"
-        url: https://www.youtube.com/watch?v=ZLAGCavIYUw
-  - title: "Bishop Pivarunas, CMRI"
-    url: https://cmri.org/priests-religious/superior-general-bishop-mark-a-pivarunas-cmri/
-  - title: "Cong Mary Imm Queen- CMRI"
-    url: https://cmri.org
-  - title: "Submission to Magisterium"
-    url: /documents/submission-to-magisterium/
   - title: "Catholic Papacy and Unity"
     children:
       - title: "Bp Pivarunas on Unity"
