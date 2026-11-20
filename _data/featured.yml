@@ -32,6 +32,17 @@ items:
     wide: true
     label: "Sermon"
 
+  # The chapel's sermon for All Saints on its YouTube channel (uploaded 2026-11-19
+  # through the YouTube pipeline; added here at the user's request the same day).
+  - type: video
+    wide: true
+    label: "Sermon"
+    title: "Called to Become Saints"
+    by: "Rev. Father Adam Joseph Craig, CMRI"
+    text: "Sermon for the Feast of All Saints, Sunday, November 1, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    youtube: cicsNVla_YQ
+    audio: /assets/audio/sermon-2026-11-01-craig.mp3
+
   # The chapel's own video on its YouTube channel (added 2026-11-17 through the
   # YouTube pipeline, Church YouTube/PIPELINE.md, step 9).
   - type: video

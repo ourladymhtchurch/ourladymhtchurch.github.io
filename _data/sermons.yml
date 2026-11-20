@@ -67,6 +67,13 @@ videos:
     poster: /assets/img/sermon-2026-11-08-sentman.jpg
     audio: /assets/audio/sermon-2026-11-08-sentman.mp3
 
+  - title: "Sermon for the Feast of All Saints"
+    by: "Rev. Father Adam Joseph Craig, CMRI"
+    text: "Sunday, November 1, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    # On the chapel's YouTube channel since 2026-11-19 ("Called to Become Saints").
+    youtube: cicsNVla_YQ
+    audio: /assets/audio/sermon-2026-11-01-craig.mp3
+
   - title: "Sermon for the Feast of Christ the King"
     by: "Rev. Father Brendan Hughes, CMRI"
     text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel."
