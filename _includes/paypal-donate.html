@@ -1,10 +1,11 @@
 {%- comment -%}
 The chapel's PayPal donate button (a hosted button from the chapel's PayPal account; its id is
 paypal_button_id in _config.yml), with the appeal the user asked for above every donate button
-(2026-11-18; the user's longer wording since 2026-11-19). Used by donate-band.html (home,
+(2026-11-18; the user's longer wording since 2026-11-19; "may want to make", not "wish to make",
+since 2026-11-20). Used by donate-band.html (home,
 About, Contact Us) and donation.html.
 {%- endcomment -%}
-<p class="donate-appeal text text--md text--slate">For the greater love and glory of Almighty God, the Most Holy Trinity, through true devotion to the Immaculate Heart of Mary Our Queen Mother for the reign of Our Divine Lord and Savior Jesus Christ the King and the salvation of souls, will you please help us at Our Lady of the Most Holy Trinity Church, also known as Our Lady of the Most Holy Trinity Chapel in Corpus Christi, with your prayers and any donation that you wish to make for this holy mission? Regardless of your donation or not, please be assured of our prayers for you and your intentions. May Almighty God bless you even more abundantly now and always... +</p>
+<p class="donate-appeal text text--md text--slate">For the greater love and glory of Almighty God, the Most Holy Trinity, through true devotion to the Immaculate Heart of Mary Our Queen Mother for the reign of Our Divine Lord and Savior Jesus Christ the King and the salvation of souls, will you please help us at Our Lady of the Most Holy Trinity Church, also known as Our Lady of the Most Holy Trinity Chapel in Corpus Christi, with your prayers and any donation that you may want to make for this holy mission? Regardless of your donation or not, please be assured of our prayers for you and your intentions. May Almighty God bless you even more abundantly now and always... +</p>
 <form class="paypal-donate" action="https://www.paypal.com/donate" method="post" target="_top">
   <input type="hidden" name="hosted_button_id" value="{{ site.chapel.paypal_button_id }}">
   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
