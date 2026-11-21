@@ -3,6 +3,20 @@
 .news-updated { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -24px 0 32px; }
 .news-list { list-style: none; margin: 40px 0 0; padding: 0; }
 
+/* "New to the Chapel?" (index.html #new-here): the Holy Communion reminders and the
+   sedevacante explanation, above the Dress Code, Profession of Faith … buttons */
+.new-here { font-size: 19px; }
+.new-here p + p, .new-here ul + p { margin-top: 14px; }
+.new-here__welcome { text-align: center; font-size: 23px; font-weight: 700; color: var(--brown); }
+.new-here__list { list-style: none; padding: 0; margin: 14px 0 0; }
+.new-here__list li { position: relative; padding-left: 1.7em; margin-top: 8px; }
+.new-here__list li::before { content: "➤"; position: absolute; left: 0; color: var(--brown); }
+.new-here__rule { border: 0; border-top: 1px solid var(--rule); margin: 32px 0 0; }
+.rich h3.new-here__question { font-size: 21px; color: var(--ink); text-align: center; margin: 28px 0 12px; }
+.new-here__names { text-align: center; font-weight: 700; color: var(--ink); }
+.new-here__link { text-align: center; }
+@media (min-width: 768px) { .new-here { font-size: 20px; } }
+
 /* A centered button under a section's cards ("All Video Sermons on YouTube" under Latest Sermon) */
 .section-more { text-align: center; margin: 32px 0 0; }
 .news-list li { font-size: 18px; color: var(--slate); padding: 16px 0; border-top: 1px solid var(--rule); }

@@ -64,10 +64,14 @@ resources exactly as written.
   and right under the schedule heading. Delete it, or leave it empty, once it no longer
   applies; both boxes disappear.
 - **Home page sections**, top to bottom: the Next Holy Latin Mass card, The Liturgical Year,
-  Chapel News, the Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer
-  Intentions, Devotions, The Papacy and Catholic Unity (the open letter), and a Donate band
-  with the PayPal button.
-- **The Liturgical Year** (the day's video, right above Chapel News): edit
+  Latest Sermon, the Holy Latin Mass schedule, New to the Chapel?, Chapel News, Featured
+  Content, Prayer Intentions, Devotions, The Papacy and Catholic Unity (the open letter), and
+  a Donate band with the PayPal button.
+- **New to the Chapel?**: its text (the welcome, the conditions for receiving Holy
+  Communion, each list line a `<li>`, and why the Chair of Saint Peter is vacant) is in
+  `index.html`, above its row of buttons (Dress Code, Modesty in Dress, Profession of Faith,
+  Baltimore Catechism, Call).
+- **The Liturgical Year** (the day's video, at the top under the Next Holy Latin Mass card): edit
   `_data/liturgical_year.yml`. Each day, take the InPrincipio Podcast's video for that day's
   saint or feast from <https://www.youtube.com/@InPrincipioCast/videos>, and change `title:`
   (for example `"St. Felix of Valois (November 20)"`) and `youtube:` (the id after `v=` in the

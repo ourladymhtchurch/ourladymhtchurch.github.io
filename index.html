@@ -5,9 +5,10 @@ permalink: "/"
 ---
 {% comment %}
 Home page sections, top to bottom:
-  hero (Next Holy Latin Mass card) · The Liturgical Year · Latest Sermon · Chapel News ·
-  Holy Latin Mass Schedule · Featured Content · New to the Chapel? · Prayer Intentions ·
-  Devotions · The Papacy and Catholic Unity · Donate
+  hero (Next Holy Latin Mass card) · The Liturgical Year · Latest Sermon ·
+  Holy Latin Mass Schedule · New to the Chapel? · Chapel News · Featured Content ·
+  Prayer Intentions · Devotions · The Papacy and Catholic Unity · Donate
+  (this order since 2026-11-21, the user's request)
 Most of the content comes from _data/: liturgical_year.yml (the day's video),
 notices.yml (Chapel News), schedule.yml, featured.yml, prayer.yml and devotions.yml. Sermons are on the Media page (/sermons/)
 (sermons.html, _data/sermons.yml); the Latest Sermon section shows the first video
@@ -48,6 +49,73 @@ cards in Featured Content were replaced by this button then). {% endcomment %}
     <p class="section-more"><a class="btn" href="https://www.youtube.com/@ourladymhtchurch/videos" target="_blank" rel="noopener">All Video Sermons on YouTube</a></p>
   </div>
 </section>
+
+<section class="section" id="mass-schedule">
+  <div class="container">
+    <h2 class="section-title">Traditional Holy Latin Mass Schedule</h2>
+    {% include alert.html %}
+    {% if site.data.schedule.celebrant %}<p class="schedule-celebrant">{{ site.data.schedule.celebrant }}</p>{% endif %}
+    <div class="schedule">
+      {% for mass in site.data.schedule.masses %}
+      <div class="schedule__item">
+        <p class="schedule__date">{{ mass.date }}</p>
+        <p class="schedule__time">{{ mass.time }}</p>
+        {% if mass.feast %}<p class="schedule__feast">{{ mass.feast }}</p>{% endif %}
+        {% if mass.celebrant %}<p class="schedule__celebrant">{{ mass.celebrant }}</p>{% endif %}
+        {% if mass.confessions or mass.rosary %}<p class="schedule__meta">{% if mass.confessions %}Confessions at {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary at {{ mass.rosary }}{% endif %}</p>{% endif %}
+        {% if mass.note %}<p class="schedule__note">{{ mass.note }}</p>{% endif %}
+        {% for sermon in mass.sermons %}
+        <div class="schedule__sermon">
+          <p class="schedule__sermon-label">Sermon</p>
+          <p class="schedule__sermon-title">{{ sermon.title }}</p>
+          {% if sermon.by %}<p class="schedule__sermon-by">{{ sermon.by }}</p>{% endif %}
+          {% if sermon.text %}<p class="schedule__sermon-text">{{ sermon.text }}</p>{% endif %}
+          <p class="schedule__sermon-actions"><a class="btn btn--outline" href="{% if sermon.url contains '://' %}{{ sermon.url }}{% else %}{{ sermon.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    {% if site.data.schedule.notice %}
+    <div class="schedule-notice rich">{{ site.data.schedule.notice | markdownify | replace: '<a href="http', '<a target="_blank" rel="noopener" href="http' }}</div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section--panel" id="new-here">
+  <div class="container">
+    <h2 class="section-title">New to the Chapel?</h2>
+    <div class="narrow">
+      {% comment %} The user's text (2026-11-21), replacing the earlier welcome paragraph; the buttons below are unchanged. {% endcomment %}
+      <div class="new-here rich text--slate">
+        <p class="new-here__welcome">We gladly welcome visitors and newcomers!</p>
+        <p>At the same time, we respectfully remind them that to receive Our Lord in Holy Communion, one must be:</p>
+        <ul class="new-here__list">
+          <li>A baptized Catholic in the state of grace free from mortal sin.</li>
+          <li>Modestly dressed according to traditional Catholic standards.</li>
+          <li>Fasting for 3 hours from any food or alcoholic beverage.</li>
+          <li>1 hour from any other beverage except water.</li>
+          <li>Exclusively attending a Traditional (i.e. Sedevacantist) Holy Latin Mass center.</li>
+          <li>The communicant does NOT say “Amen”.</li>
+        </ul>
+        <hr class="new-here__rule">
+        <h3 class="new-here__question">Why do we believe the Chair of Saint Peter is currently vacant (sedevacante)?</h3>
+        <p>Because Vatican II teachings, liturgical rites, and disciplines contain heresy contrary to what the Catholic Church has always taught for 2,000 years, we arrive at the only logical conclusion that the following men are illegitimate usurpers of the papal office and did not, do not, and cannot possess papal authority nor be guided by the Holy Ghost in matters of faith and morals:</p>
+        <p class="new-here__names">John XXIII, Paul VI, John Paul I, John Paul II, Benedict XVI, Francis I, and Leo XIV</p>
+        <p>Please see…</p>
+        <p class="new-here__link"><a href="https://cmri.org/about-cmri/theological-position-sede-vacante-2/" target="_blank" rel="noopener">The Theological Position of the CMRI</a></p>
+        <p>…for an understanding of the present crisis in the Church, and how we are striving to preserve the true Catholic Faith in these troubling times.</p>
+      </div>
+      <p class="button-row">
+        <a class="btn" href="{{ '/dress-code/' | relative_url }}">Dress Code</a>
+        <a class="btn btn--outline" href="https://www.salvemariaregina.info/Modesty.html" target="_blank" rel="noopener">Modesty in Dress</a>
+        <a class="btn btn--outline" href="{{ '/documents/profession-of-faith/' | relative_url }}">Profession of Faith</a>
+        <a class="btn btn--outline" href="https://www.cmri.org/baltimore-catechism-no-2/" target="_blank" rel="noopener">Baltimore Catechism</a>
+        <a class="btn btn--outline" href="{{ site.chapel.phone_link }}">Call {{ site.chapel.phone }}</a>
+      </p>
+    </div>
+  </div>
+</section>
 {% endif %}
 
 <section class="section" id="chapel-news">
@@ -80,41 +148,9 @@ cards in Featured Content were replaced by this button then). {% endcomment %}
   </div>
 </section>
 
-<section class="section section--panel" id="mass-schedule">
-  <div class="container">
-    <h2 class="section-title">Traditional Holy Latin Mass Schedule</h2>
-    {% include alert.html %}
-    {% if site.data.schedule.celebrant %}<p class="schedule-celebrant">{{ site.data.schedule.celebrant }}</p>{% endif %}
-    <div class="schedule">
-      {% for mass in site.data.schedule.masses %}
-      <div class="schedule__item">
-        <p class="schedule__date">{{ mass.date }}</p>
-        <p class="schedule__time">{{ mass.time }}</p>
-        {% if mass.feast %}<p class="schedule__feast">{{ mass.feast }}</p>{% endif %}
-        {% if mass.celebrant %}<p class="schedule__celebrant">{{ mass.celebrant }}</p>{% endif %}
-        {% if mass.confessions or mass.rosary %}<p class="schedule__meta">{% if mass.confessions %}Confessions at {{ mass.confessions }}{% endif %}{% if mass.confessions and mass.rosary %} &middot; {% endif %}{% if mass.rosary %}Rosary at {{ mass.rosary }}{% endif %}</p>{% endif %}
-        {% if mass.note %}<p class="schedule__note">{{ mass.note }}</p>{% endif %}
-        {% for sermon in mass.sermons %}
-        <div class="schedule__sermon">
-          <p class="schedule__sermon-label">Sermon</p>
-          <p class="schedule__sermon-title">{{ sermon.title }}</p>
-          {% if sermon.by %}<p class="schedule__sermon-by">{{ sermon.by }}</p>{% endif %}
-          {% if sermon.text %}<p class="schedule__sermon-text">{{ sermon.text }}</p>{% endif %}
-          <p class="schedule__sermon-actions"><a class="btn btn--outline" href="{% if sermon.url contains '://' %}{{ sermon.url }}{% else %}{{ sermon.url | relative_url }}{% endif %}" target="_blank" rel="noopener">Listen (MP3)</a></p>
-        </div>
-        {% endfor %}
-      </div>
-      {% endfor %}
-    </div>
-    {% if site.data.schedule.notice %}
-    <div class="schedule-notice rich">{{ site.data.schedule.notice | markdownify | replace: '<a href="http', '<a target="_blank" rel="noopener" href="http' }}</div>
-    {% endif %}
-  </div>
-</section>
-
 {%- assign featured_large = site.data.featured.items | where_exp: "item", "item.type != 'audio'" -%}
 {%- assign featured_audio = site.data.featured.items | where: "type", "audio" %}
-<section class="section" id="featured">
+<section class="section section--panel" id="featured">
   <div class="container">
     <h2 class="section-title">Featured Content</h2>
     {% if featured_large.size > 0 %}
@@ -148,22 +184,6 @@ cards in Featured Content were replaced by this button then). {% endcomment %}
       {% endfor %}
     </div>
     {% endif %}
-  </div>
-</section>
-
-<section class="section section--panel" id="new-here">
-  <div class="container">
-    <h2 class="section-title">New to the Chapel?</h2>
-    <div class="narrow">
-      <p class="text text--slate text--center">If you're new to the Chapel, welcome! Please read the Dress Code. When coming from no church, or a different church, one should speak to the Catholic Priest and learn and make with the Priest's direction and assistance: the Tridentine Profession of Faith after studying the Baltimore Catechism.</p>
-      <p class="button-row">
-        <a class="btn" href="{{ '/dress-code/' | relative_url }}">Dress Code</a>
-        <a class="btn btn--outline" href="https://www.salvemariaregina.info/Modesty.html" target="_blank" rel="noopener">Modesty in Dress</a>
-        <a class="btn btn--outline" href="{{ '/documents/profession-of-faith/' | relative_url }}">Profession of Faith</a>
-        <a class="btn btn--outline" href="https://www.cmri.org/baltimore-catechism-no-2/" target="_blank" rel="noopener">Baltimore Catechism</a>
-        <a class="btn btn--outline" href="{{ site.chapel.phone_link }}">Call {{ site.chapel.phone }}</a>
-      </p>
-    </div>
   </div>
 </section>
 
