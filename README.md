@@ -21,7 +21,8 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_config.yml` | Site name, tagline, address, phone, main color, hosting address |
 | `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
 | `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
-| `_data/featured.yml` | Featured Content cards: the latest sermon (from `sermons.yml`), other videos, conference recordings, links |
+| `_data/liturgical_year.yml` | The Liturgical Year: the day's saint or feast video (home page, above Chapel News) |
+| `_data/featured.yml` | Featured Content cards: other videos, conference recordings, links (the latest sermon has its own section, from `sermons.yml`) |
 | `_data/sermons.yml` | **Media page** (`/sermons/`): recordings of the Holy Latin Mass, the chapel's sermon videos (newest first), Bishop Pivarunas' sermons and lectures, and the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
 | `_data/devotions.yml` | Devotions cards: videos, prayers, the Pledge of Modesty |
@@ -62,19 +63,27 @@ resources exactly as written.
   box in two places: at the very top of the home page, above the Next Holy Latin Mass card,
   and right under the schedule heading. Delete it, or leave it empty, once it no longer
   applies; both boxes disappear.
-- **Home page sections**, top to bottom: the Next Holy Latin Mass card, Chapel News, the
-  Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer Intentions, Devotions,
-  The Papacy and Catholic Unity (the open letter), and a Donate band with the PayPal button.
+- **Home page sections**, top to bottom: the Next Holy Latin Mass card, The Liturgical Year,
+  Chapel News, the Holy Latin Mass schedule, Featured Content, New to the Chapel?, Prayer
+  Intentions, Devotions, The Papacy and Catholic Unity (the open letter), and a Donate band
+  with the PayPal button.
+- **The Liturgical Year** (the day's video, right above Chapel News): edit
+  `_data/liturgical_year.yml`. Each day, take the InPrincipio Podcast's video for that day's
+  saint or feast from <https://www.youtube.com/@InPrincipioCast/videos>, and change `title:`
+  (for example `"St. Felix of Valois (November 20)"`) and `youtube:` (the id after `v=` in the
+  video's address). Delete `youtube:` to hide the section.
+- **Latest Sermon** (under The Liturgical Year): needs no editing. It always shows the first
+  video in `_data/sermons.yml` (see Media page below), with its "Listen (MP3)" and "More
+  sermons" buttons, and under it one "All Video Sermons on YouTube" button to the chapel's
+  YouTube channel. Older sermons are not given their own cards on the home page.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
   To show a link there as a brown button (like "Watch on YouTube"), copy that line:
   `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.
   The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
   when you post news. Short extra notices go in the same file under `items:`, each as a
   `text:` block (links are written as `[words](https://address)`).
-- **Featured Content** (the latest sermon video, the Liturgical Year videos, the Fatima
-  Conference recordings): edit `_data/featured.yml`. The sermon card (`type: sermon`) needs
-  no editing: it always shows the first video in `_data/sermons.yml` (see Media page below).
-  A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
+- **Featured Content** (the Christ the King Holy Latin Mass excerpt, the Fatima Conference
+  recordings): edit `_data/featured.yml`. A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
   `v=` in the address; `start: 14` begins 14 seconds in). A video can also be a file kept on
   the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the
   card `file:` and `poster:` instead of `youtube:`. GitHub refuses any file over 100 MB, so
@@ -93,7 +102,7 @@ resources exactly as written.
     A video filmed with the phone held upright gets `portrait: true` (a tall frame instead
     of a wide one), and `wide: true` lets a card fill the row with the text beside it.
   - **Video Sermons**: the `videos:` list, newest first. The first
-    video is shown large as the Latest Sermon, and also in Featured Content on the home page;
+    video is shown large as the Latest Sermon, and also in the Latest Sermon section of the home page;
     the others form the Video Sermon Archive under it. Each has `title`, `by`, `text`, either
     `file:` + `poster:` (an `.mp4` in `assets/video/` and a picture in `assets/img/`) or
     `youtube:` (with an optional `start:`), and an optional `audio:` MP3, shown as a "Listen

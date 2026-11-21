@@ -2,6 +2,9 @@
    The Featured Content and Devotions cards use the .tile styles in _components.scss. */
 .news-updated { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -24px 0 32px; }
 .news-list { list-style: none; margin: 40px 0 0; padding: 0; }
+
+/* A centered button under a section's cards ("All Video Sermons on YouTube" under Latest Sermon) */
+.section-more { text-align: center; margin: 32px 0 0; }
 .news-list li { font-size: 18px; color: var(--slate); padding: 16px 0; border-top: 1px solid var(--rule); }
 
 /* Urgent red box ("alert" in _data/schedule.yml, _includes/alert.html), e.g. a cancellation.

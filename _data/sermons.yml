@@ -11,8 +11,8 @@
 # to an MP4 filmed upright (a phone held vertically), which gets a tall frame.
 #
 # videos: the sermon videos, newest first. The FIRST one is shown large at the
-# top of the Video Sermons section as the latest sermon, and also in Featured Content on
-# the home page (the "type: sermon" card in _data/featured.yml). The others form
+# top of the Video Sermons section as the latest sermon, and also in the Latest Sermon
+# section near the top of the home page (index.html). The others form
 # the Video Sermon Archive under it, two to a row. Each video has:
 #   title, by (who preached it), text (date and place), and either
 #   file (an .mp4 in assets/video/) and poster (a picture in assets/img/ shown

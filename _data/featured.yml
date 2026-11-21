@@ -3,10 +3,15 @@
 # schedule. Cards appear in this order, two to a row.
 #
 # Sermons are on the Media page (/sermons/): add them to _data/sermons.yml, not here.
+# The latest sermon has its own section near the top of the home page ("Latest
+# Sermon", the first video in _data/sermons.yml), with one "All Video Sermons on
+# YouTube" button under it; since 2026-11-21 the chapel's sermon videos are no
+# longer listed here one by one (the user's request).
 #
 #   type: sermon  the chapel's most recent sermon video, taken from the top of
 #                 videos: in _data/sermons.yml, with "Listen (MP3)" and
 #                 "More sermons" buttons. Only label and wide are set here.
+#                 (Not used since the Latest Sermon section shows it.)
 #   type: link    opens a web page. Needs url. image and button are optional.
 #   type: video   a video that plays inside the card. Either a YouTube video:
 #                 youtube (the id after "v=" in the address), with an optional
@@ -26,35 +31,6 @@
 # ---------------------------------------------------------------------------
 
 items:
-  # The chapel's most recent sermon: the first video in _data/sermons.yml.
-  # Nothing to change here for a new sermon; add its video there instead.
-  - type: sermon
-    wide: true
-    label: "Sermon"
-
-  # The chapel's sermon for the 24th Sunday after Pentecost on its YouTube channel
-  # (uploaded 2026-11-19 through the YouTube pipeline; added here at the user's
-  # request the same day).
-  - type: video
-    wide: true
-    label: "Sermon"
-    title: "Seeing Souls as God Sees Them"
-    by: "Rev. Father Martin Sentman, CMRI"
-    text: "Sermon for the 24th Sunday after Pentecost, Sunday, November 8, 2026, at Our Lady of the Most Holy Trinity Chapel."
-    youtube: NGYm8lWSghI
-    audio: /assets/audio/sermon-2026-11-08-sentman.mp3
-
-  # The chapel's sermon for All Saints on its YouTube channel (uploaded 2026-11-19
-  # through the YouTube pipeline; added here at the user's request the same day).
-  - type: video
-    wide: true
-    label: "Sermon"
-    title: "Called to Become Saints"
-    by: "Rev. Father Adam Joseph Craig, CMRI"
-    text: "Sermon for the Feast of All Saints, Sunday, November 1, 2026, at Our Lady of the Most Holy Trinity Chapel."
-    youtube: cicsNVla_YQ
-    audio: /assets/audio/sermon-2026-11-01-craig.mp3
-
   # The chapel's own video on its YouTube channel (added 2026-11-17 through the
   # YouTube pipeline, Church YouTube/PIPELINE.md, step 9).
   - type: video
@@ -64,25 +40,6 @@ items:
     by: "Excerpt of the Holy Latin Mass offered by Rev. Father Brendan Hughes, CMRI"
     text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel, with singing by the Sacred Heart Singers."
     youtube: T1iqo-P0lz8
-
-  # The sermon of that Holy Latin Mass, on the chapel's YouTube channel (added
-  # 2026-11-19 through the YouTube pipeline, step 9).
-  - type: video
-    wide: true
-    label: "Sermon"
-    title: "The Kingship of Christ"
-    by: "Rev. Father Brendan Hughes, CMRI"
-    text: "Sermon for the Feast of Christ the King, Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel."
-    youtube: 6-WruuWnCNw
-    audio: /assets/audio/sermon-2026-10-25-hughes.mp3
-
-  - type: video
-    wide: true
-    label: "The Liturgical Year"
-    title: "The Presentation of the Blessed Virgin Mary (November 21)"
-    by: "From Dom Guéranger's The Liturgical Year"
-    text: "Video by the InPrincipio Podcast."
-    youtube: 72QI4a2TYdY
 
   - type: link
     wide: true
