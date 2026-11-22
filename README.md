@@ -78,8 +78,7 @@ resources exactly as written.
   video's address). Delete `youtube:` to hide the section.
 - **Latest Sermon** (under The Liturgical Year): needs no editing. It always shows the first
   video in `_data/sermons.yml` (see Media page below), with its "Listen (MP3)" and "More
-  sermons" buttons, and under it one "All Video Sermons on YouTube" button to the chapel's
-  YouTube channel. Older sermons are not given their own cards on the home page.
+  sermons" buttons. Older sermons are not given their own cards on the home page.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
   To show a link there as a brown button (like "Watch on YouTube"), copy that line:
   `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.

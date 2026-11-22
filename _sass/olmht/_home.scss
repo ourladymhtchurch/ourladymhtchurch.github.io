@@ -17,8 +17,6 @@
 .new-here__link { text-align: center; }
 @media (min-width: 768px) { .new-here { font-size: 20px; } }
 
-/* A centered button under a section's cards ("All Video Sermons on YouTube" under Latest Sermon) */
-.section-more { text-align: center; margin: 32px 0 0; }
 .news-list li { font-size: 18px; color: var(--slate); padding: 16px 0; border-top: 1px solid var(--rule); }
 
 /* Urgent red box ("alert" in _data/schedule.yml, _includes/alert.html), e.g. a cancellation.
