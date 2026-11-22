@@ -69,8 +69,11 @@ resources exactly as written.
   a Donate band with the PayPal button.
 - **New to the Chapel?**: its text (the welcome, the conditions for receiving Holy
   Communion, each list line a `<li>`, and why the Chair of Saint Peter is vacant) is in
-  `index.html`, above its row of buttons (Dress Code, Modesty in Dress, Profession of Faith,
-  Baltimore Catechism, Call).
+  `index.html`, above its row of buttons (Dress Code, Modesty in Dress, Father Craig on
+  Modesty (Audio), Bishop Pivarunas’ Pastoral Letter on Modesty, Profession of Faith,
+  Baltimore Catechism, Call). The two modesty buttons link to files on the website of
+  Immaculate Conception Catholic Church in Sartell, Minnesota (immaculateconceptioncmri.org);
+  if that church moves them, the buttons stop working and need the new addresses.
 - **The Liturgical Year** (the day's video, at the top under the Next Holy Latin Mass card): edit
   `_data/liturgical_year.yml`. Each day, take the InPrincipio Podcast's video for that day's
   saint or feast from <https://www.youtube.com/@InPrincipioCast/videos>, and change `title:`
