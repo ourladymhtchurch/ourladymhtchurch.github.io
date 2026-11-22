@@ -3,6 +3,11 @@
 .news-updated { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -24px 0 32px; }
 .news-list { list-style: none; margin: 40px 0 0; padding: 0; }
 
+/* A narrow white band of buttons between the hero and The Liturgical Year
+   (index.html #indulgences, "Indulgences Granted for the Faithful Departed") */
+.section.home-links { padding: 28px 0; }
+.home-links .button-row { margin-top: 0; }
+
 /* "New to the Chapel?" (index.html #new-here): the Holy Communion reminders and the
    sedevacante explanation, above the Dress Code, Profession of Faith … buttons */
 .new-here { font-size: 19px; }

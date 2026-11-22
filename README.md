@@ -63,10 +63,15 @@ resources exactly as written.
   box in two places: at the very top of the home page, above the Next Holy Latin Mass card,
   and right under the schedule heading. Delete it, or leave it empty, once it no longer
   applies; both boxes disappear.
-- **Home page sections**, top to bottom: the Next Holy Latin Mass card, The Liturgical Year,
-  Latest Sermon, the Holy Latin Mass schedule, New to the Chapel?, Chapel News, Featured
-  Content, Prayer Intentions, Devotions, The Papacy and Catholic Unity (the open letter), and
-  a Donate band with the PayPal button.
+- **Home page sections**, top to bottom: the Next Holy Latin Mass card, an "Indulgences
+  Granted for the Faithful Departed" button, The Liturgical Year, Latest Sermon, the Holy
+  Latin Mass schedule, New to the Chapel?, Chapel News, Featured Content, Prayer Intentions,
+  Devotions, The Papacy and Catholic Unity (the open letter), and a Donate band with the
+  PayPal button.
+- **Indulgences button**: a PDF on the website of Immaculate Conception Catholic Church in
+  Sartell, Minnesota (immaculateconceptioncmri.org), in its own band near the top of
+  `index.html` (`id="indulgences"`). To take it down, delete that `<section>`; to change it,
+  edit the button's `href` and words.
 - **New to the Chapel?**: its text (the welcome, the conditions for receiving Holy
   Communion, each list line a `<li>`, and why the Chair of Saint Peter is vacant) is in
   `index.html`, above its row of buttons (Dress Code, Modesty in Dress, Father Craig on

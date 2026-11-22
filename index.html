@@ -5,7 +5,7 @@ permalink: "/"
 ---
 {% comment %}
 Home page sections, top to bottom:
-  hero (Next Holy Latin Mass card) · The Liturgical Year · Latest Sermon ·
+  hero (Next Holy Latin Mass card) · Indulgences button · The Liturgical Year · Latest Sermon ·
   Holy Latin Mass Schedule · New to the Chapel? · Chapel News · Featured Content ·
   Prayer Intentions · Devotions · The Papacy and Catholic Unity · Donate
   (this order since 2026-11-21, the user's request)
@@ -16,6 +16,17 @@ listed there.
 {% endcomment %}
 {% include hero.html %}
 {% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
+
+{% comment %} A button above The Liturgical Year (the user asked on 2026-11-21): a PDF on the
+website of Immaculate Conception Catholic Church, Sartell, MN (immaculateconceptioncmri.org).
+To remove it, delete this section. {% endcomment %}
+<section class="section home-links" id="indulgences">
+  <div class="container">
+    <p class="button-row">
+      <a class="btn" href="https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/CALENDAR/Yearly%20Devotionals/Indulgences%20for%20the%20Faithful%20Departed.pdf" target="_blank" rel="noopener">Indulgences Granted for the Faithful Departed</a>
+    </p>
+  </div>
+</section>
 
 {%- assign ly = site.data.liturgical_year -%}
 {% if ly.youtube %}
@@ -36,9 +47,8 @@ listed there.
 </section>
 {% endif %}
 
-{% comment %} The chapel's latest sermon (the first video in _data/sermons.yml), then one button to
-all the chapel's sermon videos on YouTube (the user asked on 2026-11-21; the separate sermon
-cards in Featured Content were replaced by this button then). {% endcomment %}
+{% comment %} The chapel's latest sermon (the first video in _data/sermons.yml), the user's
+request on 2026-11-21. {% endcomment %}
 {% if site.data.sermons.videos.size > 0 %}
 <section class="section section--panel" id="latest-sermon">
   <div class="container">
