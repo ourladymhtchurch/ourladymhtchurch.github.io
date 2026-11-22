@@ -103,6 +103,9 @@ resources exactly as written.
   video in `_data/sermons.yml` (see Media page below), with its "Listen (MP3)" and "More
   sermons" buttons. Older sermons are not given their own cards on the home page.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
+  Since 2026-11-22 it opens with Parish Registration, the same three paragraphs as the Parish
+  Registration page (spaced apart, with "Sacraments" capitalized), linking to the Parishioner
+  Information Form; change both together.
   To show a link there as a brown button (like "Watch on YouTube"), copy that line:
   `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.
   The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
