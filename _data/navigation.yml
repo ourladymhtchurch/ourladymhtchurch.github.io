@@ -15,7 +15,9 @@
 # children: a list of links under one menu item. In the drawer, the item becomes a
 # heading that opens and closes its list. In the primary row, the item keeps its own
 # url and its children drop down under it when the mouse is over it (Media lists
-# the sections of the Media page; keep both copies of that list the same).
+# the sections of the Media page; keep both copies of that list the same). Modesty
+# (since 2026-11-22) opens the Resources page's Modesty section and lists all of its
+# links in both menus; keep both lists in step with that section.
 # ---------------------------------------------------------------------------
 primary:
   - title: "Home"
@@ -24,8 +26,19 @@ primary:
     url: /about/
   - title: "Dress Code"
     url: /dress-code/
-  - title: "Modesty in Dress"
-    url: https://www.salvemariaregina.info/Modesty.html
+  - title: "Modesty"
+    url: /resources/#modesty
+    children:
+      - title: "Traditional Catholic Dress Code"
+        url: /dress-code/
+      - title: "Modesty in Dress"
+        url: https://www.salvemariaregina.info/Modesty.html
+      - title: "Bishop Pivarunas’ Pastoral Letter on Modesty"
+        url: https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/DIGITAL%20LIBRARY/Pastoral%20Letter%20on%20Modesty.pdf
+      - title: "Father Craig on Modesty (Audio)"
+        url: https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/SERMONS%20TALKS%20CONFERENCES/Sermons/Modesty%202025%20-Fr.%20Craig.mp3
+      - title: "Decency and Modesty (Archdiocese of Milwaukee)"
+        url: https://web.archive.org/web/20240405025427/https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"
@@ -59,8 +72,18 @@ drawer:
     url: /about/
   - title: "Dress Code"
     url: /dress-code/
-  - title: "Modesty in Dress"
-    url: https://www.salvemariaregina.info/Modesty.html
+  - title: "Modesty"
+    children:
+      - title: "Traditional Catholic Dress Code"
+        url: /dress-code/
+      - title: "Modesty in Dress"
+        url: https://www.salvemariaregina.info/Modesty.html
+      - title: "Bishop Pivarunas’ Pastoral Letter on Modesty"
+        url: https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/DIGITAL%20LIBRARY/Pastoral%20Letter%20on%20Modesty.pdf
+      - title: "Father Craig on Modesty (Audio)"
+        url: https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/SERMONS%20TALKS%20CONFERENCES/Sermons/Modesty%202025%20-Fr.%20Craig.mp3
+      - title: "Decency and Modesty (Archdiocese of Milwaukee)"
+        url: https://web.archive.org/web/20240405025427/https://www.archmil.org/ArchdioceseofMilwaukee/history/MC-021-B1-F15-Decency-and-Modesty-Pastoral.pdf
   - title: "Holy Latin Mass Schedule"
     url: /#mass-schedule
   - title: "Chapel News"

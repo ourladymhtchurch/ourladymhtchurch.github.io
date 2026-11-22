@@ -166,7 +166,9 @@ resources exactly as written.
   `group` label, a `title`, a `youtube` id or an `image`, and optional `text`.
 - **Menus**: `_data/navigation.yml`. Links beginning with `http` open in a new tab. An item
   with `children:` has a list of links under it: in the ☰ menu it opens and closes, and in
-  the row of links (Media) the list drops down when the mouse is over it. A link to one
+  the row of links (Modesty, Media) the list drops down when the mouse is over it. Modesty,
+  in both menus, lists the five links of the Resources page's Modesty section (`_data/resources.yml`;
+  keep them the same), and in the row of links it opens that section (`/resources/#modesty`). A link to one
   section of a page is the page's address, `#` and the section's title in lower case with
   dashes, such as `/sermons/#video-sermons`. The pages summarized on the About page are
   reached from there, not from the ☰ menu.
