@@ -1,12 +1,13 @@
 # ---------------------------------------------------------------------------
-# "Featured Content" cards on the home page, right after the Holy Latin Mass
-# schedule. Cards appear in this order, two to a row.
+# "Featured Content" cards on the home page, after Chapel News. Cards appear in
+# this order, two to a row.
 #
 # Sermons are on the Media page (/sermons/): add them to _data/sermons.yml, not here.
 # The latest sermon has its own section near the top of the home page ("Latest
-# Sermon", the first video in _data/sermons.yml), with one "All Video Sermons on
-# YouTube" button under it; since 2026-11-21 the chapel's sermon videos are no
-# longer listed here one by one (the user's request).
+# Sermon", the first video in _data/sermons.yml). Since 2026-11-21 the chapel's
+# sermon videos are not listed here one by one (the user's request); the one
+# exception is the Christ the King sermon under the Holy Latin Mass excerpt of
+# that day, which the user asked to keep here.
 #
 #   type: sermon  the chapel's most recent sermon video, taken from the top of
 #                 videos: in _data/sermons.yml, with "Listen (MP3)" and
@@ -40,6 +41,18 @@ items:
     by: "Excerpt of the Holy Latin Mass offered by Rev. Father Brendan Hughes, CMRI"
     text: "Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel, with singing by the Sacred Heart Singers."
     youtube: T1iqo-P0lz8
+
+  # The sermon of that Holy Latin Mass, on the chapel's YouTube channel (uploaded
+  # 2026-11-19; taken off this list on 2026-11-21 with the other sermon cards,
+  # then put back under the excerpt the same day at the user's request).
+  - type: video
+    wide: true
+    label: "Sermon"
+    title: "The Kingship of Christ"
+    by: "Rev. Father Brendan Hughes, CMRI"
+    text: "Sermon for the Feast of Christ the King, Sunday, October 25, 2026, at Our Lady of the Most Holy Trinity Chapel."
+    youtube: 6-WruuWnCNw
+    audio: /assets/audio/sermon-2026-10-25-hughes.mp3
 
   - type: link
     wide: true
