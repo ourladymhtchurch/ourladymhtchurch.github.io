@@ -1,0 +1,28 @@
+---
+layout: page
+title: "Church Calendar, November 2026"
+permalink: /calendar/
+description: "The Church calendar for November 2026, the Month of the Holy Souls, with its second page: the Calendar Guide and the Church laws of fast and abstinence."
+---
+{% comment %}
+The user asked on 2026-11-21 for a home page button to this calendar (the button is under
+"Indulgences Granted for the Faithful Departed" at the top of index.html). Both pages are
+pictures on the home page of Immaculate Conception Catholic Church, Sartell, MN
+(immaculateconceptioncmri.org); they are shown here from that site, not copied. For another
+month, change the title, the description, the intro and the first picture's address (that
+site names it after the month, e.g. CALENDAR/Nov.png); the second page has stayed the same.
+{% endcomment %}
+{%- assign cal_base = "https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/CALENDAR/" -%}
+<p class="narrow text text--md text--center page-intro">November 2026, the Month of the Holy Souls, and the calendar’s second page: the Calendar Guide, the Church laws of fast and abstinence, the Eucharistic fast laws and the Holydays of Obligation. Tap or click a page to open it full size.</p>
+<div class="calendar-pages">
+  <figure class="calendar-page">
+    <a href="{{ cal_base }}Nov.png" target="_blank" rel="noopener"><img src="{{ cal_base }}Nov.png" width="3300" height="2550" alt="The Church calendar for November 2026, the Month of the Holy Souls, with the feast of each day"></a>
+    <figcaption>Page 1: November 2026</figcaption>
+  </figure>
+  <figure class="calendar-page">
+    <a href="{{ cal_base }}Fast%20Laws.png" target="_blank" rel="noopener"><img src="{{ cal_base }}Fast%20Laws.png" width="3300" height="2550" loading="lazy" alt="The calendar’s second page: the Church laws of fast and abstinence, the Calendar Guide of abbreviations and symbols, the Eucharistic fast laws of Pope Pius XII, and the Holydays of Obligation in the United States"></a>
+    <figcaption>Page 2: Calendar Guide, the Church laws of fast and abstinence, the Eucharistic fast laws and the Holydays of Obligation</figcaption>
+  </figure>
+</div>
+<p class="rich text text--md text--center calendar-source">From the website of <a href="https://immaculateconceptioncmri.org" target="_blank" rel="noopener">Immaculate Conception Catholic Church</a>, Sartell, Minnesota.</p>
+<p class="button-row"><a class="btn btn--outline" href="{{ '/' | relative_url }}">Back to the home page</a></p>

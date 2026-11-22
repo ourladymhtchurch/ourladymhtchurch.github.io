@@ -17,13 +17,16 @@ listed there.
 {% include hero.html %}
 {% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
 
-{% comment %} A button above The Liturgical Year (the user asked on 2026-11-21): a PDF on the
-website of Immaculate Conception Catholic Church, Sartell, MN (immaculateconceptioncmri.org).
-To remove it, delete this section. {% endcomment %}
+{% comment %} Buttons above The Liturgical Year, one under the other (the user asked on
+2026-11-21): a PDF on the website of Immaculate Conception Catholic Church, Sartell, MN
+(immaculateconceptioncmri.org), and the Church Calendar page (calendar.html), which shows
+that site's calendar pictures. To remove a button, delete its line; to remove both, delete
+this section. {% endcomment %}
 <section class="section home-links" id="indulgences">
   <div class="container">
     <p class="button-row">
       <a class="btn" href="https://immaculateconceptioncmri.org/wp-content/uploads/ICC%20WEBSITE%20UPLOADS%20ORGANIZED/CALENDAR/Yearly%20Devotionals/Indulgences%20for%20the%20Faithful%20Departed.pdf" target="_blank" rel="noopener">Indulgences Granted for the Faithful Departed</a>
+      <a class="btn" href="{{ '/calendar/' | relative_url }}">Church Calendar, November 2026</a>
     </p>
   </div>
 </section>

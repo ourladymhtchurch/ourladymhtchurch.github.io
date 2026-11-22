@@ -3,10 +3,19 @@
 .news-updated { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -24px 0 32px; }
 .news-list { list-style: none; margin: 40px 0 0; padding: 0; }
 
-/* A narrow white band of buttons between the hero and The Liturgical Year
-   (index.html #indulgences, "Indulgences Granted for the Faithful Departed") */
+/* A narrow white band of buttons, one under the other, between the hero and The Liturgical
+   Year (index.html #indulgences: "Indulgences Granted for the Faithful Departed", then
+   "Church Calendar, November 2026") */
 .section.home-links { padding: 28px 0; }
-.home-links .button-row { margin-top: 0; }
+.home-links .button-row { margin-top: 0; flex-direction: column; align-items: center; }
+
+/* Church Calendar page (calendar.html, /calendar/): the month's two calendar pages,
+   shown from immaculateconceptioncmri.org */
+.calendar-pages { display: grid; gap: 32px; max-width: 1100px; margin: 0 auto; }
+.calendar-page { margin: 0; }
+.calendar-page img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+.calendar-page figcaption { margin-top: 10px; text-align: center; font-size: 16px; color: var(--slate); }
+.calendar-source { margin-top: 32px; }
 
 /* "New to the Chapel?" (index.html #new-here): the Holy Communion reminders and the
    sedevacante explanation, above the Dress Code, Profession of Faith … buttons */

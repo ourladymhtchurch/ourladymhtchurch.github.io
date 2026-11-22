@@ -63,15 +63,22 @@ resources exactly as written.
   box in two places: at the very top of the home page, above the Next Holy Latin Mass card,
   and right under the schedule heading. Delete it, or leave it empty, once it no longer
   applies; both boxes disappear.
-- **Home page sections**, top to bottom: the Next Holy Latin Mass card, an "Indulgences
-  Granted for the Faithful Departed" button, The Liturgical Year, Latest Sermon, the Holy
-  Latin Mass schedule, New to the Chapel?, Chapel News, Featured Content, Prayer Intentions,
-  Devotions, The Papacy and Catholic Unity (the open letter), and a Donate band with the
-  PayPal button.
-- **Indulgences button**: a PDF on the website of Immaculate Conception Catholic Church in
-  Sartell, Minnesota (immaculateconceptioncmri.org), in its own band near the top of
-  `index.html` (`id="indulgences"`). To take it down, delete that `<section>`; to change it,
-  edit the button's `href` and words.
+- **Home page sections**, top to bottom: the Next Holy Latin Mass card, the "Indulgences
+  Granted for the Faithful Departed" and "Church Calendar, November 2026" buttons, The
+  Liturgical Year, Latest Sermon, the Holy Latin Mass schedule, New to the Chapel?, Chapel
+  News, Featured Content, Prayer Intentions, Devotions, The Papacy and Catholic Unity (the
+  open letter), and a Donate band with the PayPal button.
+- **Indulgences and Church Calendar buttons**: in their own band near the top of
+  `index.html` (`id="indulgences"`), one under the other. The first opens a PDF on the
+  website of Immaculate Conception Catholic Church in Sartell, Minnesota
+  (immaculateconceptioncmri.org). The second opens the Church Calendar page
+  (`calendar.html`, `/calendar/`), which shows that church's calendar pictures: the month,
+  then the second page of explanations (fast and abstinence, the Calendar Guide). To take a
+  button down, delete its line; to take both down, delete that `<section>`.
+- **Church Calendar page** (`calendar.html`): for a new month, change the title, the
+  description and the first sentence at the top of the file, and the first picture's file
+  name (that church names it after the month, e.g. `Nov.png`; find the new one on its home
+  page), then change the button's words in `index.html`.
 - **New to the Chapel?**: its text (the welcome, the conditions for receiving Holy
   Communion, each list line a `<li>`, and why the Chair of Saint Peter is vacant) is in
   `index.html`, above its row of buttons (Dress Code, Modesty in Dress, Father Craig on
