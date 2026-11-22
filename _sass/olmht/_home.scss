@@ -17,6 +17,10 @@
 .calendar-page figcaption { margin-top: 10px; text-align: center; font-size: 16px; color: var(--slate); }
 .calendar-source { margin-top: 32px; }
 
+/* Parish Registration page (parish-registration.html, /parish-registration/), linked from
+   the "New to the Chapel?" buttons */
+.parish-registration p + p { margin-top: 16px; }
+
 /* "New to the Chapel?" (index.html #new-here): the Holy Communion reminders and the
    sedevacante explanation, above the Dress Code, Profession of Faith … buttons */
 .new-here { font-size: 19px; }

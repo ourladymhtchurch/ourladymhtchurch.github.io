@@ -32,7 +32,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_data/document_categories.yml` | Section order and descriptions on the Documents page |
 | `_documents/` | One file per document: creeds, catechisms, papal documents, Fatima, etc. |
 | `index.html` | Home page layout, the Chapel News text and the "New to the Chapel?" text |
-| `about.html`, `contact-us.html`, `donation.html`, `dress-code.html` | The other pages |
+| `about.html`, `contact-us.html`, `donation.html`, `dress-code.html`, `parish-registration.html`, `calendar.html` | The other pages |
 | `documents.html`, `resources.html`, `sermons.html`, `404.html` | The Documents index, Resources page, Media page, not-found page |
 | `_layouts/`, `_includes/`, `_sass/` | The theme: page skeletons, reusable pieces, styles |
 | `assets/img`, `assets/pdf`, `assets/fonts`, `assets/js` | Images, PDFs, web fonts, menu script |
@@ -83,9 +83,17 @@ resources exactly as written.
   Communion, each list line a `<li>`, and why the Chair of Saint Peter is vacant) is in
   `index.html`, above its row of buttons (Dress Code, Modesty in Dress, Father Craig on
   Modesty (Audio), Bishop Pivarunas’ Pastoral Letter on Modesty, Profession of Faith,
-  Baltimore Catechism, Call). The two modesty buttons link to files on the website of
-  Immaculate Conception Catholic Church in Sartell, Minnesota (immaculateconceptioncmri.org);
-  if that church moves them, the buttons stop working and need the new addresses.
+  Baltimore Catechism, Parish Registration, Call). The two modesty buttons link to files on
+  the website of Immaculate Conception Catholic Church in Sartell, Minnesota
+  (immaculateconceptioncmri.org); if that church moves them, the buttons stop working and
+  need the new addresses. Parish Registration opens the chapel's own page
+  (`parish-registration.html`, `/parish-registration/`): how to become a parishioner with a
+  Parishioner Information Form from the vestibule, then Contact Us, Call and New to the
+  Chapel? buttons. Edit its three paragraphs there. "Parishioner Information Form" in the
+  first paragraph opens the chapel's printable form, `assets/pdf/parishioner-information-form.pdf`
+  (front and back, each 8.5 × 5.5 inches, with the chapel's mural and name). To change the
+  form, edit `_branding/parishioner-information-form.html` and render the PDF again with the
+  Chrome command at the top of that file.
 - **The Liturgical Year** (the day's video, at the top under the Next Holy Latin Mass card): edit
   `_data/liturgical_year.yml`. Each day, take the InPrincipio Podcast's video for that day's
   saint or feast from <https://www.youtube.com/@InPrincipioCast/videos>, and change `title:`

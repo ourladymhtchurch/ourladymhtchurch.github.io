@@ -1,0 +1,24 @@
+---
+layout: page
+title: "Parish Registration"
+permalink: /parish-registration/
+description: "How to become a parishioner of Our Lady of the Most Holy Trinity Chapel: fill out a Parishioner Information Form, available in the vestibule."
+---
+{% comment %}
+The user's text (2026-11-22), modeled on the Parish Registration section of Immaculate
+Conception Catholic Church's home page (immaculateconceptioncmri.org). The button to this page
+is in the home page's "New to the Chapel?" section. "Parishioner Information Form" links to the
+chapel's own form (assets/pdf/parishioner-information-form.pdf, two half-letter pages), made
+from _branding/parishioner-information-form.html at the user's request on 2026-11-22; the
+render command is in that file's header.
+{% endcomment %}
+<div class="narrow rich text text--md text--center parish-registration">
+  <p>If you have been attending Our Lady of the Most Holy Trinity Chapel and would like to become a parishioner, please fill out a <a href="{{ '/assets/pdf/parishioner-information-form.pdf' | relative_url }}" target="_blank" rel="noopener"><strong>Parishioner Information Form</strong></a>.</p>
+  <p>These are available on the bulletin counter in the vestibule.</p>
+  <p>This information remains confidential and is used by the pastor to make sure you and your children are taken care of regarding the sacraments especially if an emergency arises.</p>
+</div>
+<p class="button-row">
+  <a class="btn" href="{{ '/contact-us/' | relative_url }}">Contact Us</a>
+  <a class="btn btn--outline" href="{{ site.chapel.phone_link }}">Call {{ site.chapel.phone }}</a>
+  <a class="btn btn--outline" href="{{ '/#new-here' | relative_url }}">New to the Chapel?</a>
+</p>

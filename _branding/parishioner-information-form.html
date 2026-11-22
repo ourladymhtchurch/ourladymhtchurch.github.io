@@ -1,0 +1,248 @@
+<!doctype html>
+<!--
+  Parishioner Information Form: two half-letter pages (8.5 x 5.5 in, landscape), front and
+  back, modeled on Immaculate Conception Catholic Church's form (immaculateconceptioncmri.org,
+  the two pictures in its home page's Parish Registration section), made the chapel's own
+  with its mural and its blackletter name. The Parish Registration page
+  (parish-registration.html) links to the PDF. After any change, render it again from this
+  folder with:
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --no-pdf-header-footer --virtual-time-budget=3000 \
+      --print-to-pdf=../assets/pdf/parishioner-information-form.pdf \
+      parishioner-information-form.html
+
+  This folder starts with "_", so Jekyll never publishes this source; only the PDF is
+  published.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parishioner Information Form</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  @page { size: 8.5in 5.5in; margin: 0; }
+  :root {
+    --brown: #854204;
+    --brown-deep: #522601;
+    --gold: #c08a3e;
+    --ink: #1b1b1b;
+    --text: #2b2b2b;
+    --soft: #5e5e5e;
+    --line: #8d8279;
+    --tint: #fbf3ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; color: var(--text); font-family: 'Montserrat', Arial, sans-serif; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .sheet { position: relative; width: 8.5in; height: 5.5in; overflow: hidden; break-after: page; }
+  .sheet:last-child { break-after: auto; }
+
+  /* double frame with a cross at each corner */
+  .frame { position: absolute; inset: 14px; border: 2px solid var(--brown); }
+  .frame::after { content: ""; position: absolute; inset: 3px; border: .75px solid var(--brown); }
+  .corner { position: absolute; width: 18px; height: 18px; background: #fff; padding: 2px; }
+  .corner svg { display: block; width: 100%; height: 100%; }
+  .corner.tl { left: 6px; top: 6px; } .corner.tr { right: 6px; top: 6px; }
+  .corner.bl { left: 6px; bottom: 6px; } .corner.br { right: 6px; bottom: 6px; }
+
+  .content { position: absolute; inset: 30px 38px 26px; display: flex; flex-direction: column; }
+
+  /* front: mural on the left, the name, title and opening fields beside it */
+  .top { display: flex; gap: 22px; }
+  /* The gable shows the top of the mural, the whole width: the Most Holy Trinity crowning Our
+     Lady, down to the tabernacle. The photo starts just below the peak (top: --drop), so the
+     roof clears the heads of the Father and the Son; the strip above it is the mural's sky
+     colour, and the photo's top edge fades into it. */
+  .gable { --drop: 18px; flex: 0 0 196px; height: 186px; background: var(--brown);
+           clip-path: polygon(50% 0, 100% 19%, 100% 100%, 0 100%, 0 19%); padding: 2px; margin-top: 2px; }
+  .gable .art { position: relative; width: 100%; height: 100%; overflow: hidden; background: #d3e0ee;
+                clip-path: polygon(50% 0, 100% 19%, 100% 100%, 0 100%, 0 19%);
+                filter: grayscale(1) sepia(.85) saturate(1.5) hue-rotate(-8deg) contrast(1.3) brightness(.9); }
+  .gable img { position: absolute; left: 0; top: var(--drop); display: block; width: 100%; height: auto;
+               -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+                       mask-image: linear-gradient(to bottom, transparent 0, #000 14px); }
+  .head { flex: 1; min-width: 0; }
+  .name { font-family: 'Grenze Gotisch', 'Vollkorn', Georgia, serif; font-weight: 600; color: var(--brown);
+          font-size: 29px; line-height: 1; text-align: center; }
+  .title { font-family: 'Archivo Black', Arial, sans-serif; color: var(--ink); text-transform: uppercase;
+           letter-spacing: .05em; font-size: 19px; line-height: 1; text-align: center; margin-top: 7px; }
+  .rule { display: flex; align-items: center; gap: 8px; margin: 7px auto 6px; width: 62%; }
+  .rule::before, .rule::after { content: ""; flex: 1; height: 1px; background: var(--gold); }
+  .rule svg { width: 11px; height: 11px; flex: none; }
+  .intro { font-style: italic; font-size: 10px; line-height: 1.42; color: var(--soft); text-align: center; }
+
+  .row { display: flex; align-items: flex-end; gap: 14px; height: 25px; font-size: 11.5px; }
+  .head .row { height: 24px; }
+  .f { display: flex; align-items: flex-end; gap: 6px; min-width: 0; }
+  .f.grow { flex: 1; }
+  .f label { white-space: nowrap; color: var(--ink); }
+  .f .line { flex: 1; min-width: 30px; border-bottom: .9px solid var(--line); height: 1px; margin-bottom: 3px; }
+  .w60 { flex: 0 0 60px; } .w80 { flex: 0 0 80px; } .w110 { flex: 0 0 110px; } .w130 { flex: 0 0 130px; }
+  .opts { display: flex; align-items: flex-end; gap: 12px; white-space: nowrap; color: var(--ink); }
+  .opts .label { margin-right: -4px; }
+  .opt { display: inline-flex; align-items: center; gap: 4px; }
+  .box { display: inline-block; width: 10px; height: 10px; border: 1.1px solid var(--brown); background: #fff; }
+  .yn { display: inline-flex; gap: 8px; }
+  .note { margin-top: auto; text-align: center; font-style: italic; font-size: 11px; color: var(--soft); }
+
+  /* back: children, emergency contact, other information */
+  .kids-head { font-size: 11.5px; color: var(--ink); }
+  .kids-head em { color: var(--soft); }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 10.5px; }
+  th { background: var(--tint); color: var(--brown-deep); font-weight: 700; text-align: center;
+       padding: 5px 4px; border: .75px solid #cbbfb3; }
+  td { height: 24px; border: .75px solid #cbbfb3; text-align: center; vertical-align: middle; }
+  td .box { vertical-align: middle; }
+  .col-name { width: 44%; } .col-dob { width: 17%; } .col-s { width: 13%; }
+  .back .row { height: 27px; }
+  .return { margin-top: auto; text-align: center; font-style: italic; font-size: 11px; color: var(--ink); }
+  .foot { margin-top: 6px; text-align: center; font-size: 9px; color: var(--soft); letter-spacing: .02em; }
+  .foot b { color: var(--brown); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="cross" viewBox="6 5 20 22"><path d="M14 5h4v8h8v4h-8v10h-4V17H6v-4h8z" fill="#854204"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===================== Front ===================== -->
+<section class="sheet front">
+  <div class="frame"></div>
+  <div class="corner tl"><svg><use href="#cross"/></svg></div>
+  <div class="corner tr"><svg><use href="#cross"/></svg></div>
+  <div class="corner bl"><svg><use href="#cross"/></svg></div>
+  <div class="corner br"><svg><use href="#cross"/></svg></div>
+
+  <div class="content">
+    <div class="top">
+      <div class="gable"><div class="art"><img src="../assets/img/trinity-coronation.jpg" alt=""></div></div>
+      <div class="head">
+        <div class="name">Our Lady of the Most Holy Trinity Chapel</div>
+        <div class="title">Parishioner Information Form</div>
+        <div class="rule"><svg><use href="#cross"/></svg></div>
+        <p class="intro">This information is kept confidential. The pastor uses it to care for you and your
+          family, especially regarding the sacraments if an emergency arises, and to keep accurate parish
+          records.</p>
+
+        <div class="row" style="margin-top: 4px;">
+          <div class="opts">
+            <span class="opt"><span class="box"></span>New registration</span>
+            <span class="opt"><span class="box"></span>Update</span>
+          </div>
+          <div class="f grow"><label>Date:</label><span class="line"></span></div>
+        </div>
+        <div class="row">
+          <div class="f grow"><label>Adult 1 – Name:</label><span class="line"></span></div>
+          <div class="f w130"><label>Birth date:</label><span class="line"></span></div>
+        </div>
+        <div class="row">
+          <div class="f grow"><label>Adult 2 – Name:</label><span class="line"></span></div>
+          <div class="f w130"><label>Birth date:</label><span class="line"></span></div>
+        </div>
+        <div class="row">
+          <div class="f grow"><label>Previous parish or chapel:</label><span class="line"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 6px;">
+      <div class="f grow"><label>Address:</label><span class="line"></span></div>
+    </div>
+    <div class="row">
+      <div class="f grow"><label>City:</label><span class="line"></span></div>
+      <div class="f w110"><label>State:</label><span class="line"></span></div>
+      <div class="f w130"><label>ZIP:</label><span class="line"></span></div>
+    </div>
+    <div class="row">
+      <div class="f" style="flex: 0 0 42%;"><label>Adult 1 – Phone:</label><span class="line"></span></div>
+      <div class="f grow"><label>Email:</label><span class="line"></span></div>
+    </div>
+    <div class="row">
+      <div class="f" style="flex: 0 0 42%;"><label>Adult 2 – Phone:</label><span class="line"></span></div>
+      <div class="f grow"><label>Email:</label><span class="line"></span></div>
+    </div>
+    <div class="row">
+      <div class="f grow"><label>Adult 1 – Religion:</label><span class="line"></span></div>
+      <div class="opts">
+        <span class="label">Baptized:</span><span class="yn"><span class="opt"><span class="box"></span>Yes</span><span class="opt"><span class="box"></span>No</span></span>
+        <span class="label">Confirmed:</span><span class="yn"><span class="opt"><span class="box"></span>Yes</span><span class="opt"><span class="box"></span>No</span></span>
+        <span class="label">Practicing / Easter duty:</span><span class="yn"><span class="opt"><span class="box"></span>Yes</span><span class="opt"><span class="box"></span>No</span></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="f grow"><label>Adult 2 – Religion:</label><span class="line"></span></div>
+      <div class="opts">
+        <span class="label">Baptized:</span><span class="yn"><span class="opt"><span class="box"></span>Yes</span><span class="opt"><span class="box"></span>No</span></span>
+        <span class="label">Confirmed:</span><span class="yn"><span class="opt"><span class="box"></span>Yes</span><span class="opt"><span class="box"></span>No</span></span>
+        <span class="label">Practicing / Easter duty:</span><span class="yn"><span class="opt"><span class="box"></span>Yes</span><span class="opt"><span class="box"></span>No</span></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="opts">
+        <span class="label">Marital status:</span>
+        <span class="opt"><span class="box"></span>Single</span>
+        <span class="opt"><span class="box"></span>Married</span>
+        <span class="opt"><span class="box"></span>Widowed</span>
+        <span class="opt"><span class="box"></span>Separated</span>
+        <span class="opt"><span class="box"></span>Discuss privately</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="f" style="flex: 0 0 34%;"><label>Marriage date:</label><span class="line"></span></div>
+      <div class="f grow"><label>Church / place of marriage:</label><span class="line"></span></div>
+    </div>
+
+    <p class="note">Please fill out the other side if it applies to you.</p>
+  </div>
+</section>
+
+<!-- ===================== Back ===================== -->
+<section class="sheet back">
+  <div class="frame"></div>
+  <div class="corner tl"><svg><use href="#cross"/></svg></div>
+  <div class="corner tr"><svg><use href="#cross"/></svg></div>
+  <div class="corner bl"><svg><use href="#cross"/></svg></div>
+  <div class="corner br"><svg><use href="#cross"/></svg></div>
+
+  <div class="content">
+    <p class="kids-head">Children <em>(children 18 and older should fill out their own form)</em>:</p>
+    <table>
+      <thead>
+        <tr><th class="col-name">Name</th><th class="col-dob">Birth date</th><th class="col-s">Baptized</th><th class="col-s">First Holy Communion</th><th class="col-s">Confirmed</th></tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        <tr><td></td><td></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="row" style="margin-top: 8px;">
+      <div class="f grow"><label>Emergency contact:</label><span class="line"></span></div>
+      <div class="f" style="flex: 0 0 24%;"><label>Relationship:</label><span class="line"></span></div>
+      <div class="f" style="flex: 0 0 24%;"><label>Phone:</label><span class="line"></span></div>
+    </div>
+    <div class="row">
+      <div class="f grow"><label>Occupations and other information <em>(optional)</em>:</label><span class="line"></span></div>
+    </div>
+    <div class="row"><div class="f grow"><span class="line"></span></div></div>
+    <div class="row"><div class="f grow"><span class="line"></span></div></div>
+    <div class="row"><div class="f grow"><span class="line"></span></div></div>
+
+    <p class="return">Please hand the completed form to the priest. Thank you, and may God bless you.</p>
+    <p class="foot"><b>Our Lady of the Most Holy Trinity Chapel</b> &nbsp;·&nbsp; 4421 Carroll Lane, Corpus Christi, TX 78411 &nbsp;·&nbsp; 361-857-6279 &nbsp;·&nbsp; olmhtchurch.org</p>
+  </div>
+</section>
+
+</body>
+</html>
