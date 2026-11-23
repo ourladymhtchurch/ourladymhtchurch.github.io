@@ -1,11 +1,13 @@
 # ---------------------------------------------------------------------------
-# "The Liturgical Year" on the home page: its own section, right under the top
-# banner and above Chapel News, with one video for the day's feast or saint.
+# "The Liturgical Year" on the home page: its own section, under Latest Sermon
+# (since 2026-11-23) and above the Holy Latin Mass schedule, with one video for
+# the day's feast or saint.
 # (Moved out of Featured Content at the user's request on 2026-11-21.)
 #
 # Each day, use the InPrincipio Podcast's video for that day, from
 # https://www.youtube.com/@InPrincipioCast/videos ("<Saint> (<Month Day>) — From
-# Dom Guéranger's Liturgical Year"):
+# Dom Guéranger's Liturgical Year"). If this year's isn't posted yet, search
+# YouTube for the channel's video from an earlier year:
 #   title    the saint or feast and the date, as the video names them
 #   youtube  the id after "v=" in the video's address (or after youtu.be/)
 #   start    optional: begin this many seconds in
@@ -13,7 +15,7 @@
 # Delete youtube (or leave it empty) to hide the whole section.
 # ---------------------------------------------------------------------------
 
-title: "The Last Sunday after Pentecost (November 22)"
+title: "Pope St. Clement I (November 23)"
 by: "From Dom Guéranger's The Liturgical Year"
 text: "Video by the InPrincipio Podcast."
-youtube: 8veVAqI-plA
+youtube: 05Jxet75sjQ

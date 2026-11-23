@@ -21,7 +21,7 @@ Requires Ruby 3.2 (the `.ruby-version` file selects it automatically when rbenv 
 | `_config.yml` | Site name, tagline, address, phone, main color, hosting address |
 | `_data/schedule.yml` | **Holy Latin Mass schedule** (home page) |
 | `_data/notices.yml` | Chapel News: the "Updated" line and short notices |
-| `_data/liturgical_year.yml` | The Liturgical Year: the day's saint or feast video (home page, above Chapel News) |
+| `_data/liturgical_year.yml` | The Liturgical Year: the day's saint or feast video (home page, under Latest Sermon) |
 | `_data/featured.yml` | Featured Content cards: other videos, conference recordings, links (the latest sermon has its own section, from `sermons.yml`) |
 | `_data/sermons.yml` | **Media page** (`/sermons/`): recordings of the Holy Latin Mass, the chapel's sermon videos (newest first), Bishop Pivarunas' sermons and lectures, and the MP3 sermons, in groups |
 | `_data/prayer.yml` | Prayer Intentions and the quotes under them |
@@ -64,8 +64,8 @@ resources exactly as written.
   and right under the schedule heading. Delete it, or leave it empty, once it no longer
   applies; both boxes disappear.
 - **Home page sections**, top to bottom: the Next Holy Latin Mass card, the "Indulgences
-  Granted for the Faithful Departed" and "Church Calendar, November 2026" buttons, The
-  Liturgical Year, Latest Sermon, the Holy Latin Mass schedule, New to the Chapel?, Chapel
+  Granted for the Faithful Departed" and "Church Calendar, November 2026" buttons, Latest
+  Sermon, The Liturgical Year, the Holy Latin Mass schedule, New to the Chapel?, Chapel
   News, Featured Content, Prayer Intentions, Devotions, The Papacy and Catholic Unity (the
   open letter), and a Donate band with the PayPal button.
 - **Indulgences and Church Calendar buttons**: in their own band near the top of
@@ -94,12 +94,14 @@ resources exactly as written.
   (front and back, each 8.5 × 5.5 inches, with the chapel's mural and name). To change the
   form, edit `_branding/parishioner-information-form.html` and render the PDF again with the
   Chrome command at the top of that file.
-- **The Liturgical Year** (the day's video, at the top under the Next Holy Latin Mass card): edit
+- **The Liturgical Year** (the day's video, under Latest Sermon): edit
   `_data/liturgical_year.yml`. Each day, take the InPrincipio Podcast's video for that day's
   saint or feast from <https://www.youtube.com/@InPrincipioCast/videos>, and change `title:`
   (for example `"St. Felix of Valois (November 20)"`) and `youtube:` (the id after `v=` in the
-  video's address). Delete `youtube:` to hide the section.
-- **Latest Sermon** (under The Liturgical Year): needs no editing. It always shows the first
+  video's address). If this year's video isn't posted yet, search YouTube for the channel's
+  video from an earlier year (November 23, 2026 used last year's "Pope St. Clement I").
+  Delete `youtube:` to hide the section.
+- **Latest Sermon** (above The Liturgical Year): needs no editing. It always shows the first
   video in `_data/sermons.yml` (see Media page below), with its "Listen (MP3)" and "More
   sermons" buttons. Older sermons are not given their own cards on the home page.
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.

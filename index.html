@@ -5,10 +5,11 @@ permalink: "/"
 ---
 {% comment %}
 Home page sections, top to bottom:
-  hero (Next Holy Latin Mass card) · Indulgences button · The Liturgical Year · Latest Sermon ·
+  hero (Next Holy Latin Mass card) · Indulgences button · Latest Sermon · The Liturgical Year ·
   Holy Latin Mass Schedule · New to the Chapel? · Chapel News · Featured Content ·
   Prayer Intentions · Devotions · The Papacy and Catholic Unity · Donate
-  (this order since 2026-11-21, the user's request)
+  (this order since 2026-11-21, the user's request; Latest Sermon moved above The
+  Liturgical Year on 2026-11-23)
 Most of the content comes from _data/: liturgical_year.yml (the day's video),
 notices.yml (Chapel News), schedule.yml, featured.yml, prayer.yml and devotions.yml. Sermons are on the Media page (/sermons/)
 (sermons.html, _data/sermons.yml); the Latest Sermon section shows the first video
@@ -17,7 +18,7 @@ listed there.
 {% include hero.html %}
 {% capture hrefbase %}href="{{ site.baseurl }}/{% endcapture %}
 
-{% comment %} Buttons above The Liturgical Year, one under the other (the user asked on
+{% comment %} Buttons above Latest Sermon, one under the other (the user asked on
 2026-11-21): a PDF on the website of Immaculate Conception Catholic Church, Sartell, MN
 (immaculateconceptioncmri.org), and the Church Calendar page (calendar.html), which shows
 that site's calendar pictures. To remove a button, delete its line; to remove both, delete
@@ -30,6 +31,19 @@ this section. {% endcomment %}
     </p>
   </div>
 </section>
+
+{% comment %} The chapel's latest sermon (the first video in _data/sermons.yml), the user's
+request on 2026-11-21; above The Liturgical Year since 2026-11-23 (the user's request). {% endcomment %}
+{% if site.data.sermons.videos.size > 0 %}
+<section class="section section--panel" id="latest-sermon">
+  <div class="container">
+    <h2 class="section-title">Latest Sermon</h2>
+    <div class="tiles tiles--two">
+      {% include sermon-video-tile.html item=site.data.sermons.videos.first wide=true more=true %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
 {%- assign ly = site.data.liturgical_year -%}
 {% if ly.youtube %}
@@ -49,18 +63,6 @@ this section. {% endcomment %}
   </div>
 </section>
 {% endif %}
-
-{% comment %} The chapel's latest sermon (the first video in _data/sermons.yml), the user's
-request on 2026-11-21. {% endcomment %}
-{% if site.data.sermons.videos.size > 0 %}
-<section class="section section--panel" id="latest-sermon">
-  <div class="container">
-    <h2 class="section-title">Latest Sermon</h2>
-    <div class="tiles tiles--two">
-      {% include sermon-video-tile.html item=site.data.sermons.videos.first wide=true more=true %}
-    </div>
-  </div>
-</section>
 
 <section class="section" id="mass-schedule">
   <div class="container">
@@ -132,7 +134,6 @@ request on 2026-11-21. {% endcomment %}
     </div>
   </div>
 </section>
-{% endif %}
 
 <section class="section" id="chapel-news">
   <div class="container">
