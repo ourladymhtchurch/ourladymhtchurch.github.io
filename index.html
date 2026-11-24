@@ -33,10 +33,13 @@ this section. {% endcomment %}
 </section>
 
 {% comment %} The chapel's latest sermon (the first video in _data/sermons.yml), the user's
-request on 2026-11-21; above The Liturgical Year since 2026-11-23 (the user's request). {% endcomment %}
+request on 2026-11-21; above The Liturgical Year since 2026-11-23 (the user's request).
+The "Updated …" date line (updated: in _data/notices.yml) is above its heading since
+2026-11-24, the user's request; it was under the Chapel News heading before. {% endcomment %}
 {% if site.data.sermons.videos.size > 0 %}
 <section class="section section--panel" id="latest-sermon">
   <div class="container">
+    {% if site.data.notices.updated %}<p class="news-updated news-updated--top">{{ site.data.notices.updated }}</p>{% endif %}
     <h2 class="section-title">Latest Sermon</h2>
     <div class="tiles tiles--two">
       {% include sermon-video-tile.html item=site.data.sermons.videos.first wide=true more=true %}
@@ -138,7 +141,6 @@ request on 2026-11-21; above The Liturgical Year since 2026-11-23 (the user's re
 <section class="section" id="chapel-news">
   <div class="container">
     <h2 class="section-title">Chapel News</h2>
-    {% if site.data.notices.updated %}<p class="news-updated">{{ site.data.notices.updated }}</p>{% endif %}
     <div class="grid grid--4-8">
       <img src="{{ '/assets/img/chapel-altar.jpg' | relative_url }}" alt="Side altar of the chapel with the statue of the Sacred Heart and the image of the Holy Face">
       <div class="rich text text--slate">

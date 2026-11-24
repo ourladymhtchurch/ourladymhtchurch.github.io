@@ -103,15 +103,17 @@ resources exactly as written.
   Delete `youtube:` to hide the section.
 - **Latest Sermon** (above The Liturgical Year): needs no editing. It always shows the first
   video in `_data/sermons.yml` (see Media page below), with its "Listen (MP3)" and "More
-  sermons" buttons. Older sermons are not given their own cards on the home page.
+  sermons" buttons. Older sermons are not given their own cards on the home page. The
+  "Updated …" date line above its heading comes from `_data/notices.yml` (see Chapel News).
 - **Chapel News**: the main text (beside the side-altar photo) is near the top of `index.html`.
   Since 2026-11-22 it opens with Parish Registration, the same three paragraphs as the Parish
   Registration page (spaced apart, with "Sacraments" capitalized), linking to the Parishioner
   Information Form; change both together.
   To show a link there as a brown button (like "Watch on YouTube"), copy that line:
   `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.
-  The "Updated …" line under the heading is `updated:` in `_data/notices.yml`; change its date
-  when you post news. Short extra notices go in the same file under `items:`, each as a
+  The "Updated …" date line is `updated:` in `_data/notices.yml`; change its date when you
+  post news. Since November 24, 2026 it is shown above the Latest Sermon heading, not under
+  the Chapel News heading. Short extra notices go in the same file under `items:`, each as a
   `text:` block (links are written as `[words](https://address)`).
 - **Featured Content** (the Christ the King Holy Latin Mass excerpt and, under it, that day's
   sermon, "The Kingship of Christ"; the Fatima Conference recordings): edit `_data/featured.yml`. A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
