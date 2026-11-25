@@ -32,7 +32,7 @@
 /* A document reached from the About page ("about:" in its front matter, _layouts/document.html):
    a light gray title band that links back to the About page, the picture in the same
    frame as on the About page (it stays in view while the text scrolls on wide screens),
-   and a "Back to About Us" button at the end. */
+   and a "Back to About" button at the end. */
 .doc-header { padding: 40px 0 36px; text-align: center; }
 @media (min-width: 1024px) { .doc-header { padding: 56px 0 48px; } }
 .doc-header__title { font-size: 24px; line-height: 1.3; margin: 0 auto; max-width: 900px; text-wrap: balance; }

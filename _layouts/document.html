@@ -14,8 +14,8 @@ Document layout. Front matter options:
   pdf / pdf_title / pdf_thumb / pdf_link_text: embedded PDF viewer
   about:          the id of this document's summary on the About page (_data/about.yml),
                   e.g. bishop-thuc. The page then opens with a light gray title band
-                  ("About Us" above the title, the summary line under it), shows the
-                  picture in the About page's frame, and ends with "Back to About Us".
+                  ("About" above the title, the summary line under it), shows the
+                  picture in the About page's frame, and ends with "Back to About".
 {%- endcomment -%}
 {%- assign title_class = "section-title" -%}
 {%- if page.title_style == "large" %}{% assign title_class = "section-title section-title--large" %}
@@ -37,7 +37,7 @@ Document layout. Front matter options:
 {%- capture about_url %}{{ '/about/' | relative_url }}#{{ page.about }}{% endcapture %}
 <section class="section section--panel doc-header">
   <div class="container">
-    <p class="eyebrow"><a href="{{ about_url }}">About Us</a></p>
+    <p class="eyebrow"><a href="{{ about_url }}">About</a></p>
     <h1 class="section-title doc-header__title">{{ page.title }}</h1>
     {% if page.summary %}<p class="doc-header__summary">{{ page.summary }}</p>{% endif %}
   </div>
@@ -88,7 +88,7 @@ Document layout. Front matter options:
     {% include pdf-viewer.html title=page.pdf_title file=page.pdf thumb=page.pdf_thumb link_text=page.pdf_link_text %}
     {% endif %}
 
-    {% if page.about %}<p class="button-row doc-feature__back"><a class="btn btn--outline" href="{{ about_url }}">Back to About Us</a></p>{% endif %}
+    {% if page.about %}<p class="button-row doc-feature__back"><a class="btn btn--outline" href="{{ about_url }}">Back to About</a></p>{% endif %}
   </div>
 </section>
 

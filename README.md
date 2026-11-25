@@ -197,9 +197,9 @@ resources exactly as written.
   `pdf_link_text` to embed a PDF. The page appears at `/documents/<file-name>/` and on the
   Documents page under its category. A document summarized on the About page also gets
   `about:` with its summary's `id` in `_data/about.yml` (Bishop Thuc's declaration has
-  `about: bishop-thuc`): it then opens with a light gray title band, "About Us" above the
+  `about: bishop-thuc`): it then opens with a light gray title band, "About" above the
   title linking back to its summary, the picture in the About page's frame, and a "Back to
-  About Us" button at the end.
+  About" button at the end.
 - **A link to another website on the Documents page** (like Documents of Popes under Papal
   Documents): add it under `links:` for that section in `_data/document_categories.yml`, with
   `title`, `url`, `cover` (the words on its brown cover) and `summary`. It shows as a card
