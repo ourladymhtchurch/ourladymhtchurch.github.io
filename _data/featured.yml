@@ -32,6 +32,20 @@
 # ---------------------------------------------------------------------------
 
 items:
+  # The CMRI article also linked under the date line (added 2026-11-27, the day of
+  # Our Lady of the Miraculous Medal, at the user's request, at the top). The
+  # picture is the article's own, copied from cmri.org.
+  - type: link
+    wide: true
+    label: "Article"
+    title: "The Miraculous Medal"
+    by: "Rev. Fr. Dominic Radecki, CMRI"
+    text: "The medal Our Lady showed St. Catherine Labouré in 1830: its history, the meaning of each side, and the graces she promised to those who wear it."
+    url: https://cmri.org/articles-on-the-traditional-catholic-faith/the-miraculous-medal/
+    image: /assets/img/miraculous-medal.jpg
+    image_alt: "The front and back of the Miraculous Medal"
+    button: "Read the article"
+
   # The chapel's own video on its YouTube channel (added 2026-11-17 through the
   # YouTube pipeline, Church YouTube/PIPELINE.md, step 9).
   - type: video

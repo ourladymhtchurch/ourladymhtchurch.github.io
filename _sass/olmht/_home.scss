@@ -3,6 +3,8 @@
 .news-updated { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -24px 0 32px; }
 /* The date line above the Latest Sermon heading (since 2026-11-24; it was under Chapel News) */
 .news-updated--top { margin: 0 0 24px; }
+/* An article linked under the date line (article: in _data/notices.yml, since 2026-11-27) */
+.news-article { text-align: center; font-size: 17px; font-weight: 700; color: var(--brown); margin: -16px 0 24px; }
 .news-list { list-style: none; margin: 40px 0 0; padding: 0; }
 
 /* A narrow white band of buttons, one under the other, between the hero and Latest

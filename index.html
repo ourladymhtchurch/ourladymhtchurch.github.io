@@ -35,11 +35,14 @@ this section. {% endcomment %}
 {% comment %} The chapel's latest sermon (the first video in _data/sermons.yml), the user's
 request on 2026-11-21; above The Liturgical Year since 2026-11-23 (the user's request).
 The "Updated …" date line (updated: in _data/notices.yml) is above its heading since
-2026-11-24, the user's request; it was under the Chapel News heading before. {% endcomment %}
+2026-11-24, the user's request; it was under the Chapel News heading before. Under it,
+article: in the same file links to an article (title, by, url), since 2026-11-27. {% endcomment %}
 {% if site.data.sermons.videos.size > 0 %}
 <section class="section section--panel" id="latest-sermon">
   <div class="container">
     {% if site.data.notices.updated %}<p class="news-updated news-updated--top">{{ site.data.notices.updated }}</p>{% endif %}
+    {%- assign article = site.data.notices.article %}
+    {% if article.url %}<p class="news-article rich"><a href="{{ article.url }}" target="_blank" rel="noopener">{{ article.title }}</a>{% if article.by %} by {{ article.by }}{% endif %}</p>{% endif %}
     <h2 class="section-title">Latest Sermon</h2>
     <div class="tiles tiles--two">
       {% include sermon-video-tile.html item=site.data.sermons.videos.first wide=true more=true %}

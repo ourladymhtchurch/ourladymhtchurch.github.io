@@ -113,9 +113,12 @@ resources exactly as written.
   `<p class="rich__button"><a class="btn" href="…" target="_blank" rel="noopener">Button words</a></p>`.
   The "Updated …" date line is `updated:` in `_data/notices.yml`; change its date when you
   post news. Since November 24, 2026 it is shown above the Latest Sermon heading, not under
-  the Chapel News heading. Short extra notices go in the same file under `items:`, each as a
+  the Chapel News heading. An article can be linked on its own line under the date line with
+  `article:` in the same file (`title`, `by`, `url`); delete those lines to remove it. Short
+  extra notices go in the same file under `items:`, each as a
   `text:` block (links are written as `[words](https://address)`).
-- **Featured Content** (the Christ the King Holy Latin Mass excerpt and, under it, that day's
+- **Featured Content** (the CMRI article "The Miraculous Medal" by Rev. Fr. Dominic Radecki,
+  CMRI, first since November 27, 2026; the Christ the King Holy Latin Mass excerpt and, under it, that day's
   sermon, "The Kingship of Christ"; the Fatima Conference recordings): edit `_data/featured.yml`. A card with `type: video` plays a YouTube video inside the card (`youtube:` is the id after
   `v=` in the address; `start: 14` begins 14 seconds in). A video can also be a file kept on
   the site: put an `.mp4` in `assets/video/` and a still picture in `assets/img/`, and give the

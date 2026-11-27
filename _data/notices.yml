@@ -3,6 +3,9 @@
 #   updated: the "Updated …" date line, shown above the "Latest Sermon" heading
 #            (since 2026-11-24; it was under the "Chapel News" heading before).
 #            Change the date when you post news.
+#   article: an article linked on its own line under the date line (since
+#            2026-11-27): title (the link's words), by (the author, shown after
+#            "by") and url. Leave it out, or empty, to show nothing there.
 #   items:   short notices, listed under the main news text. Each notice may use
 #            Markdown: links as [text](https://address), *italics*, **bold**.
 #            Example:
@@ -13,5 +16,10 @@
 # index.html.
 # ---------------------------------------------------------------------------
 updated: "Updated 11.27.26, Our Lady of the Miraculous Medal, pray for us+"
+
+article:
+  title: "The Miraculous Medal"
+  by: "Rev. Fr. Dominic Radecki, CMRI"
+  url: "https://cmri.org/articles-on-the-traditional-catholic-faith/the-miraculous-medal/"
 
 items: []
