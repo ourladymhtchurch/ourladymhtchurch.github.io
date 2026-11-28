@@ -36,7 +36,8 @@
 .new-here__rule { border: 0; border-top: 1px solid var(--rule); margin: 32px 0 0; }
 .rich h3.new-here__question { font-size: 21px; color: var(--ink); text-align: center; margin: 28px 0 12px; }
 .new-here__names { text-align: center; font-weight: 700; color: var(--ink); }
-.new-here__link { text-align: center; }
+/* "Please see…" links as ➤ bullets, the list centered as a block (since 2026-11-27) */
+.new-here__links { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
 @media (min-width: 768px) { .new-here { font-size: 20px; } }
 
 .news-list li { font-size: 18px; color: var(--slate); padding: 16px 0; border-top: 1px solid var(--rule); }
