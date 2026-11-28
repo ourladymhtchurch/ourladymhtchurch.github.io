@@ -28,7 +28,9 @@
 # video_groups: more sections of videos, after the chapel's sermon videos, in
 # this order, two to a row. Each section has a title, an optional description
 # and its videos (newest first), written like the videos above, plus an
-# optional label (the small word above the title, default "Sermon").
+# optional label (the small word above the title, default "Sermon"). A video can
+# also have links: a list of title and url (a web address or a file on this site,
+# such as a PDF in assets/pdf/), each shown as a button on its card.
 #
 # groups: the MP3 sermons, in groups shown in this order, three to a row. Every
 # chapel sermon MP3 goes in "Sermons at the Chapel", filmed or not. Each group has a title, an optional description and its
@@ -104,6 +106,9 @@ video_groups:
         by: "His Excellency Bishop Mark Pivarunas, CMRI"
         text: "October 9, 2026. The 7th Lecture of the 2026 Fatima Conference."
         youtube: v6ElD6rhY74
+        links:
+          - title: "False Ecumenism Booklet"
+            url: /assets/pdf/false-ecumenism-booklet-pivarunas.pdf
 
       - label: "Talk"
         title: "An Imperfect General Council Is the Answer, But We Need to Have Unity First"

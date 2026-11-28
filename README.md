@@ -152,7 +152,9 @@ resources exactly as written.
   - **Other video sections** (`video_groups:`), after the chapel's videos: "Selected Sermons
     or Lectures of Bishop Pivarunas". Each section has a `title`, an optional `description`
     and its `videos`, newest first, written like the chapel videos, plus an optional `label`
-    (the small word above the title, such as Lecture or Interview). Chapel News on the home
+    (the small word above the title, such as Lecture or Interview). A video can also have
+    `links:`, a list of `title` and `url`, each shown as a button on its card (the "Strike
+    the Shepherd" lecture links to the False Ecumenism Booklet). Chapel News on the home
     page shows only the bishop's latest talk and links to this section; when a new talk
     goes into Chapel News, add it at the top of this section too.
   - **MP3 sermons**: the `groups:` ("Sermons at the Chapel", "Sermons of the Saints"). Every
