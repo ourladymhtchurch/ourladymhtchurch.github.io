@@ -25,9 +25,21 @@
 # order, each with a "Listen (MP3)" button. When the Mass is removed, its sermons go
 # with it, so move any worth keeping to _data/sermons.yml (the Media page).
 #
+# "bulletins" is the Bulletins box right under the Mass cards (since 2026-11-27): its
+# title (the Sunday) and its files, each a button with title and url (a PDF in
+# assets/pdf/), English first, then Spanish. Delete it (or its files) to hide the box.
+#
 # Other sermons are in _data/sermons.yml; prayer intentions and quotes are in
 # _data/prayer.yml.
 # ---------------------------------------------------------------------------
+
+bulletins:
+  title: "First Sunday of Advent, November 29, 2026"
+  files:
+    - title: "Bulletin in English"
+      url: /assets/pdf/bulletin-2026-11-29-english.pdf
+    - title: "Boletín en español"
+      url: /assets/pdf/bulletin-2026-11-29-spanish.pdf
 
 notice: |
   On Sundays, after the Holy Latin Mass in Corpus Christi, Father travels to the new mission Our Lady of Mount Carmel Chapel (Nuestra Señora del Monte Carmelo Chapel) in San Antonio at the Candlewood Suites Airport to offer the Holy Latin Mass at 1 PM with Confessions at 12:30 PM. To confirm future dates and times, visit: [www.facebook.com/NSDMCC](https://www.facebook.com/NSDMCC) or email: <NSDMCC@proton.me>

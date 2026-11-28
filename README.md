@@ -59,6 +59,10 @@ resources exactly as written.
   do (`"Sunday, November 8, 2026"`, `"8:00 AM"`) so the box can tell which Mass is next.
   To flag a change, add `label: "UPDATE:"` to that Mass: the word appears in red in front of
   "Next Holy Latin Mass" in the box while that Mass is the next one.
+  The **Bulletins** under the Mass cards are `bulletins:` in the same file: a `title` (the
+  Sunday) and `files`, each a button with `title` and `url`, English first, then Spanish. Put
+  each week's PDFs in `assets/pdf/` (named like `bulletin-2026-11-29-english.pdf`) and delete
+  last week's, since every PDF on the site counts toward its 1 GB limit (about 15 MB a week).
   The box under the Mass cards (the San Antonio mission notice) is `notice:` at the top of
   the same file. Delete it, or leave it empty, to hide the box.
   For urgent news such as a cancellation, `alert:` (also at the top of the file) shows a red
