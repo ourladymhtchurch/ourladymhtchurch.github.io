@@ -51,6 +51,7 @@
   font-family: var(--font-display); text-transform: uppercase;
   font-size: 13px; letter-spacing: .12em; color: var(--brown); margin-bottom: 8px;
 }
+.next-mass__label { color: var(--alert); }   /* label: in schedule.yml, e.g. "UPDATE:" */
 .next-mass__when { font-size: 19px; line-height: 1.35; color: var(--ink); }
 .next-mass__date { display: block; font-family: var(--font-display); font-size: 18px; }
 .next-mass__time { display: block; font-size: 30px; font-weight: 700; line-height: 1.2; color: var(--brown); margin-top: 2px; }

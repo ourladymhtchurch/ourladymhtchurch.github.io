@@ -3,14 +3,17 @@
 Each Mass gets a start time (its date + time, Central Time). The first Mass is shown
 before the page script runs. assets/js/main.js then shows the first Mass that has not
 ended yet, or a "being updated" message when every listed Mass is in the past.
+Each Mass has its own "Next Holy Latin Mass" heading, so a Mass with label: in
+schedule.yml (e.g. "UPDATE:", since 2026-11-27) shows that word in front of it, in red,
+only while it is the next Mass.
 {%- endcomment -%}
 {%- assign masses = site.data.schedule.masses -%}
 {%- capture maps_url %}https://www.google.com/maps/search/?api=1&query={{ site.chapel.address | url_encode }}{% endcapture -%}
 <aside class="next-mass" aria-label="Next Holy Latin Mass" data-next-mass>
-  <p class="next-mass__eyebrow">Next Holy Latin Mass</p>
   {%- for mass in masses %}
   {%- assign starts = mass.date | append: " " | append: mass.time | date: "%Y-%m-%dT%H:%M:%S%:z" %}
   <div class="next-mass__item" data-start="{{ starts }}"{% unless forloop.first %} hidden{% endunless %}>
+    <p class="next-mass__eyebrow">{% if mass.label %}<span class="next-mass__label">{{ mass.label }}</span> {% endif %}Next Holy Latin Mass</p>
     <p class="next-mass__when"><span class="next-mass__date">{{ mass.date }}</span> <span class="next-mass__time">{{ mass.time }}</span></p>
     {% if mass.feast %}<p class="next-mass__feast">{{ mass.feast }}</p>{% endif %}
     {%- assign celebrant = mass.celebrant | default: site.data.schedule.celebrant %}
@@ -19,6 +22,7 @@ ended yet, or a "being updated" message when every listed Mass is in the past.
   </div>
   {%- endfor %}
   <div class="next-mass__item" data-next-mass-none{% if masses.size > 0 %} hidden{% endif %}>
+    <p class="next-mass__eyebrow">Next Holy Latin Mass</p>
     <p class="next-mass__when">This week's Holy Latin Mass times are being updated.</p>
     <p class="next-mass__meta">Please call <a href="{{ site.chapel.phone_link }}">{{ site.chapel.phone }}</a> {{ site.chapel.phone_note }} for the schedule.</p>
   </div>

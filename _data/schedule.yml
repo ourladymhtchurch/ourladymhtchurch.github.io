@@ -2,6 +2,10 @@
 # Holy Latin Mass schedule shown on the home page. Add, remove or edit entries freely;
 # the page rebuilds from this file. Keep the two-space indentation.
 #
+# "label" puts a word in red in front of "Next Holy Latin Mass" on the box at the top of
+# the home page while that Mass is the next one, e.g. label: "UPDATE:" after a change of
+# time. Delete it to show the heading alone.
+#
 # Each Mass can name its own priest with "celebrant". Write dates and times as
 # below ("Sunday, November 8, 2026", "8:00 AM") so the Next Holy Latin Mass box at the top
 # of the home page can tell which Mass is next.
@@ -31,9 +35,10 @@ notice: |
 masses:
   - date: "Saturday, November 28, 2026"
     time: "8:00 AM"
+    label: "UPDATE:"
     feast: "Blessed Virgin Mary (St. Catherine Labouré, Virgin)"
     celebrant: "Rev. Father Adam Joseph Craig, CMRI"
-    confessions: "7:20 AM"
+    confessions: "7:30 AM"
     rosary: "7:35 AM"
   - date: "Sunday, November 29, 2026"
     time: "8:00 AM"
