@@ -18,6 +18,8 @@
 # the sections of the Media page; keep both copies of that list the same). Modesty
 # (since 2026-11-22) opens the Resources page's Modesty section and lists all of its
 # links in both menus; keep both lists in step with that section.
+# Resources (since 2026-11-27) opens the Resources page in the primary row, and its
+# drop-down lists the same links as the drawer's Resources group; keep both lists the same.
 # ---------------------------------------------------------------------------
 primary:
   - title: "Home"
@@ -60,6 +62,43 @@ primary:
     url: /documents/
   - title: "Resources"
     url: /resources/
+    children:
+      - title: "Examination of Conscience"
+        url: /documents/examination-of-conscience/
+      - title: "Holy Bible - Douay-Rheims"
+        url: https://drbo.org
+      - title: "Haydock Bible Commentary"
+        url: https://web.archive.org/web/20160405100303/http://haydock1859.tripod.com/id94.html
+      - title: "Holy Rosary / Latin & Eng"
+        url: https://www.holyromancatholicchurch.org/articles/LatinRosary.htm
+      - title: "Tridentine Mass"
+        url: http://traditionalcatholic.net/Tradition/Mass/Missal/index.html
+      - title: "Liberalism is a Sin"
+        url: https://archive.org/details/whatisliberalis00pallgoog/page/n12/mode/2up?view=theater
+      - title: "Case Against Roncalli"
+        url: https://introiboadaltaredei2.blogspot.com/2019/05/the-case-against-roncalli.html?m=1
+      - title: "Destruction of..Tradition"
+        url: https://www.holyromancatholicchurch.org/CatholicWritings.htm
+      - title: "Latin / English Prayers"
+        url: https://www.holyromancatholicchurch.org/CollectionOfLatin.htm
+      - title: "My Prayer Book"
+        url: https://www.holyromancatholicchurch.org/articles/MyPrayerBook.pdf
+      - title: "Imitation of Christ"
+        url: https://www.holyromancatholicchurch.org/articles/Of_the_imitation_of_Christ.pdf
+      - title: "Intro. to the Devout Life"
+        url: https://www.holyromancatholicchurch.org/articles/devout_life.pdf
+      - title: "1937 Latin-English Missal"
+        url: https://www.ccwatershed.org/pdfs/km0_misc-tome_1937_fr_lasance_missal/download/
+      - title: "A Soul in Hell - Annette"
+        url: https://www.youtube.com/watch?v=jwBhoJSqdHI
+      - title: "The Happiness of Heaven"
+        url: https://www.google.com/books/edition/The_Happiness_of_Heaven/7bw_AAAAYAAJ?hl=en&gbpv=1&printsec=frontcover
+      - title: "VIDEO: Brown Scapular"
+        url: https://youtu.be/cqBwFHaZV0w
+      - title: "The Miraculous Medal"
+        url: https://cmri.org/articles-on-the-traditional-catholic-faith/the-miraculous-medal/
+      - title: "False Ecumenism Booklet"
+        url: /assets/pdf/false-ecumenism-booklet-pivarunas.pdf
   - title: "Contact"
     url: /contact-us/
   - title: "Donate"
@@ -214,6 +253,8 @@ drawer:
         url: https://youtu.be/cqBwFHaZV0w
       - title: "The Miraculous Medal"
         url: https://cmri.org/articles-on-the-traditional-catholic-faith/the-miraculous-medal/
+      - title: "False Ecumenism Booklet"
+        url: /assets/pdf/false-ecumenism-booklet-pivarunas.pdf
   - title: "St. Louis De Montfort"
     children:
       - title: "Secret of the Rosary"
